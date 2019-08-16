@@ -16,6 +16,9 @@
     CHECK ([Type]='D' OR [Type]='U')
 );
 
+GO
+CREATE NONCLUSTERED INDEX [IX_Accounts_AccountGUID]
+    ON [repository].[Accounts]([AccountGUID] ASC);
 
 GO
 CREATE NONCLUSTERED INDEX [IX_Accounts_UserId]

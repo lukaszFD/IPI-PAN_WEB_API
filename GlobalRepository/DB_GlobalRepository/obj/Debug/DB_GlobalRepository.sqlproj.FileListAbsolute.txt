@@ -1,0 +1,11 @@
+C:\Users\luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\bin\Debug\DB_GlobalRepository.dacpac
+C:\Users\luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\DB_GlobalRepository.dll
+C:\Users\luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\DB_GlobalRepository.pdb
+C:\Users\luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\bin\Debug\DB_GlobalRepository.dll
+C:\Users\luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\bin\Debug\DB_GlobalRepository.pdb
+C:\Users\luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\bin\Debug\master.dacpac
+C:\Users\luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\DB_GlobalRepository.sqlproj.CopyComplete
+C:\Users\luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\Model.xml
+C:\Users\luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\refactor.xml
+C:\Users\luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\postdeploy.sql
+C:\Users\luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\predeploy.sql

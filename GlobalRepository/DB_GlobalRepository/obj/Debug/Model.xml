@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.4" DspName="Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider" CollationLcid="1045" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="False" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="False" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="110" />
+		</CustomData>
+		<CustomData Category="Reference" Type="SqlSchema">
+			<Metadata Name="FileName" Value="C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\COMMON7\IDE\EXTENSIONS\MICROSOFT\SQLDB\EXTENSIONS\SQLSERVER\110\SQLSCHEMAS\MASTER.DACPAC" />
+			<Metadata Name="LogicalName" Value="master.dacpac" />
+			<Metadata Name="ExternalParts" Value="[master]" />
+			<Metadata Name="SuppressMissingDependenciesErrors" Value="False" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="DB_GlobalRepository.dll" />
+			<Metadata Name="FileName" Value="C:\USERS\LUC\DOCUMENTS\GITHUB\IPI-PAN_WEB_API\GLOBALREPOSITORY\DB_GLOBALREPOSITORY\OBJ\DEBUG\DB_GLOBALREPOSITORY.DLL" />
+			<Metadata Name="AssemblyName" Value="DB_GlobalRepository" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\DB_GlobalRepository.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlCheckConstraint">
+			<Property Name="CheckExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[[Type]='D' OR [Type]='U']]></Value>
+			</Property>
+			<Relationship Name="CheckExpressionDependencies">
+				<Entry>
+					<References Name="[repository].[Accounts].[Type]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="Polish_CI_AS" />
+			<Property Name="IsAnsiPaddingOn" Value="False" />
+			<Property Name="IsQuotedIdentifierOn" Value="False" />
+			<Property Name="IsCursorDefaultScopeGlobal" Value="True" />
+			<Property Name="IsAutoCloseOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="RecoveryMode" Value="1" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="ServiceBrokerOption" Value="1" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(newid())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[repository].[Accounts].[AccountGUID]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[repository].[Accounts].[CreationDate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[repository].[Accounts].[AccountId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+		</Element>
+		<Element Type="SqlSchema" Name="[documentation]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlView" Name="[documentation].[tables]">
+			<Property Name="QueryScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[
+
+select schema_name(tab.schema_id) as schema_name,
+    tab.name as table_name, 
+    col.column_id,
+    col.name as column_name, 
+    t.name as data_type,    
+    col.max_length,
+    col.precision,
+	col.is_nullable,
+	sep.value [Description]
+from sys.tables as tab
+    inner join sys.columns as col on tab.object_id = col.object_id
+    left join sys.types as t on col.user_type_id = t.user_type_id
+	left join sys.extended_properties sep on tab.object_id = sep.major_id AND col.column_id = sep.minor_id]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[tables].[schema_name]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[tables].[table_name]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[tables].[name]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[tables].[column_id]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[column_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[tables].[column_name]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[name]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[tables].[data_type]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[types].[name]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[tables].[max_length]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[max_length]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[tables].[precision]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[precision]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[tables].[is_nullable]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[is_nullable]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[tables].[Description]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[extended_properties].[value]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[tables]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[tables].[object_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[object_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[types]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[user_type_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[types].[user_type_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[extended_properties]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[tables].[object_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[extended_properties].[major_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[column_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[extended_properties].[minor_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[tables].[schema_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[tables].[name]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[name]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[types].[name]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[max_length]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[precision]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[is_nullable]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[extended_properties].[value]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[documentation]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="4" />
+				<Property Name="Length" Value="558" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;&#xD;&#xA;CREATE view [documentation].[tables]&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[documentation].[views]">
+			<Property Name="QueryScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[
+
+select schema_name(tab.schema_id) as schema_name,
+    tab.name as table_name, 
+    col.column_id,
+    col.name as column_name, 
+    t.name as data_type,    
+    col.max_length,
+    col.precision,
+	col.is_nullable,
+	sep.value [Description]
+from sys.views as tab
+    inner join sys.columns as col on tab.object_id = col.object_id
+    left join sys.types as t on col.user_type_id = t.user_type_id
+	left join sys.extended_properties sep on tab.object_id = sep.major_id AND col.column_id = sep.minor_id]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[views].[schema_name]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[views].[table_name]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[views].[name]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[views].[column_id]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[column_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[views].[column_name]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[name]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[views].[data_type]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[types].[name]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[views].[max_length]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[max_length]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[views].[precision]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[precision]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[views].[is_nullable]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[is_nullable]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[documentation].[views].[Description]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References ExternalSource="master.dacpac" Name="[master]|[sys].[extended_properties].[value]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[views]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[views].[object_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[object_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[types]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[user_type_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[types].[user_type_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[extended_properties]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[views].[object_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[extended_properties].[major_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[column_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[extended_properties].[minor_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[views].[schema_id]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[views].[name]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[name]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[types].[name]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[max_length]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[precision]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[columns].[is_nullable]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="master.dacpac" Name="[master]|[sys].[extended_properties].[value]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[documentation]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="4" />
+				<Property Name="Length" Value="556" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;&#xD;&#xA;CREATE view [documentation].[views]&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlSchema" Name="[recon]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlSchema" Name="[repository]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[repository].[Accounts]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[repository].[Accounts].[AccountGUID]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="5" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[repository].[Accounts].[AccountId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[repository].[Accounts].[UserId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[repository].[Accounts].[SystemId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[repository].[Accounts].[ServerId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[repository].[Accounts].[Name]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[repository].[Accounts].[Description]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="200" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[repository].[Accounts].[Type]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[repository].[Accounts].[PasswordExpires]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[repository].[Accounts].[Tofix]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[repository].[Accounts].[CreationDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="6" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[repository].[Accounts].[EditDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[repository].[Accounts].[DeleteDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[repository]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="7" />
+			<AttachedAnnotation Disambiguator="4" />
+		</Element>
+		<Element Type="SqlIndex" Name="[repository].[Accounts].[IX_Accounts_AccountGUID]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[repository].[Accounts].[AccountGUID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="IndexedObject">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlIndex" Name="[repository].[Accounts].[IX_Accounts_ServerId]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[repository].[Accounts].[ServerId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="IndexedObject">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlIndex" Name="[repository].[Accounts].[IX_Accounts_SystemId]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[repository].[Accounts].[SystemId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="IndexedObject">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlIndex" Name="[repository].[Accounts].[IX_Accounts_UserId]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[repository].[Accounts].[UserId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="IndexedObject">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlDmlTrigger" Name="[repository].[After_U_Accounts_trg]">
+			<Property Name="IsUpdateTrigger" Value="True" />
+			<Property Name="SqlTriggerType" Value="2" />
+			<Property Name="BodyScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[ 
+BEGIN
+SET NOCOUNT ON;
+
+	UPDATE a
+	SET a.EditDate = getdate()
+	FROM 
+		repository.Accounts a 
+		JOIN inserted i ON i.AccountId = a.AccountId
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[Accounts].[AccountId]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[Accounts].[AccountId]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[Accounts].[EditDate]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parent">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Offset" Value="1234" />
+				<Property Name="Length" Value="242" />
+				<Property Name="StartLine" Value="39" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE TRIGGER repository.After_U_Accounts_trg&#xD;&#xA;ON repository.Accounts&#xD;&#xA;AFTER UPDATE&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[repository].[Accounts].[AccountGUID].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The identifier transmitted in web communication.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[repository].[Accounts].[AccountGUID]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[repository].[Accounts].[AccountId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Identifier on the database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[repository].[Accounts].[AccountId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[repository].[Accounts].[CreationDate].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The date the account was created. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[repository].[Accounts].[CreationDate]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[repository].[Accounts].[DeleteDate].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Date of deletion of the account.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[repository].[Accounts].[DeleteDate]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[repository].[Accounts].[Description].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Short description of the account. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[repository].[Accounts].[Description]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[repository].[Accounts].[EditDate].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The date of the last update for the account.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[repository].[Accounts].[EditDate]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[repository].[Accounts].[Name].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Account name. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[repository].[Accounts].[Name]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[repository].[Accounts].[PasswordExpires].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Password expiration date. Accounts that have invalid passwords have the Tofix flag set to Y.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[repository].[Accounts].[PasswordExpires]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[repository].[Accounts].[ServerId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The server identifier on the database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[repository].[Accounts].[ServerId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[repository].[Accounts].[SystemId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'System identifier from the database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[repository].[Accounts].[SystemId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[repository].[Accounts].[Tofix].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Flag indicating accounts that have missing attributes. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[repository].[Accounts].[Tofix]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[repository].[Accounts].[Type].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Account type. U - user account, D - database account. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[repository].[Accounts].[Type]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[repository].[Accounts].[UserId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'User ID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[repository].[Accounts].[UserId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+	</Model>
+</DataSchemaModel>
