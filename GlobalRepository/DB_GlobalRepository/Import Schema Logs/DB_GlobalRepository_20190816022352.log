@@ -1,0 +1,77 @@
+2019-08-16 16:23:52	This log contains information about the import schema operation into project 'DB_GlobalRepository' on computer 'LUC-PC' by user 'luc'.
+2019-08-16 16:23:52	Import of database schema has started.
+2019-08-16 16:24:00	Gathering database options
+2019-08-16 16:24:00	Gathering users
+2019-08-16 16:24:00	Gathering roles
+2019-08-16 16:24:00	Gathering application roles
+2019-08-16 16:24:00	Gathering role memberships
+2019-08-16 16:24:00	Gathering filegroups
+2019-08-16 16:24:00	Gathering full-text catalogs
+2019-08-16 16:24:00	Gathering assemblies
+2019-08-16 16:24:00	Gathering certificates
+2019-08-16 16:24:00	Gathering asymmetric keys
+2019-08-16 16:24:00	Gathering symmetric keys
+2019-08-16 16:24:00	Gathering encrypted symmetric keys
+2019-08-16 16:24:00	Gathering schemas
+2019-08-16 16:24:00	Gathering XML schema collections
+2019-08-16 16:24:00	Gathering user-defined data types
+2019-08-16 16:24:00	Gathering user-defined types
+2019-08-16 16:24:00	Gathering table types
+2019-08-16 16:24:00	Gathering unique keys for table types
+2019-08-16 16:24:00	Gathering primary keys for table types
+2019-08-16 16:24:00	Gathering check constraints for table types
+2019-08-16 16:24:00	Gathering default constraints for table types
+2019-08-16 16:24:00	Gathering partition functions
+2019-08-16 16:24:00	Gathering partition schemes
+2019-08-16 16:24:00	Gathering functions
+2019-08-16 16:24:00	Gathering encrypted functions
+2019-08-16 16:24:00	Gathering aggregates
+2019-08-16 16:24:00	Gathering procedures
+2019-08-16 16:24:01	Gathering encrypted procedures
+2019-08-16 16:24:01	Gathering tables
+2019-08-16 16:24:01	Gathering primary keys
+2019-08-16 16:24:01	Gathering unique constraints
+2019-08-16 16:24:01	Gathering foreign keys
+2019-08-16 16:24:01	Gathering default constraints
+2019-08-16 16:24:01	Gathering check constraints
+2019-08-16 16:24:01	Gathering views
+2019-08-16 16:24:01	Gathering encrypted views
+2019-08-16 16:24:01	Gathering indexes
+2019-08-16 16:24:01	Gathering statistics
+2019-08-16 16:24:01	Gathering full-text index stoplists
+2019-08-16 16:24:01	Gathering search property lists
+2019-08-16 16:24:01	Gathering search properties
+2019-08-16 16:24:01	Gathering full-text indexes
+2019-08-16 16:24:01	Gathering column store indexes
+2019-08-16 16:24:01	Gathering spatial indexes
+2019-08-16 16:24:01	Gathering XML indexes
+2019-08-16 16:24:01	Gathering Selective XML indexes
+2019-08-16 16:24:01	Gathering encrypted triggers
+2019-08-16 16:24:01	Gathering triggers
+2019-08-16 16:24:01	Gathering encrypted and clr ddl triggers
+2019-08-16 16:24:01	Gathering ddl triggers
+2019-08-16 16:24:01	Gathering synonyms
+2019-08-16 16:24:01	Gathering defaults
+2019-08-16 16:24:01	Gathering data constraint uddt bindings
+2019-08-16 16:24:01	Gathering rules
+2019-08-16 16:24:01	Gathering data constraint uddt bindings
+2019-08-16 16:24:01	Gathering message types
+2019-08-16 16:24:01	Gathering queues
+2019-08-16 16:24:01	Gathering contracts
+2019-08-16 16:24:01	Gathering services
+2019-08-16 16:24:01	Gathering event notifications
+2019-08-16 16:24:01	Gathering remote service bindings
+2019-08-16 16:24:01	Gathering broker priorities
+2019-08-16 16:24:01	Gathering signatures
+2019-08-16 16:24:01	Gathering data compression options
+2019-08-16 16:24:01	Gathering sequence types
+2019-08-16 16:24:01	Gathering database permissions
+2019-08-16 16:24:01	Gathering extended properties
+2019-08-16 16:24:01	Gathering credentials
+2019-08-16 16:24:01	Gathering logins
+2019-08-16 16:24:01	Gathering server audits
+2019-08-16 16:24:02	Scanning project for duplicate elements
+2019-08-16 16:24:03	Finished duplicate element processing
+2019-08-16 16:24:03	Finished importing database.
+2019-08-16 16:24:03	A summary of the import was saved to the following location: C:\Users\luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\Import Schema Logs\DB_GlobalRepository_20190816022352.log
+2019-08-16 16:24:03	Click Finish to continue...
