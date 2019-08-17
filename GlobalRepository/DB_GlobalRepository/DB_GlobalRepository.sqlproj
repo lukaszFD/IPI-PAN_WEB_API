@@ -108,6 +108,8 @@
     <Folder Include="documentation\" />
     <Folder Include="documentation\Views\" />
     <Folder Include="Security\" />
+    <Folder Include="gr_user\" />
+    <Folder Include="gr_user\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="repository\Tables\Accounts.sql">
@@ -125,6 +127,15 @@
     <Build Include="Security\documentation.sql" />
     <Build Include="Security\recon.sql" />
     <Build Include="Security\repository.sql" />
+    <Build Include="repository\Tables\Servers.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="gr_user\Tables\Users.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Security\gr_user.sql" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\110\SqlSchemas\master.dacpac">
@@ -135,5 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="GlobalRepository.publish.xml" />
+    <None Include="SqlSchemaCompare.scmp" />
   </ItemGroup>
 </Project>

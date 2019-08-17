@@ -13,7 +13,8 @@
     [EditDate]        DATETIME         NULL,
     [DeleteDate]      DATETIME         NULL,
     PRIMARY KEY CLUSTERED ([AccountId] ASC),
-    CHECK ([Type]='D' OR [Type]='U')
+    CHECK ([Type]='D' OR [Type]='U'),
+	CHECK ([Tofix]=0 OR [Tofix]=1)
 );
 
 GO

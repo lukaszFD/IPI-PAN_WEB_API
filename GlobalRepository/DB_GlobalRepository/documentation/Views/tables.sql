@@ -1,5 +1,6 @@
 ﻿
 
+
 CREATE view [documentation].[tables]
 as
 
