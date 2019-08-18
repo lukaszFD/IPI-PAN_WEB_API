@@ -1,4 +1,4 @@
-CREATE TABLE [repository].[Servers] (
+﻿CREATE TABLE [repository].[Servers] (
     [ExternalId]             UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
     [ServerId]               INT              IDENTITY (1, 1) NOT NULL,
     [Name]                   NVARCHAR (50)    NOT NULL,
@@ -25,36 +25,28 @@ CREATE TABLE [repository].[Servers] (
 );
 
 
+GO
 
+CREATE TRIGGER [repository].[After_U_Server_trg]
+ON [repository].Servers
+AFTER UPDATE
+AS 
+BEGIN
+SET NOCOUNT ON;
 
-
-
-
-
-
+	UPDATE a
+	SET a.EditDate = getdate()
+	FROM 
+		[repository].Servers a 
+		JOIN inserted i ON i.ServerId = a.ServerId
+END
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Warranty expiration date. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'WarrantyExpirationDate';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Security of the server in elenctic energy. The default value is false. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'UPS';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Technical support for the server. The default value is false. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'TechSupport';
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'ExternalId';
 
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The server ID of the database. In relation to [GlobalRepository].[repository].[Accounts].[ServerId].', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'ServerId';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Serial number of the server', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'SerialNumber';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Number of ram memories on the server (MB)', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'RAM';
 
 
 GO
@@ -66,7 +58,43 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Server host
 
 
 GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Server location - country id. In relation to [GlobalRepository].[repository].[CountryRegion].[CountryId].[CountryId].', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'CountryId';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Serial number of the server', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'SerialNumber';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Technical support for the server. The default value is false. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'TechSupport';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Warranty expiration date. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'WarrantyExpirationDate';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Processor type ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'CPUType';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Number of ram memories on the server (MB)', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'RAM';
+
+
+GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The type of disk used on the server. D - normal drive, S - SSD', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'HardDisk';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Security of the server in elenctic energy. The default value is false. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'UPS';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Anti-virus software. default value is false. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'AntivirusSoftware';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of creation of the entry. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'CreationDate';
 
 
 GO
@@ -75,24 +103,4 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of edi
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of deletion of the entry. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'DeleteDate';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of creation of the entry. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'CreationDate';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Processor type ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'CPUType';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Anti-virus software. default value is false. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'AntivirusSoftware';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Server location - country id. In relation to [GlobalRepository].[repository].[CountryRegion].[CountryId].[CountryId].', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'CountryId';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'ExternalId';
 

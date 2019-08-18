@@ -18,32 +18,29 @@
     CHECK ([Type]='D' OR [Type]='U'),
     FOREIGN KEY ([CountryId]) REFERENCES [repository].[CountryRegion] ([CountryId]),
     FOREIGN KEY ([ServerId]) REFERENCES [repository].[Servers] ([ServerId]),
+    FOREIGN KEY ([SystemId]) REFERENCES [repository].[Systems] ([SystemId]),
     FOREIGN KEY ([UserId]) REFERENCES [gr_user].[Users] ([UserId])
 );
 
 
-
-
-
 GO
 
+CREATE TRIGGER [repository].[After_U_Account_trg]
+ON [repository].Accounts
+AFTER UPDATE
+AS 
+BEGIN
+SET NOCOUNT ON;
+
+	UPDATE a
+	SET a.EditDate = getdate()
+	FROM 
+		[repository].Accounts a 
+		JOIN inserted i ON i.AccountId = a.AccountId
+END
 
 GO
-
-
-
-GO
-
-
-
-GO
-
-
-
-GO
-
-GO
-
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'ExternalId';
 
 
 GO
@@ -51,9 +48,11 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Identifier 
 
 
 GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Account location - country id. In relation to [GlobalRepository].[repository].[CountryRegion].[CountryId].', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'CountryId';
+
+
+GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'User ID on a database.  In relation to [GlobalRepository].[gr_user].[Users].[UserId]', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'UserId';
-
-
 
 
 GO
@@ -62,8 +61,6 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'System iden
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The server identifier on the database. In relation to [GlobalRepository].[repository].[Servers].[ServerId]', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'ServerId';
-
-
 
 
 GO
@@ -96,12 +93,4 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The date of
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of deletion of the account.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'DeleteDate';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Account location - country id. In relation to [GlobalRepository].[repository].[CountryRegion].[CountryId].', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'CountryId';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'ExternalId';
 
