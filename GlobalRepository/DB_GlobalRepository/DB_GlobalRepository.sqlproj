@@ -112,6 +112,9 @@
     <Folder Include="documentation\" />
     <Folder Include="documentation\Views\" />
     <Folder Include="Security\" />
+    <Folder Include="error\" />
+    <Folder Include="error\Tables\" />
+    <Folder Include="error\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\110\SqlSchemas\master.dacpac">
@@ -174,6 +177,14 @@
     <Build Include="Security\gr_user.sql" />
     <Build Include="Security\recon.sql" />
     <Build Include="Security\repository.sql" />
+    <Build Include="error\Tables\ErrorMessages.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="error\Stored Procedures\AddErrorMessage.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
   </ItemGroup>
   <ItemGroup>
     <None Include="GlobalRepository.publish.xml" />
