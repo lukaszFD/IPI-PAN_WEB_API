@@ -23,6 +23,8 @@
 );
 
 
+
+
 GO
 
 CREATE TRIGGER [repository].[After_U_Account_trg]
@@ -93,4 +95,29 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The date of
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of deletion of the account.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'DeleteDate';
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_Accounts_UserId]
+    ON [repository].[Accounts]([UserId] ASC);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_Accounts_SystemId]
+    ON [repository].[Accounts]([SystemId] ASC);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_Accounts_ServerId]
+    ON [repository].[Accounts]([ServerId] ASC);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_Accounts_ExternalId]
+    ON [repository].[Accounts]([ExternalId] ASC);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_Accounts_CountryId]
+    ON [repository].[Accounts]([CountryId] ASC);
 

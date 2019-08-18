@@ -14,6 +14,8 @@
 );
 
 
+
+
 GO
 
 CREATE TRIGGER [repository].[After_U_System_trg]
@@ -68,4 +70,9 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of edi
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of deletion of the entry. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Systems', @level2type = N'COLUMN', @level2name = N'DeleteDate';
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_Systems_SystemId]
+    ON [repository].[Systems]([SystemId] ASC);
 
