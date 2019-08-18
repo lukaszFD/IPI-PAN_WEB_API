@@ -1,6 +1,7 @@
 ﻿CREATE TABLE [repository].[Accounts] (
-    [AccountGUID]     UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
+    [ExternalId]      UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
     [AccountId]       INT              IDENTITY (1, 1) NOT NULL,
+    [CountryId]       INT              NOT NULL,
     [UserId]          INT              NULL,
     [SystemId]        INT              NULL,
     [ServerId]        INT              NULL,
@@ -13,45 +14,36 @@
     [EditDate]        DATETIME         NULL,
     [DeleteDate]      DATETIME         NULL,
     PRIMARY KEY CLUSTERED ([AccountId] ASC),
+    CHECK ([Tofix]=(0) OR [Tofix]=(1)),
     CHECK ([Type]='D' OR [Type]='U'),
-	CHECK ([Tofix]=0 OR [Tofix]=1)
+    FOREIGN KEY ([CountryId]) REFERENCES [repository].[CountryRegion] ([CountryId]),
+    FOREIGN KEY ([ServerId]) REFERENCES [repository].[Servers] ([ServerId]),
+    FOREIGN KEY ([UserId]) REFERENCES [gr_user].[Users] ([UserId])
 );
 
-GO
-CREATE NONCLUSTERED INDEX [IX_Accounts_AccountGUID]
-    ON [repository].[Accounts]([AccountGUID] ASC);
 
-GO
-CREATE NONCLUSTERED INDEX [IX_Accounts_UserId]
-    ON [repository].[Accounts]([UserId] ASC);
+
 
 
 GO
-CREATE NONCLUSTERED INDEX [IX_Accounts_SystemId]
-    ON [repository].[Accounts]([SystemId] ASC);
 
 
 GO
-CREATE NONCLUSTERED INDEX [IX_Accounts_ServerId]
-    ON [repository].[Accounts]([ServerId] ASC);
+
 
 
 GO
-CREATE TRIGGER repository.After_U_Accounts_trg
-ON repository.Accounts
-AFTER UPDATE
-AS 
-BEGIN
-SET NOCOUNT ON;
 
-	UPDATE a
-	SET a.EditDate = getdate()
-	FROM 
-		repository.Accounts a 
-		JOIN inserted i ON i.AccountId = a.AccountId
-END
+
+
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'AccountGUID';
+
+
+
+GO
+
+GO
+
 
 
 GO
@@ -59,7 +51,9 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Identifier 
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'User ID on a database.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'UserId';
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'User ID on a database.  In relation to [GlobalRepository].[gr_user].[Users].[UserId]', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'UserId';
+
+
 
 
 GO
@@ -67,7 +61,9 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'System iden
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The server identifier on the database.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'ServerId';
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The server identifier on the database. In relation to [GlobalRepository].[repository].[Servers].[ServerId]', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'ServerId';
+
+
 
 
 GO
@@ -100,4 +96,12 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The date of
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of deletion of the account.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'DeleteDate';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Account location - country id. In relation to [GlobalRepository].[repository].[CountryRegion].[CountryId].', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'CountryId';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'ExternalId';
 

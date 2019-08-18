@@ -110,6 +110,8 @@
     <Folder Include="Security\" />
     <Folder Include="gr_user\" />
     <Folder Include="gr_user\Tables\" />
+    <Folder Include="recon\" />
+    <Folder Include="recon\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="repository\Tables\Accounts.sql">
@@ -141,6 +143,19 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
     <Build Include="documentation\Views\foreign_keys.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="repository\Tables\Systems.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Security\error.sql" />
+    <Build Include="recon\Tables\Users.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="recon\Tables\Accounts.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>

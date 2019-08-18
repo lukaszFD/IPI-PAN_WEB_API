@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [gr_user].[Users] (
-    [UserGUID]     UNIQUEIDENTIFIER NOT NULL,
+    [ExternalId]   UNIQUEIDENTIFIER NOT NULL,
     [UserId]       INT              IDENTITY (1, 1) NOT NULL,
     [Description]  NVARCHAR (200)   NULL,
     [Type]         CHAR (1)         NOT NULL,
@@ -13,9 +13,13 @@
 
 
 
+
+
 GO
 CREATE NONCLUSTERED INDEX [IX_Users_UserGUID]
-    ON [gr_user].[Users]([UserGUID] ASC);
+    ON [gr_user].[Users]([ExternalId] ASC);
+
+
 
 
 GO
@@ -37,7 +41,7 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'User ID on 
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Id retrieved from the database that performs the authorization.', @level0type = N'SCHEMA', @level0name = N'gr_user', @level1type = N'TABLE', @level1name = N'Users', @level2type = N'COLUMN', @level2name = N'UserGUID';
+
 
 
 GO
@@ -58,4 +62,8 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of rem
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The date of creation of the user. ', @level0type = N'SCHEMA', @level0name = N'gr_user', @level1type = N'TABLE', @level1name = N'Users', @level2type = N'COLUMN', @level2name = N'CreationDate';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Id retrieved from the database that performs the authorization.', @level0type = N'SCHEMA', @level0name = N'gr_user', @level1type = N'TABLE', @level1name = N'Users', @level2type = N'COLUMN', @level2name = N'ExternalId';
 
