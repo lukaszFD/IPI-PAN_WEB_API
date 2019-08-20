@@ -1,26 +1,32 @@
 ﻿CREATE TABLE [repository].[Accounts] (
-    [ExternalId]      UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
-    [AccountId]       INT              IDENTITY (1, 1) NOT NULL,
-    [CountryId]       INT              NOT NULL,
-    [UserId]          INT              NULL,
-    [SystemId]        INT              NULL,
-    [ServerId]        INT              NULL,
-    [Name]            NVARCHAR (50)    NOT NULL,
-    [Description]     NVARCHAR (200)   NULL,
-    [Type]            CHAR (1)         NOT NULL,
-    [PasswordExpires] DATETIME         NULL,
-    [Tofix]           CHAR (1)         NULL,
-    [CreationDate]    DATETIME         DEFAULT (getdate()) NOT NULL,
-    [EditDate]        DATETIME         NULL,
-    [DeleteDate]      DATETIME         NULL,
+    [ExternalId]      UNIQUEIDENTIFIER                            DEFAULT (newid()) NOT NULL,
+    [ValidFrom]       DATETIME2 (2) GENERATED ALWAYS AS ROW START NOT NULL,
+    [ValidTo]         DATETIME2 (2) GENERATED ALWAYS AS ROW END   NOT NULL,
+    [AccountId]       INT                                         IDENTITY (1, 1) NOT NULL,
+    [CountryId]       INT                                         NOT NULL,
+    [UserId]          INT                                         NULL,
+    [SystemId]        INT                                         NULL,
+    [ServerId]        INT                                         NULL,
+    [Name]            NVARCHAR (50)                               NOT NULL,
+    [Description]     NVARCHAR (200)                              NULL,
+    [Type]            CHAR (1)                                    NOT NULL,
+    [PasswordExpires] DATETIME                                    NULL,
+    [Tofix]           CHAR (1)                                    NULL,
+    [CreationDate]    DATETIME                                    DEFAULT (getdate()) NOT NULL,
+    [EditDate]        DATETIME                                    NULL,
+    [DeleteDate]      DATETIME                                    NULL,
     PRIMARY KEY CLUSTERED ([AccountId] ASC),
     CHECK ([Tofix]=(0) OR [Tofix]=(1)),
     CHECK ([Type]='D' OR [Type]='U'),
     FOREIGN KEY ([CountryId]) REFERENCES [repository].[CountryRegion] ([CountryId]),
     FOREIGN KEY ([ServerId]) REFERENCES [repository].[Servers] ([ServerId]),
     FOREIGN KEY ([SystemId]) REFERENCES [repository].[Systems] ([SystemId]),
-    FOREIGN KEY ([UserId]) REFERENCES [gr_user].[Users] ([UserId])
-);
+    FOREIGN KEY ([UserId]) REFERENCES [gr_user].[Users] ([UserId]),
+    PERIOD FOR SYSTEM_TIME ([ValidFrom], [ValidTo])
+)
+WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE=[repository].[AccountsHistory], DATA_CONSISTENCY_CHECK=ON));
+
+
 
 
 

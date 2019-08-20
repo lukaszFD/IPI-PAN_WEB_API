@@ -1,17 +1,23 @@
 ﻿CREATE TABLE [repository].[Systems] (
-    [ExternalId]         UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
-    [SystemId]           INT              IDENTITY (1, 1) NOT NULL,
-    [CompanyName]        NVARCHAR (50)    NOT NULL,
-    [Name]               NVARCHAR (50)    NOT NULL,
-    [Version]            NVARCHAR (50)    NOT NULL,
-    [TechSupport]        CHAR (1)         DEFAULT ((0)) NOT NULL,
-    [TechSupportExpDate] DATE             NOT NULL,
-    [CreationDate]       DATETIME         DEFAULT (getdate()) NOT NULL,
-    [EditDate]           DATETIME         NULL,
-    [DeleteDate]         DATETIME         NULL,
+    [ExternalId]         UNIQUEIDENTIFIER                            DEFAULT (newid()) NOT NULL,
+    [ValidFrom]          DATETIME2 (2) GENERATED ALWAYS AS ROW START NOT NULL,
+    [ValidTo]            DATETIME2 (2) GENERATED ALWAYS AS ROW END   NOT NULL,
+    [SystemId]           INT                                         IDENTITY (1, 1) NOT NULL,
+    [CompanyName]        NVARCHAR (50)                               NOT NULL,
+    [Name]               NVARCHAR (50)                               NOT NULL,
+    [Version]            NVARCHAR (50)                               NOT NULL,
+    [TechSupport]        CHAR (1)                                    DEFAULT ((0)) NOT NULL,
+    [TechSupportExpDate] DATE                                        NOT NULL,
+    [CreationDate]       DATETIME                                    DEFAULT (getdate()) NOT NULL,
+    [EditDate]           DATETIME                                    NULL,
+    [DeleteDate]         DATETIME                                    NULL,
     PRIMARY KEY CLUSTERED ([SystemId] ASC),
-    CHECK ([TechSupport]=(0) OR [TechSupport]=(1))
-);
+    CHECK ([TechSupport]=(0) OR [TechSupport]=(1)),
+    PERIOD FOR SYSTEM_TIME ([ValidFrom], [ValidTo])
+)
+WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE=[repository].[SystemsHistory], DATA_CONSISTENCY_CHECK=ON));
+
+
 
 
 
