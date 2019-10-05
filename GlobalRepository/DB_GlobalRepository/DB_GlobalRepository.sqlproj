@@ -115,6 +115,8 @@
     <Folder Include="error\" />
     <Folder Include="error\Tables\" />
     <Folder Include="error\Stored Procedures\" />
+    <Folder Include="audit\" />
+    <Folder Include="audit\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\110\SqlSchemas\master.dacpac">
@@ -182,6 +184,23 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
     <Build Include="error\Stored Procedures\AddErrorMessage.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="audit\Tables\Accounts.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Security\audit.sql" />
+    <Build Include="audit\Tables\Systems.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="audit\Tables\Servers.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="audit\Tables\CountryRegion.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
