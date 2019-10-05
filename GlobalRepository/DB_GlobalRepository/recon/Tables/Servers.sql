@@ -18,6 +18,8 @@
 );
 
 
+
+
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'recon', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'ServerExId';
 
@@ -72,4 +74,8 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'E - error, 
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of creation of the entry.', @level0type = N'SCHEMA', @level0name = N'recon', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'CreationDate';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Server model.', @level0type = N'SCHEMA', @level0name = N'recon', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'Model';
 
