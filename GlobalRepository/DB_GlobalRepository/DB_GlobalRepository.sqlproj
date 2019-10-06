@@ -118,6 +118,8 @@
     <Folder Include="audit\" />
     <Folder Include="audit\Tables\" />
     <Folder Include="error\Views\" />
+    <Folder Include="repository\Functions\" />
+    <Folder Include="recon\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\110\SqlSchemas\master.dacpac">
@@ -226,6 +228,14 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
     <Build Include="error\Stored Procedures\CheckReconAccounts.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="repository\Functions\CheckDate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="recon\Stored Procedures\MergeReconAccounts.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>

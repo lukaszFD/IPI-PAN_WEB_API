@@ -1,4 +1,4 @@
-﻿CREATE TABLE [repository].[Accounts] (
+CREATE TABLE [repository].[Accounts] (
     [ExternalId]      UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
     [AccountId]       INT              IDENTITY (1, 1) NOT NULL,
     [CountryId]       INT              NOT NULL,
@@ -9,12 +9,11 @@
     [Description]     NVARCHAR (200)   NULL,
     [Type]            CHAR (1)         NOT NULL,
     [PasswordExpires] DATETIME         NULL,
-    [Tofix]           CHAR (1)         NULL,
+    [Tofix]           AS               ([repository].[CheckDate]([PasswordExpires])),
     [CreationDate]    DATETIME         DEFAULT (getdate()) NOT NULL,
     [EditDate]        DATETIME         NULL,
     [DeleteDate]      DATETIME         NULL,
     PRIMARY KEY CLUSTERED ([AccountId] ASC),
-    CHECK ([Tofix]=(0) OR [Tofix]=(1)),
     CHECK ([Type]='D' OR [Type]='U'),
     FOREIGN KEY ([CountryId]) REFERENCES [repository].[CountryRegion] ([CountryId]),
     FOREIGN KEY ([ServerId]) REFERENCES [repository].[Servers] ([ServerId]),
@@ -25,21 +24,10 @@
 
 
 
+
+
 GO
 
-CREATE TRIGGER [repository].[After_U_Account_trg]
-ON [repository].Accounts
-AFTER UPDATE
-AS 
-BEGIN
-SET NOCOUNT ON;
-
-	UPDATE a
-	SET a.EditDate = getdate()
-	FROM 
-		[repository].Accounts a 
-		JOIN inserted i ON i.AccountId = a.AccountId
-END
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'ExternalId';
@@ -82,7 +70,7 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Password ex
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Flag indicating accounts that have missing attributes. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'Tofix';
+
 
 
 GO
@@ -98,26 +86,21 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of del
 
 
 GO
-CREATE NONCLUSTERED INDEX [IX_Accounts_UserId]
-    ON [repository].[Accounts]([UserId] ASC);
 
-
-GO
-CREATE NONCLUSTERED INDEX [IX_Accounts_SystemId]
-    ON [repository].[Accounts]([SystemId] ASC);
 
 
 GO
-CREATE NONCLUSTERED INDEX [IX_Accounts_ServerId]
-    ON [repository].[Accounts]([ServerId] ASC);
 
-
-GO
-CREATE NONCLUSTERED INDEX [IX_Accounts_ExternalId]
-    ON [repository].[Accounts]([ExternalId] ASC);
 
 
 GO
-CREATE NONCLUSTERED INDEX [IX_Accounts_CountryId]
-    ON [repository].[Accounts]([CountryId] ASC);
+
+
+
+GO
+
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Flag indicating accounts that have missing attributes. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'Tofix';
 
