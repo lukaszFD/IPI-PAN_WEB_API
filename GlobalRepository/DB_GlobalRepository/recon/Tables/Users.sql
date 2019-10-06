@@ -1,10 +1,13 @@
 ﻿CREATE TABLE [recon].[Users] (
+    [RecUserId]    INT              IDENTITY (1, 1) NOT NULL,
     [UserExId]     UNIQUEIDENTIFIER NULL,
     [Description]  NVARCHAR (200)   NULL,
     [Status]       CHAR (1)         DEFAULT ('I') NOT NULL,
     [CreationDate] DATETIME         DEFAULT (getdate()) NOT NULL,
     CHECK ([Status]='P' OR [Status]='I' OR [Status]='E')
 );
+
+
 
 
 GO
@@ -21,4 +24,8 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'E - error, 
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The date of creation of the user. ', @level0type = N'SCHEMA', @level0name = N'recon', @level1type = N'TABLE', @level1name = N'Users', @level2type = N'COLUMN', @level2name = N'CreationDate';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Identifier on the database.', @level0type = N'SCHEMA', @level0name = N'recon', @level1type = N'TABLE', @level1name = N'Users', @level2type = N'COLUMN', @level2name = N'RecUserId';
 
