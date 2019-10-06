@@ -3,10 +3,8 @@
     [UserName]                   NVARCHAR (100)   DEFAULT (stuff(suser_sname(),(1),charindex('\',suser_sname()),'')) NULL,
     [DateFrom]                   DATETIME         NOT NULL,
     [DateTo]                     DATETIME         DEFAULT (getdate()) NULL,
-    [NEW_ExternalId]             UNIQUEIDENTIFIER NULL,
-    [OLD_ExternalId]             UNIQUEIDENTIFIER NULL,
-    [NEW_ServerId]               INT              NULL,
-    [OLD_ServerId]               INT              NULL,
+    [ExternalId]                 UNIQUEIDENTIFIER NOT NULL,
+    [ServerId]                   INT              NOT NULL,
     [NEW_Name]                   NVARCHAR (50)    NULL,
     [OLD_Name]                   NVARCHAR (50)    NULL,
     [NEW_Host]                   NVARCHAR (50)    NULL,
@@ -32,6 +30,8 @@
     [NEW_AntivirusSoftware]      CHAR (1)         NULL,
     [OLD_AntivirusSoftware]      CHAR (1)         NULL
 );
+
+
 
 
 GO
@@ -131,19 +131,19 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'New value -
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Old value - The server ID of the database. In relation to [GlobalRepository].[repository].[Accounts].[ServerId].', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'OLD_ServerId';
 
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'New value - The server ID of the database. In relation to [GlobalRepository].[repository].[Accounts].[ServerId].', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'NEW_ServerId';
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Old value - The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'OLD_ExternalId';
+
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'New value - The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'NEW_ExternalId';
+
+
+
+GO
+
 
 
 GO
@@ -160,4 +160,12 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The user wh
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Unique id for the table', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'AudID';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Unique id for [repository].[Servers] table.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'ServerId';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication for [repository].[Servers] table.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'ExternalId';
 

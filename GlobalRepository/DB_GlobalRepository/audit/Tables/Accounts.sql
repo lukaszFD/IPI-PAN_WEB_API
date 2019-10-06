@@ -3,10 +3,8 @@
     [UserName]            NVARCHAR (100)   DEFAULT (stuff(suser_sname(),(1),charindex('\',suser_sname()),'')) NULL,
     [DateFrom]            DATETIME         NOT NULL,
     [DateTo]              DATETIME         DEFAULT (getdate()) NULL,
-    [NEW_ExternalId]      UNIQUEIDENTIFIER NULL,
-    [OLD_ExternalId]      UNIQUEIDENTIFIER NULL,
-    [NEW_AccountId]       INT              NULL,
-    [OLD_AccountId]       INT              NULL,
+    [ExternalId]          UNIQUEIDENTIFIER NOT NULL,
+    [AccountId]           INT              NOT NULL,
     [NEW_CountryId]       INT              NULL,
     [OLD_CountryId]       INT              NULL,
     [NEW_UserId]          INT              NULL,
@@ -26,6 +24,8 @@
     [NEW_Tofix]           CHAR (1)         NULL,
     [OLD_Tofix]           CHAR (1)         NULL
 );
+
+
 
 
 GO
@@ -101,19 +101,19 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'New value -
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Old value - Identifier on the database.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'OLD_AccountId';
 
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'New value - Identifier on the database.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'NEW_AccountId';
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Old value - The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'OLD_ExternalId';
+
 
 
 GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'New value - The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'NEW_ExternalId';
+
+
+
+GO
+
 
 
 GO
@@ -130,4 +130,12 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The user wh
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Unique id for the table', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'AudID';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication for [repository].[Accounts] table.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'ExternalId';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Unique id for [repository].[Accounts] table.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'AccountId';
 

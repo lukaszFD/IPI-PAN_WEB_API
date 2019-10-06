@@ -1,4 +1,5 @@
-﻿CREATE TABLE [recon].[Systems] (
+CREATE TABLE [recon].[Systems] (
+    [RecSystemId]        INT              IDENTITY (1, 1) NOT NULL,
     [SystemExId]         UNIQUEIDENTIFIER NULL,
     [CompanyName]        NVARCHAR (50)    NULL,
     [Name]               NVARCHAR (50)    NULL,
@@ -9,6 +10,12 @@
     [CreationDate]       DATETIME         DEFAULT (getdate()) NOT NULL,
     CHECK ([Status]='P' OR [Status]='I' OR [Status]='E')
 );
+
+
+
+
+
+
 
 
 GO
@@ -42,3 +49,28 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'E - error, 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of creation of the entry. ', @level0type = N'SCHEMA', @level0name = N'recon', @level1type = N'TABLE', @level1name = N'Systems', @level2type = N'COLUMN', @level2name = N'CreationDate';
 
+
+GO
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Identifier on the database.', @level0type = N'SCHEMA', @level0name = N'recon', @level1type = N'TABLE', @level1name = N'Systems', @level2type = N'COLUMN', @level2name = N'RecSystemId';
+
+
+GO
+
+
+
+CREATE TRIGGER	[recon].[After_I_ReconSystem_trg]
+ON [recon].[Systems]	
+AFTER INSERT
+AS 
+BEGIN TRY
+	EXEC [GlobalRepository].[error].[CheckReconSystems]
+END TRY
+BEGIN CATCH
+		EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+			@schemaName = 'recon',
+			@tableName = 'Systems', 
+			@columnName = null,
+			@columnId = null 
+END CATCH

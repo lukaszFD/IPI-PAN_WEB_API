@@ -1,4 +1,5 @@
-﻿CREATE TABLE [recon].[Servers] (
+CREATE TABLE [recon].[Servers] (
+    [RecServerId]            INT              IDENTITY (1, 1) NOT NULL,
     [ServerExId]             UNIQUEIDENTIFIER NULL,
     [Name]                   NVARCHAR (50)    NULL,
     [Host]                   NVARCHAR (50)    NULL,
@@ -16,6 +17,12 @@
     [CreationDate]           DATETIME         DEFAULT (getdate()) NOT NULL,
     CHECK ([Status]='P' OR [Status]='I' OR [Status]='E')
 );
+
+
+
+
+
+
 
 
 
@@ -79,3 +86,29 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of cre
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Server model.', @level0type = N'SCHEMA', @level0name = N'recon', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'Model';
 
+
+GO
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Identifier on the database.', @level0type = N'SCHEMA', @level0name = N'recon', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'RecServerId';
+
+
+GO
+
+
+
+
+CREATE TRIGGER	[recon].[After_I_ReconServer_trg]
+ON [recon].[Servers]	
+AFTER INSERT
+AS 
+BEGIN TRY
+	EXEC [GlobalRepository].[error].[CheckReconServers]
+END TRY
+BEGIN CATCH
+		EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+			@schemaName = 'recon',
+			@tableName = 'Servers', 
+			@columnName = null,
+			@columnId = null 
+END CATCH
