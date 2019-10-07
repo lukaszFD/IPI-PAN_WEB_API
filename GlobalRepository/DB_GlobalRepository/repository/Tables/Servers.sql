@@ -16,13 +16,17 @@
     [CreationDate]           DATETIME         DEFAULT (getdate()) NOT NULL,
     [EditDate]               DATETIME         NULL,
     [DeleteDate]             DATETIME         NULL,
+    [RecServerId]            INT              NULL,
     PRIMARY KEY CLUSTERED ([ServerId] ASC),
     CHECK ([AntivirusSoftware]=(0) OR [AntivirusSoftware]=(1)),
     CHECK ([HardDisk]='D' OR [HardDisk]='S'),
     CHECK ([TechSupport]=(0) OR [TechSupport]=(1)),
     CHECK ([UPS]=(0) OR [UPS]=(1)),
-    FOREIGN KEY ([CountryId]) REFERENCES [repository].[CountryRegion] ([CountryId])
+    FOREIGN KEY ([CountryId]) REFERENCES [repository].[CountryRegion] ([CountryId]),
+    FOREIGN KEY ([RecServerId]) REFERENCES [recon].[Servers] ([RecServerId])
 );
+
+
 
 
 
@@ -121,4 +125,8 @@ CREATE NONCLUSTERED INDEX [IX_Servers_CountryId]
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Server model.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'Model';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Identity reconciliation of data.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'RecServerId';
 

@@ -1,9 +1,5 @@
 ﻿
 
-
-
-
-
 CREATE VIEW	[error].[ReconSystems]
 as
 
@@ -84,6 +80,19 @@ WHERE
 	AND 
 	e.ColumnId IS NULL 
 )
+,cte_system AS
+(
+SELECT 
+	a.RecSystemId,
+	case when a.SystemExId IS NULL THEN 'SystemExId' END AS 'ColumnName'
+FROM 
+	[recon].[Systems] a
+	LEFT JOIN cte_err e ON (e.ColumnId = a.RecSystemId) 
+WHERE 
+	a.STATUS = 'E'
+	AND 
+	e.ColumnId IS NULL 
+)
 
 SELECT * FROM cte_company cc WHERE cc.ColumnName IS NOT NULL 
 UNION ALL
@@ -93,4 +102,6 @@ SELECT * FROM cte_techSup cts WHERE cts.ColumnName IS NOT NULL
 UNION all
 SELECT * FROM cte_techSupEx ctse WHERE ctse.ColumnName IS NOT NULL 
 UNION all
-SELECT * FROM cte_version cv WHERE cv.ColumnName IS NOT NULL
+SELECT * FROM cte_version cv WHERE cv.ColumnName IS NOT NULL  
+UNION all
+SELECT * FROM cte_system s WHERE s.ColumnName IS NOT NULL

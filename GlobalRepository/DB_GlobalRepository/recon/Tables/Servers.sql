@@ -1,4 +1,4 @@
-CREATE TABLE [recon].[Servers] (
+﻿CREATE TABLE [recon].[Servers] (
     [RecServerId]            INT              IDENTITY (1, 1) NOT NULL,
     [ServerExId]             UNIQUEIDENTIFIER NULL,
     [Name]                   NVARCHAR (50)    NULL,
@@ -15,8 +15,11 @@ CREATE TABLE [recon].[Servers] (
     [AntivirusSoftware]      CHAR (1)         NULL,
     [Status]                 CHAR (1)         DEFAULT ('I') NOT NULL,
     [CreationDate]           DATETIME         DEFAULT (getdate()) NOT NULL,
+    PRIMARY KEY CLUSTERED ([RecServerId] ASC),
     CHECK ([Status]='P' OR [Status]='I' OR [Status]='E')
 );
+
+
 
 
 

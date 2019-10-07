@@ -1,7 +1,4 @@
 ﻿
-
-
-
 CREATE VIEW	[error].[ReconServers]
 as
 
@@ -147,6 +144,19 @@ WHERE
 	AND 
 	e.ColumnId IS NULL 
 )
+,cte_serv AS
+(
+SELECT 
+	a.RecServerId,
+	case when a.ServerExId IS NULL THEN 'ServerExId' END AS 'ColumnName'
+FROM 
+	[recon].[Servers] a
+	LEFT JOIN cte_err e ON (e.ColumnId = a.RecServerId) 
+WHERE 
+	a.STATUS = 'E'
+	AND 
+	e.ColumnId IS NULL 
+)
 
 SELECT	* FROM cte_country cc WHERE cc.ColumnName is NOT null 
 union all 
@@ -166,4 +176,6 @@ SELECT * FROM cte_ups cu WHERE cu.ColumnName IS NOT NULL
 UNION ALL 
 SELECT * FROM cte_virus cv WHERE cv.ColumnName IS NOT NULL 
 UNION ALL 
-SELECT* FROM cte_warEx cwe WHERE cwe.ColumnName IS NOT NULL
+SELECT* FROM cte_warEx cwe WHERE cwe.ColumnName IS NOT NULL 
+UNION ALL 
+SELECT* FROM cte_serv s WHERE s.ColumnName IS NOT NULL

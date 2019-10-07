@@ -1,4 +1,4 @@
-CREATE TABLE [repository].[Accounts] (
+﻿CREATE TABLE [repository].[Accounts] (
     [ExternalId]      UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
     [AccountId]       INT              IDENTITY (1, 1) NOT NULL,
     [CountryId]       INT              NOT NULL,
@@ -13,13 +13,17 @@ CREATE TABLE [repository].[Accounts] (
     [CreationDate]    DATETIME         DEFAULT (getdate()) NOT NULL,
     [EditDate]        DATETIME         NULL,
     [DeleteDate]      DATETIME         NULL,
+    [RecAccountId]    INT              NULL,
     PRIMARY KEY CLUSTERED ([AccountId] ASC),
     CHECK ([Type]='D' OR [Type]='U'),
     FOREIGN KEY ([CountryId]) REFERENCES [repository].[CountryRegion] ([CountryId]),
+    FOREIGN KEY ([RecAccountId]) REFERENCES [recon].[Accounts] ([RecAccountId]),
     FOREIGN KEY ([ServerId]) REFERENCES [repository].[Servers] ([ServerId]),
     FOREIGN KEY ([SystemId]) REFERENCES [repository].[Systems] ([SystemId]),
     FOREIGN KEY ([UserId]) REFERENCES [gr_user].[Users] ([UserId])
 );
+
+
 
 
 
@@ -103,4 +107,8 @@ GO
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Flag indicating accounts that have missing attributes. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'Tofix';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Identity reconciliation of data.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'RecAccountId';
 
