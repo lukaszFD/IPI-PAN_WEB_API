@@ -22,8 +22,12 @@
     [NEW_PasswordExpires] DATETIME         NULL,
     [OLD_PasswordExpires] DATETIME         NULL,
     [NEW_Tofix]           CHAR (1)         NULL,
-    [OLD_Tofix]           CHAR (1)         NULL
+    [OLD_Tofix]           CHAR (1)         NULL,
+    [NEW_RecAccountId]    INT              NULL,
+    [OLD_RecAccountId]    INT              NULL
 );
+
+
 
 
 
@@ -138,4 +142,12 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identif
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Unique id for [repository].[Accounts] table.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'AccountId';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Old value - Identity reconciliation of data.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'OLD_RecAccountId';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'New value - Identity reconciliation of data.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'NEW_RecAccountId';
 

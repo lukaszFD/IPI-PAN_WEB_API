@@ -3,6 +3,7 @@
 
 
 
+
 CREATE PROCEDURE [error].[CheckReconAccounts]
 AS
 
@@ -14,6 +15,8 @@ BEGIN TRY
 			[GlobalRepository].[recon].[Accounts] a 
 		WHERE 
 			(
+			a.AccountExId IS NULL
+			OR 
 			a.CountryRegionCode IS NULL 
 			OR 
 			a.Name IS NULL 
