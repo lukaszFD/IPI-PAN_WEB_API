@@ -1,7 +1,5 @@
 ﻿
 
-
-
 CREATE VIEW	[error].[ReconAccounts]
 as
 
@@ -56,8 +54,23 @@ WHERE
 	AND 
 	e.ColumnId IS NULL 
 )
+,cte_account AS
+(
+SELECT 
+	a.RecAccountId,
+	case when a.AccountExId IS NULL THEN 'AccountExId' END AS 'ColumnName'
+FROM 
+	[recon].[Accounts] a
+	LEFT JOIN cte_err e ON (e.ColumnId = a.RecAccountId) 
+WHERE 
+	a.STATUS = 'E'
+	AND 
+	e.ColumnId IS NULL 
+)
 SELECT	* FROM cte_country cc WHERE cc.ColumnName is NOT null 
 union all 
 SELECT	* FROM cte_name cn WHERE cn.ColumnName is NOT null 
 union all 
-SELECT	* FROM cte_type c WHERE c.ColumnName is NOT null
+SELECT	* FROM cte_type c WHERE c.ColumnName is NOT null 
+union all 
+SELECT	* FROM cte_account a WHERE a.ColumnName is NOT null

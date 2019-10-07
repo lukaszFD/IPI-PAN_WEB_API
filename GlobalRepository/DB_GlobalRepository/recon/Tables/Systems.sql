@@ -1,4 +1,4 @@
-CREATE TABLE [recon].[Systems] (
+﻿CREATE TABLE [recon].[Systems] (
     [RecSystemId]        INT              IDENTITY (1, 1) NOT NULL,
     [SystemExId]         UNIQUEIDENTIFIER NULL,
     [CompanyName]        NVARCHAR (50)    NULL,
@@ -8,8 +8,11 @@ CREATE TABLE [recon].[Systems] (
     [TechSupportExpDate] DATE             NULL,
     [Status]             CHAR (1)         DEFAULT ('I') NOT NULL,
     [CreationDate]       DATETIME         DEFAULT (getdate()) NOT NULL,
+    PRIMARY KEY CLUSTERED ([RecSystemId] ASC),
     CHECK ([Status]='P' OR [Status]='I' OR [Status]='E')
 );
+
+
 
 
 

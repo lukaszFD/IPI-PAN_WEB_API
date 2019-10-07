@@ -9,9 +9,13 @@
     [CreationDate]       DATETIME         DEFAULT (getdate()) NOT NULL,
     [EditDate]           DATETIME         NULL,
     [DeleteDate]         DATETIME         NULL,
+    [RecSystemId]        INT              NULL,
     PRIMARY KEY CLUSTERED ([SystemId] ASC),
-    CHECK ([TechSupport]=(0) OR [TechSupport]=(1))
+    CHECK ([TechSupport]=(0) OR [TechSupport]=(1)),
+    FOREIGN KEY ([RecSystemId]) REFERENCES [recon].[Systems] ([RecSystemId])
 );
+
+
 
 
 
@@ -75,4 +79,8 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of del
 GO
 CREATE NONCLUSTERED INDEX [IX_Systems_SystemId]
     ON [repository].[Systems]([SystemId] ASC);
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Identity reconciliation of data.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Systems', @level2type = N'COLUMN', @level2name = N'RecSystemId';
 

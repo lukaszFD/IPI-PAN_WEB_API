@@ -1,6 +1,4 @@
 ﻿
-
-
 CREATE PROCEDURE [recon].[MergeReconAccounts]
 AS
 
@@ -38,30 +36,7 @@ BEGIN TRY
 				target.Name = source.Name,
 				target.Description = source.Description,
 				target.Type = source.Type,
-				target.PasswordExpires = source.PasswordExpires
-		WHEN NOT MATCHED BY TARGET THEN 
-		INSERT 
-			(
-				CountryId,
-				UserId,
-				SystemId,
-				ServerId,
-				Name,
-				Description,
-				Type,
-				PasswordExpires
-			)
-			VALUES 
-			(
-				source.CountryId,
-				source.userid,
-				source.SystemId,
-				source.ServerId,
-				source.Name,
-				source.Description,
-				source.Type,
-				source.PasswordExpires
-			);
+				target.PasswordExpires = source.PasswordExpires;
 	COMMIT TRAN merge_recon;
 END TRY
 BEGIN CATCH

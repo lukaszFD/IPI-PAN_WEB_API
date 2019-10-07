@@ -1,4 +1,4 @@
-CREATE TABLE [recon].[Accounts] (
+﻿CREATE TABLE [recon].[Accounts] (
     [RecAccountId]      INT              IDENTITY (1, 1) NOT NULL,
     [AccountExId]       UNIQUEIDENTIFIER NULL,
     [CountryRegionCode] NVARCHAR (2)     NULL,
@@ -11,8 +11,11 @@ CREATE TABLE [recon].[Accounts] (
     [PasswordExpires]   DATETIME         NULL,
     [Status]            CHAR (1)         DEFAULT ('I') NOT NULL,
     [CreationDate]      DATETIME         DEFAULT (getdate()) NOT NULL,
+    PRIMARY KEY CLUSTERED ([RecAccountId] ASC),
     CHECK ([Status]='P' OR [Status]='I' OR [Status]='E')
 );
+
+
 
 
 
