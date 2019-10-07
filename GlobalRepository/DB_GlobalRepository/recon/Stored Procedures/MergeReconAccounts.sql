@@ -1,5 +1,4 @@
-﻿
-CREATE PROCEDURE [recon].[MergeReconAccounts]
+﻿CREATE PROCEDURE [recon].[MergeReconAccounts]
 AS
 
 BEGIN TRY
@@ -17,6 +16,7 @@ BEGIN TRY
 			,a.[Description]
 			,a.[Type]
 			,a.[PasswordExpires]
+			,a.RecAccountId
 		FROM 
 			[GlobalRepository].[recon].[Accounts] AS a 
 			LEFT JOIN repository.CountryRegion cr ON a.CountryRegionCode = cr.CountryRegionCode
@@ -36,12 +36,25 @@ BEGIN TRY
 				target.Name = source.Name,
 				target.Description = source.Description,
 				target.Type = source.Type,
-				target.PasswordExpires = source.PasswordExpires;
+				target.PasswordExpires = source.PasswordExpires,
+				target.RecAccountId = source.RecAccountId;
 	COMMIT TRAN merge_recon;
+
+	BEGIN TRAN upd_recon
+			UPDATE a2
+			SET a2.STATUS = 'P'
+			FROM 
+				[repository].[Accounts] AS a
+				INNER JOIN recon.Accounts a2 ON a2.RecAccountId = a.RecAccountId 
+			WHERE 
+				a2.STATUS = 'I'
+	COMMIT TRAN upd_recon;
 END TRY
 BEGIN CATCH
 
 	ROLLBACK TRAN merge_recon;
+
+	ROLLBACK TRAN upd_recon;
 
 	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
 			@schemaName = 'recon',
