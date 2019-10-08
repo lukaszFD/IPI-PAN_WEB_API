@@ -22,20 +22,9 @@
     FOREIGN KEY ([SystemId]) REFERENCES [repository].[Systems] ([SystemId]),
     FOREIGN KEY ([UserId]) REFERENCES [gr_user].[Users] ([UserId])
 );
+go
 
 
-
-
-
-
-
-
-
-
-GO
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'ExternalId';
 
 
@@ -76,10 +65,6 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Password ex
 
 
 GO
-
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The date the account was created. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'CreationDate';
 
 
@@ -89,22 +74,6 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The date of
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of deletion of the account.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'DeleteDate';
-
-
-GO
-
-
-
-GO
-
-
-
-GO
-
-
-
-GO
-
 
 
 GO
