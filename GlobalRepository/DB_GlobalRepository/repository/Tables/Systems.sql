@@ -20,21 +20,70 @@
 
 
 
+
+
 GO
 
 CREATE TRIGGER [repository].[After_U_System_trg]
-ON [repository].Systems
+ON [repository].[Systems]
 AFTER UPDATE
 AS 
-BEGIN
-SET NOCOUNT ON;
+BEGIN TRY
+	BEGIN TRAN aud
+	   INSERT INTO [GlobalRepository].[audit].[Systems]
+	   (   
+			[DateTo],
+			[ExternalId],
+			[SystemId],
+			[NEW_CompanyName],
+			[OLD_CompanyName],
+			[NEW_Name],
+			[OLD_Name],
+			[NEW_Version],
+			[OLD_Version],
+			[NEW_TechSupport],
+			[OLD_TechSupport],
+			[NEW_TechSupportExpDate],
+			[OLD_TechSupportExpDate]
+	   )
+	   SELECT 
+	        isnull(s.EditDate,s.CreationDate),
+			s.[ExternalId],
+			s.[SystemId],
+			s.[CompanyName],
+			d.[CompanyName],
+			s.[Name],
+			d.[Name],
+			s.[Version],
+			d.[Version],
+			s.[TechSupport],
+			d.[TechSupport],
+			s.[TechSupportExpDate],
+			d.[TechSupportExpDate]
+		FROM 
+			[repository].[Systems] s
+			JOIN deleted d ON d.SystemId = s.SystemId
+	COMMIT TRAN aud
 
-	UPDATE a
-	SET a.EditDate = getdate()
-	FROM 
-		[repository].Systems a 
-		JOIN inserted i ON i.SystemId = a.SystemId
-END
+	BEGIN TRAN upd
+		UPDATE a
+		SET a.EditDate = getdate()
+		FROM 
+			[repository].Systems a 
+			JOIN deleted d ON d.SystemId = a.SystemId
+	COMMIT TRAN upd
+END TRY
+	BEGIN CATCH
+			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+				@schemaName = 'repository',
+				@tableName = 'Systems', 
+				@columnName = null,
+				@columnId = null 
+END CATCH
+GO
+EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_System_trg]', @order = N'first', @stmttype = N'update';
+
+
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Systems', @level2type = N'COLUMN', @level2name = N'ExternalId';
