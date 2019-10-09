@@ -33,21 +33,95 @@
 
 
 
+
+
 GO
 
 CREATE TRIGGER [repository].[After_U_Server_trg]
-ON [repository].Servers
+ON [repository].[Servers]
 AFTER UPDATE
 AS 
-BEGIN
-SET NOCOUNT ON;
+BEGIN TRY
+	BEGIN TRAN aud
+		INSERT INTO [GlobalRepository].[audit].[Servers]
+		(
+		    [DateFrom],
+		    [ExternalId],
+		    [ServerId],
+		    [NEW_Name],
+		    [OLD_Name],
+		    [NEW_Host],
+		    [OLD_Host],
+		    [NEW_CountryId],
+		    [OLD_CountryId],
+		    [NEW_Model],
+		    [OLD_Model],
+		    [NEW_SerialNumber],
+		    [OLD_SerialNumber],
+		    [NEW_TechSupport],
+		    [OLD_TechSupport],
+		    [NEW_WarrantyExpirationDate],
+		    [OLD_WarrantyExpirationDate],
+		    [NEW_CPUType],
+		    [OLD_CPUType],
+		    [NEW_RAM],
+		    [OLD_RAM],
+		    [NEW_HardDisk],
+		    [OLD_HardDisk],
+		    [NEW_UPS],
+		    [OLD_UPS],
+		    [NEW_AntivirusSoftware],
+		    [OLD_AntivirusSoftware]
+		)
 
-	UPDATE a
-	SET a.EditDate = getdate()
-	FROM 
-		[repository].Servers a 
-		JOIN inserted i ON i.ServerId = a.ServerId
-END
+		SELECT 
+			isnull(s.EditDate,s.CreationDate),
+			s.ExternalId,
+			s.[ServerId],
+			s.[Name],
+			d.[Name],
+			s.[Host],
+			d.[Host],
+			s.[CountryId],
+			d.[CountryId],
+			s.[Model],
+			d.[Model],
+			s.[SerialNumber],
+			d.[SerialNumber],
+			s.[TechSupport],
+			d.[TechSupport],
+			s.[WarrantyExpirationDate],
+			d.[WarrantyExpirationDate],
+			s.[CPUType],
+			d.[CPUType],
+			s.[RAM],
+			d.[RAM],
+			s.[HardDisk],
+			d.[HardDisk],
+			s.[UPS],
+			d.[UPS],
+			s.[AntivirusSoftware],
+			d.[AntivirusSoftware]
+		FROM 
+			[repository].[Servers] s
+			JOIN  deleted d ON d.[ServerId] = s.[ServerId]
+	COMMIT TRAN aud
+
+	BEGIN TRAN upd
+		UPDATE a
+		SET a.EditDate = getdate()
+		FROM 
+			[repository].Servers a 
+			join deleted d ON d.ServerId = a.ServerId
+	COMMIT TRAN upd
+END TRY
+	BEGIN CATCH
+			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+				@schemaName = 'repository',
+				@tableName = 'Servers', 
+				@columnName = null,
+				@columnId = null 
+END CATCH
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'ExternalId';

@@ -9,20 +9,51 @@
 );
 
 
+
+
 GO
-CREATE TRIGGER repository.After_U_CountryRegion_trg
+CREATE TRIGGER [repository].[After_U_CountryRegion_trg]
 ON [repository].[CountryRegion]
 AFTER UPDATE
 AS 
-BEGIN
-SET NOCOUNT ON;
+BEGIN TRY
+	BEGIN TRAN aud
+		INSERT INTO [GlobalRepository].[audit].[CountryRegion]
+		(
+			[DateTo],
+			[CountryId],
+			[NEW_CountryRegionCode],
+			[OLD_CountryRegionCode],
+			[NEW_Name],
+			[OLD_Name]
+		)
+		SELECT 
+			 isnull(c.EditDate,c.CreationDate)
+			,c.[CountryId]
+			,c.[CountryRegionCode]
+			,d.[CountryRegionCode]
+			,c.[Name]
+			,d.[Name]
+		FROM 
+			[repository].[CountryRegion] c
+			JOIN  deleted d ON d.[CountryId] = c.[CountryId]
+	COMMIT TRAN aud
 
-	UPDATE a
-	SET a.EditDate = getdate()
-	FROM 
-		[repository].[CountryRegion] a 
-		JOIN inserted i ON i.[CountryId] = a.[CountryId]
-END
+	BEGIN TRAN upd
+		UPDATE a
+		SET a.EditDate = getdate()
+		FROM 
+			[repository].[CountryRegion] a 
+			JOIN deleted d ON d.[CountryId] = a.[CountryId]
+	COMMIT TRAN upd
+END TRY
+	BEGIN CATCH
+			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+				@schemaName = 'repository',
+				@tableName = 'Accounts', 
+				@columnName = null,
+				@columnId = null 
+END CATCH
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Country id in the database. In relation to [GlobalRepository]. [repository]. [Servers]. [CountryId].', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'CountryRegion', @level2type = N'COLUMN', @level2name = N'CountryId';
