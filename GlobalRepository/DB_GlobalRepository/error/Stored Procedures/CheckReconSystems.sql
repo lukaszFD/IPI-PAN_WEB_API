@@ -16,8 +16,6 @@ BEGIN TRY
 			a.Name IS NULL 
 			OR
 			a.Version IS NULL 
-			OR
-			a.TechSupport IS NULL 
 			OR 
 			a.TechSupportExpDate IS NULL 
 			)

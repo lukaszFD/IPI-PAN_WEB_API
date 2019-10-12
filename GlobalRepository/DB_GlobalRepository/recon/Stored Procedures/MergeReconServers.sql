@@ -15,7 +15,6 @@ BEGIN TRY
 			,cr.[CountryId]
 			,s.[Model]
 			,s.[SerialNumber]
-			,s.[TechSupport]
 			,s.[WarrantyExpirationDate]
 			,s.[CPUType]
 			,s.[RAM]
@@ -36,7 +35,6 @@ BEGIN TRY
 				target.[CountryId] = source.[CountryId],
 				target.[Model] = source.[Model],
 				target.[SerialNumber] = source.[SerialNumber],
-				target.[TechSupport] = source.[TechSupport],
 				target.[WarrantyExpirationDate] = source.[WarrantyExpirationDate],
 				target.[CPUType] = source.[CPUType],
 				target.[RAM] = source.[RAM],

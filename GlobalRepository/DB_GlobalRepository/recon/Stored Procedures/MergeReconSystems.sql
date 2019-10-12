@@ -14,7 +14,6 @@ BEGIN TRY
 			,s.[CompanyName]
 			,s.[Name]
 			,s.[Version]
-			,s.[TechSupport]
 			,s.[TechSupportExpDate]
 		FROM 
 			[GlobalRepository].[recon].[Systems] AS s 
@@ -27,7 +26,6 @@ BEGIN TRY
 				target.[CompanyName] = source.[CompanyName],
 				target.[Name] = source.[Name],
 				target.[Version] = source.[Version],
-				target.[TechSupport] = source.[TechSupport],
 				target.[TechSupportExpDate] = source.[TechSupportExpDate];
 	COMMIT TRAN merge_recon;
 

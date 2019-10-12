@@ -6,7 +6,7 @@
     [CountryId]              INT              NOT NULL,
     [Model]                  NVARCHAR (50)    NOT NULL,
     [SerialNumber]           INT              NOT NULL,
-    [TechSupport]            CHAR (1)         DEFAULT ((0)) NOT NULL,
+    [TechSupport]            AS ([repository].[CheckDate]([WarrantyExpirationDate])),
     [WarrantyExpirationDate] DATE             NOT NULL,
     [CPUType]                SMALLINT         NULL,
     [RAM]                    SMALLINT         NULL,
@@ -20,19 +20,19 @@
     PRIMARY KEY CLUSTERED ([ServerId] ASC),
     CHECK ([AntivirusSoftware]=(0) OR [AntivirusSoftware]=(1)),
     CHECK ([HardDisk]='D' OR [HardDisk]='S'),
-    CHECK ([TechSupport]=(0) OR [TechSupport]=(1)),
     CHECK ([UPS]=(0) OR [UPS]=(1)),
     FOREIGN KEY ([CountryId]) REFERENCES [repository].[CountryRegion] ([CountryId]),
     FOREIGN KEY ([RecServerId]) REFERENCES [recon].[Servers] ([RecServerId])
 );
 
+GO
+CREATE NONCLUSTERED INDEX [IX_Servers_ServerId]
+    ON [repository].[Servers]([ServerId] ASC);
 
 
-
-
-
-
-
+GO
+CREATE NONCLUSTERED INDEX [IX_Servers_CountryId]
+    ON [repository].[Servers]([CountryId] ASC);
 
 
 GO
@@ -185,16 +185,6 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of edi
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of deletion of the entry. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'DeleteDate';
-
-
-GO
-CREATE NONCLUSTERED INDEX [IX_Servers_ServerId]
-    ON [repository].[Servers]([ServerId] ASC);
-
-
-GO
-CREATE NONCLUSTERED INDEX [IX_Servers_CountryId]
-    ON [repository].[Servers]([CountryId] ASC);
 
 
 GO
