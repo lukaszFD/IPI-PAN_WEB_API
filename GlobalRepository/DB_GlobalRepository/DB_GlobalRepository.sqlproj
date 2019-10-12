@@ -120,6 +120,8 @@
     <Folder Include="error\Views\" />
     <Folder Include="repository\Functions\" />
     <Folder Include="recon\Stored Procedures\" />
+    <Folder Include="service\" />
+    <Folder Include="service\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\110\SqlSchemas\master.dacpac">
@@ -247,6 +249,15 @@
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
+    <Build Include="service\Stored Procedures\EnableAllConstraints.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="service\Stored Procedures\DisableAllConstraints.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Security\service.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GlobalRepository.publish.xml" />
