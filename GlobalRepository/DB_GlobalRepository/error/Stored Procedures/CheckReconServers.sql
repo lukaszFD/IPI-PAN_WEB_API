@@ -20,8 +20,6 @@ BEGIN TRY
 			OR 
 			a.SerialNumber IS NULL 
 			OR 
-			a.TechSupport IS NULL 
-			OR 
 			a.WarrantyExpirationDate IS NULL 
 			OR 
 			a.HardDisk IS NULL 

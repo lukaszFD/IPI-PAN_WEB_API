@@ -6,7 +6,6 @@
     [CountryRegionCode]      NVARCHAR (2)     NULL,
     [Model]                  NVARCHAR (50)    NULL,
     [SerialNumber]           INT              NULL,
-    [TechSupport]            CHAR (1)         NULL,
     [WarrantyExpirationDate] DATE             NULL,
     [CPUType]                SMALLINT         NULL,
     [RAM]                    SMALLINT         NULL,
@@ -18,18 +17,6 @@
     PRIMARY KEY CLUSTERED ([RecServerId] ASC),
     CHECK ([Status]='P' OR [Status]='I' OR [Status]='E')
 );
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 GO
@@ -50,10 +37,6 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Account loc
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Serial number of the server', @level0type = N'SCHEMA', @level0name = N'recon', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'SerialNumber';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Technical support for the server.', @level0type = N'SCHEMA', @level0name = N'recon', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'TechSupport';
 
 
 GO

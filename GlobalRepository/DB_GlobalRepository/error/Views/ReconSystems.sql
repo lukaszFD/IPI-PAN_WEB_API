@@ -54,19 +54,6 @@ WHERE
 	AND 
 	e.ColumnId IS NULL 
 )
-,cte_techSup AS
-(
-SELECT 
-	a.RecSystemId,
-	case when a.TechSupport IS NULL THEN 'TechSupport' END AS 'ColumnName'
-FROM 
-	[recon].[Systems] a
-	LEFT JOIN cte_err e ON (e.ColumnId = a.RecSystemId) 
-WHERE 
-	a.STATUS = 'E'
-	AND 
-	e.ColumnId IS NULL 
-)
 ,cte_techSupEx AS
 (
 SELECT 
@@ -97,8 +84,6 @@ WHERE
 SELECT * FROM cte_company cc WHERE cc.ColumnName IS NOT NULL 
 UNION ALL
 SELECT * FROM cte_name cn WHERE cn.ColumnName IS NOT NULL 
-UNION ALL
-SELECT * FROM cte_techSup cts WHERE cts.ColumnName IS NOT NULL 
 UNION all
 SELECT * FROM cte_techSupEx ctse WHERE ctse.ColumnName IS NOT NULL 
 UNION all

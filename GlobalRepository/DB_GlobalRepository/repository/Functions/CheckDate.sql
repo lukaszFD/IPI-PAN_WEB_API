@@ -7,7 +7,8 @@ RETURNS int
 AS
 
 BEGIN
-DECLARE @return_val int = null
+DECLARE 
+	@return_val int = NULL
 	IF @Param1 < getdate()
 		begin 
 		SELECT @return_val = 1

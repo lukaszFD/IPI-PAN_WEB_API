@@ -4,22 +4,20 @@
     [CompanyName]        NVARCHAR (50)    NOT NULL,
     [Name]               NVARCHAR (50)    NOT NULL,
     [Version]            NVARCHAR (50)    NOT NULL,
-    [TechSupport]        CHAR (1)         DEFAULT ((0)) NOT NULL,
+    [TechSupport]        AS ([repository].[CheckDate]([TechSupportExpDate])),
     [TechSupportExpDate] DATE             NOT NULL,
     [CreationDate]       DATETIME         DEFAULT (getdate()) NOT NULL,
     [EditDate]           DATETIME         NULL,
     [DeleteDate]         DATETIME         NULL,
     [RecSystemId]        INT              NULL,
     PRIMARY KEY CLUSTERED ([SystemId] ASC),
-    CHECK ([TechSupport]=(0) OR [TechSupport]=(1)),
     FOREIGN KEY ([RecSystemId]) REFERENCES [recon].[Systems] ([RecSystemId])
 );
 
 
-
-
-
-
+GO
+CREATE NONCLUSTERED INDEX [IX_Systems_SystemId]
+    ON [repository].[Systems]([SystemId] ASC);
 
 
 GO
@@ -123,11 +121,6 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of edi
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of deletion of the entry. ', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Systems', @level2type = N'COLUMN', @level2name = N'DeleteDate';
-
-
-GO
-CREATE NONCLUSTERED INDEX [IX_Systems_SystemId]
-    ON [repository].[Systems]([SystemId] ASC);
 
 
 GO
