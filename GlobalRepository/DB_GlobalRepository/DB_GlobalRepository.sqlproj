@@ -263,4 +263,7 @@
     <None Include="GlobalRepository.publish.xml" />
     <None Include="SqlSchemaCompare.scmp" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment_GR.sql" />
+  </ItemGroup>
 </Project>
