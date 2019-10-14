@@ -6310,7 +6310,7 @@ END CATCH]]></Value>
 								<Element Type="SqlTypeSpecifier">
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[datetime]" />
+											<References ExternalSource="BuiltIns" Name="[date]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -6604,7 +6604,7 @@ END CATCH]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Offset" Value="5721" />
+				<Property Name="Offset" Value="5717" />
 				<Property Name="CreateOffset" Value="2" />
 				<Property Name="Length" Value="1556" />
 				<Property Name="StartLine" Value="90" />

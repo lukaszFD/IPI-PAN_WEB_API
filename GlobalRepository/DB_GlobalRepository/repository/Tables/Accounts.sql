@@ -8,7 +8,7 @@
     [Name]            NVARCHAR (50)    NOT NULL,
     [Description]     NVARCHAR (200)   NULL,
     [Type]            CHAR (1)         NOT NULL,
-    [PasswordExpires] DATETIME         NULL,
+    [PasswordExpires] DATE         NULL,
     [Tofix]           AS               ([repository].[CheckDate]([PasswordExpires])),
     [CreationDate]    DATETIME         DEFAULT (getdate()) NOT NULL,
     [EditDate]        DATETIME         NULL,
