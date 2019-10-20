@@ -22,15 +22,14 @@ CREATE NONCLUSTERED INDEX [IX_Systems_SystemId]
 
 GO
 
-CREATE TRIGGER [repository].[After_U_System_trg]
+CREATE TRIGGER [repository].[After_U_AuditSystem_trg]
 ON [repository].[Systems]
 AFTER UPDATE
 AS 
 BEGIN TRY
-	BEGIN TRAN aud
 	   INSERT INTO [GlobalRepository].[audit].[Systems]
 	   (   
-			[DateTo],
+			[DateFrom],
 			[ExternalId],
 			[SystemId],
 			[NEW_CompanyName],
@@ -42,7 +41,9 @@ BEGIN TRY
 			[NEW_TechSupport],
 			[OLD_TechSupport],
 			[NEW_TechSupportExpDate],
-			[OLD_TechSupportExpDate]
+			[OLD_TechSupportExpDate],
+			[NEW_RecSystemId],
+			[OLD_RecSystemId]
 	   )
 	   SELECT 
 	        isnull(s.EditDate,s.CreationDate),
@@ -57,30 +58,52 @@ BEGIN TRY
 			s.[TechSupport],
 			d.[TechSupport],
 			s.[TechSupportExpDate],
-			d.[TechSupportExpDate]
+			d.[TechSupportExpDate],
+			s.[RecSystemId],
+			d.[RecSystemId]
 		FROM 
 			[repository].[Systems] s
 			JOIN deleted d ON d.SystemId = s.SystemId
-	COMMIT TRAN aud
+END TRY
+	BEGIN CATCH
 
-	BEGIN TRAN upd
+	if @@trancount > 0
+	rollback
+
+	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+		@schemaName = 'repository',
+		@tableName = 'Systems', 
+		@columnName = null,
+		@columnId = null 
+END CATCH
+GO
+EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_AuditSystem_trg]', @order = N'first', @stmttype = N'update';
+go
+
+CREATE TRIGGER [repository].[After_U_System_trg]
+ON [repository].[Systems]
+AFTER UPDATE
+AS 
+BEGIN TRY
 		UPDATE a
 		SET a.EditDate = getdate()
 		FROM 
 			[repository].Systems a 
 			JOIN deleted d ON d.SystemId = a.SystemId
-	COMMIT TRAN upd
 END TRY
 	BEGIN CATCH
-			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
-				@schemaName = 'repository',
-				@tableName = 'Systems', 
-				@columnName = null,
-				@columnId = null 
+
+	if @@trancount > 0
+	rollback
+
+	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+		@schemaName = 'repository',
+		@tableName = 'Systems', 
+		@columnName = null,
+		@columnId = null 
 END CATCH
 GO
-EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_System_trg]', @order = N'first', @stmttype = N'update';
-
+EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_System_trg]', @order = N'last', @stmttype = N'update';
 
 
 GO

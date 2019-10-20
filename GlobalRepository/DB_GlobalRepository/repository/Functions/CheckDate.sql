@@ -11,11 +11,11 @@ DECLARE
 	@return_val int = NULL
 	IF @Param1 < getdate()
 		begin 
-		SELECT @return_val = 1
+		SELECT @return_val = 0
 		END 
 	ELSE 
 	    begin 
-		SELECT @return_val = 0
+		SELECT @return_val = 1
 		END 
 	RETURN @return_val;
 END

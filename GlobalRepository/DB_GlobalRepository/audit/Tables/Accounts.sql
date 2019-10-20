@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [audit].[Accounts] (
-    [AudID]               INT              IDENTITY (1, 1) NOT NULL,
+    [AudID]               INT              IDENTITY (1, 1) NOT NULL primary key,
     [UserName]            NVARCHAR (100)   DEFAULT (stuff(suser_sname(),(1),charindex('\',suser_sname()),'')) NULL,
     [DateFrom]            DATETIME         NOT NULL,
     [DateTo]              DATETIME         DEFAULT (getdate()) NULL,

@@ -37,12 +37,11 @@ CREATE NONCLUSTERED INDEX [IX_Servers_CountryId]
 
 GO
 
-CREATE TRIGGER [repository].[After_U_Server_trg]
+CREATE TRIGGER [repository].[After_U_AuditServer_trg]
 ON [repository].[Servers]
 AFTER UPDATE
 AS 
 BEGIN TRY
-	BEGIN TRAN aud
 		INSERT INTO [GlobalRepository].[audit].[Servers]
 		(
 		    [DateFrom],
@@ -71,7 +70,9 @@ BEGIN TRY
 		    [NEW_UPS],
 		    [OLD_UPS],
 		    [NEW_AntivirusSoftware],
-		    [OLD_AntivirusSoftware]
+		    [OLD_AntivirusSoftware],
+			[NEW_RecServerId],
+			[OLD_RecServerId]
 		)
 
 		SELECT 
@@ -101,27 +102,55 @@ BEGIN TRY
 			s.[UPS],
 			d.[UPS],
 			s.[AntivirusSoftware],
-			d.[AntivirusSoftware]
+			d.[AntivirusSoftware],
+			s.[RecServerId],
+			d.[RecServerId]
 		FROM 
 			[repository].[Servers] s
 			JOIN  deleted d ON d.[ServerId] = s.[ServerId]
-	COMMIT TRAN aud
+END TRY
+	BEGIN CATCH
 
-	BEGIN TRAN upd
+	if @@trancount > 0
+	rollback;
+
+	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+		@schemaName = 'repository',
+		@tableName = 'Servers', 
+		@columnName = null,
+		@columnId = null 
+END CATCH
+go
+
+EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_AuditServer_trg]', @order = N'first', @stmttype = N'update';
+go
+
+
+CREATE TRIGGER [repository].[After_U_Server_trg]
+ON [repository].[Servers]
+AFTER UPDATE
+AS 
+BEGIN TRY
 		UPDATE a
 		SET a.EditDate = getdate()
 		FROM 
 			[repository].Servers a 
 			join deleted d ON d.ServerId = a.ServerId
-	COMMIT TRAN upd
 END TRY
 	BEGIN CATCH
-			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
-				@schemaName = 'repository',
-				@tableName = 'Servers', 
-				@columnName = null,
-				@columnId = null 
+
+	if @@trancount > 0
+	rollback;
+
+	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+		@schemaName = 'repository',
+		@tableName = 'Servers', 
+		@columnName = null,
+		@columnId = null 
 END CATCH
+go
+
+EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_Server_trg]', @order = N'last', @stmttype = N'update';
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'ExternalId';
