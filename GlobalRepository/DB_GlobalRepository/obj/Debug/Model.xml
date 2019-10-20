@@ -65,22 +65,6 @@
 		</Element>
 		<Element Type="SqlCheckConstraint">
 			<Property Name="CheckExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[[Type]='D' OR [Type]='U']]></Value>
-			</Property>
-			<Relationship Name="CheckExpressionDependencies">
-				<Entry>
-					<References Name="[repository].[Accounts].[Type]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Accounts]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
-		</Element>
-		<Element Type="SqlCheckConstraint">
-			<Property Name="CheckExpressionScript">
 				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[[Type]='A' OR [Type]='N']]></Value>
 			</Property>
 			<Relationship Name="CheckExpressionDependencies">
@@ -93,55 +77,7 @@
 					<References Name="[gr_user].[Users]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
-		</Element>
-		<Element Type="SqlCheckConstraint">
-			<Property Name="CheckExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[[AntivirusSoftware]=(0) OR [AntivirusSoftware]=(1)]]></Value>
-			</Property>
-			<Relationship Name="CheckExpressionDependencies">
-				<Entry>
-					<References Name="[repository].[Servers].[AntivirusSoftware]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Servers]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
-		</Element>
-		<Element Type="SqlCheckConstraint">
-			<Property Name="CheckExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[[HardDisk]='D' OR [HardDisk]='S']]></Value>
-			</Property>
-			<Relationship Name="CheckExpressionDependencies">
-				<Entry>
-					<References Name="[repository].[Servers].[HardDisk]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Servers]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
-		</Element>
-		<Element Type="SqlCheckConstraint">
-			<Property Name="CheckExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[[UPS]=(0) OR [UPS]=(1)]]></Value>
-			</Property>
-			<Relationship Name="CheckExpressionDependencies">
-				<Entry>
-					<References Name="[repository].[Servers].[UPS]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Servers]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
 		</Element>
 		<Element Type="SqlCheckConstraint">
 			<Property Name="CheckExpressionScript">
@@ -157,7 +93,7 @@
 					<References Name="[recon].[Servers]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
 		</Element>
 		<Element Type="SqlCheckConstraint">
 			<Property Name="CheckExpressionScript">
@@ -173,7 +109,87 @@
 					<References Name="[recon].[Systems]" />
 				</Entry>
 			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+		</Element>
+		<Element Type="SqlCheckConstraint">
+			<Property Name="CheckExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[[AntivirusSoftware]=(0) OR [AntivirusSoftware]=(1)]]></Value>
+			</Property>
+			<Relationship Name="CheckExpressionDependencies">
+				<Entry>
+					<References Name="[repository].[Servers].[AntivirusSoftware]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Servers]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+		</Element>
+		<Element Type="SqlCheckConstraint">
+			<Property Name="CheckExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[[HardDisk]='D' OR [HardDisk]='S']]></Value>
+			</Property>
+			<Relationship Name="CheckExpressionDependencies">
+				<Entry>
+					<References Name="[repository].[Servers].[HardDisk]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Servers]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+		</Element>
+		<Element Type="SqlCheckConstraint">
+			<Property Name="CheckExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[[UPS]=(0) OR [UPS]=(1)]]></Value>
+			</Property>
+			<Relationship Name="CheckExpressionDependencies">
+				<Entry>
+					<References Name="[repository].[Servers].[UPS]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Servers]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+		</Element>
+		<Element Type="SqlCheckConstraint">
+			<Property Name="CheckExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[[Type]='D' OR [Type]='U']]></Value>
+			</Property>
+			<Relationship Name="CheckExpressionDependencies">
+				<Entry>
+					<References Name="[repository].[Accounts].[Type]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+		</Element>
+		<Element Type="SqlCheckConstraint">
+			<Property Name="CheckExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[[Tofix]=(0) OR [Tofix]=(1)]]></Value>
+			</Property>
+			<Relationship Name="CheckExpressionDependencies">
+				<Entry>
+					<References Name="[repository].[Accounts].[Tofix]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
 		</Element>
 		<Element Type="SqlDatabaseOptions">
 			<Property Name="Collation" Value="Polish_CI_AS" />
@@ -199,70 +215,6 @@
 			</Property>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[audit].[Systems]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[audit].[Systems].[UserName]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[audit].[Systems]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[audit].[Systems].[DateTo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(stuff(suser_sname(),(1),charindex('\',suser_sname()),''))]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[audit].[Accounts]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[audit].[Accounts].[UserName]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[audit].[Accounts]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[audit].[Accounts].[DateTo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(stuff(suser_sname(),(1),charindex('\',suser_sname()),''))]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
 					<References Name="[error].[ErrorMessages]" />
 				</Entry>
 			</Relationship>
@@ -271,7 +223,7 @@
 					<References Name="[error].[ErrorMessages].[UserName]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -287,7 +239,7 @@
 					<References Name="[error].[ErrorMessages].[ErrorDateTime]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -303,7 +255,7 @@
 					<References Name="[recon].[Accounts].[Status]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -319,7 +271,7 @@
 					<References Name="[recon].[Accounts].[CreationDate]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -335,7 +287,7 @@
 					<References Name="[recon].[Users].[Status]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -351,55 +303,7 @@
 					<References Name="[recon].[Users].[CreationDate]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[CountryRegion]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[repository].[CountryRegion].[CreationDate]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(newid())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Accounts]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[repository].[Accounts].[ExternalId]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Accounts]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[repository].[Accounts].[CreationDate]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -415,167 +319,7 @@
 					<References Name="[gr_user].[Users].[CreationDate]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(stuff(suser_sname(),(1),charindex('\',suser_sname()),''))]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[audit].[CountryRegion]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[audit].[CountryRegion].[UserName]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="27" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[audit].[CountryRegion]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[audit].[CountryRegion].[DateTo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="28" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(stuff(suser_sname(),(1),charindex('\',suser_sname()),''))]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[audit].[Servers]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[audit].[Servers].[UserName]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="29" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[audit].[Servers]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[audit].[Servers].[DateTo]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="30" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(newid())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Servers]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[repository].[Servers].[ExternalId]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="31" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[((0))]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Servers]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[repository].[Servers].[UPS]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="32" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[((0))]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Servers]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[repository].[Servers].[AntivirusSoftware]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="33" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Servers]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[repository].[Servers].[CreationDate]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="34" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(newid())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Systems]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[repository].[Systems].[ExternalId]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="35" />
-		</Element>
-		<Element Type="SqlDefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Systems]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[repository].[Systems].[CreationDate]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="36" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -591,7 +335,7 @@
 					<References Name="[recon].[Servers].[Status]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="37" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -607,7 +351,7 @@
 					<References Name="[recon].[Servers].[CreationDate]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="38" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -623,7 +367,7 @@
 					<References Name="[recon].[Systems].[Status]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="39" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -639,122 +383,279 @@
 					<References Name="[recon].[Systems].[CreationDate]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="40" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
 		</Element>
-		<Element Type="SqlForeignKeyConstraint">
-			<Relationship Name="Columns">
-				<Entry>
-					<References Name="[repository].[Accounts].[CountryId]" />
-				</Entry>
-			</Relationship>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(newid())]]></Value>
+			</Property>
 			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Accounts]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForeignColumns">
-				<Entry>
-					<References Name="[repository].[CountryRegion].[CountryId]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForeignTable">
-				<Entry>
-					<References Name="[repository].[CountryRegion]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="41" />
-		</Element>
-		<Element Type="SqlForeignKeyConstraint">
-			<Relationship Name="Columns">
-				<Entry>
-					<References Name="[repository].[Accounts].[RecAccountId]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Accounts]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForeignColumns">
-				<Entry>
-					<References Name="[recon].[Accounts].[RecAccountId]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForeignTable">
-				<Entry>
-					<References Name="[recon].[Accounts]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="42" />
-		</Element>
-		<Element Type="SqlForeignKeyConstraint">
-			<Relationship Name="Columns">
-				<Entry>
-					<References Name="[repository].[Accounts].[ServerId]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Accounts]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForeignColumns">
-				<Entry>
-					<References Name="[repository].[Servers].[ServerId]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForeignTable">
 				<Entry>
 					<References Name="[repository].[Servers]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="43" />
-		</Element>
-		<Element Type="SqlForeignKeyConstraint">
-			<Relationship Name="Columns">
+			<Relationship Name="ForColumn">
 				<Entry>
-					<References Name="[repository].[Accounts].[SystemId]" />
+					<References Name="[repository].[Servers].[ExternalId]" />
 				</Entry>
 			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[((0))]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Servers]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[repository].[Servers].[UPS]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[((0))]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Servers]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[repository].[Servers].[AntivirusSoftware]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="27" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Servers]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[repository].[Servers].[CreationDate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="28" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(newid())]]></Value>
+			</Property>
 			<Relationship Name="DefiningTable">
 				<Entry>
 					<References Name="[repository].[Accounts]" />
 				</Entry>
 			</Relationship>
-			<Relationship Name="ForeignColumns">
+			<Relationship Name="ForColumn">
 				<Entry>
-					<References Name="[repository].[Systems].[SystemId]" />
+					<References Name="[repository].[Accounts].[ExternalId]" />
 				</Entry>
 			</Relationship>
-			<Relationship Name="ForeignTable">
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="29" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[repository].[Accounts].[CreationDate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="30" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(stuff(suser_sname(),(1),charindex('\',suser_sname()),''))]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[audit].[Systems]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[audit].[Systems].[UserName]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="31" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[audit].[Systems]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[audit].[Systems].[DateTo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="32" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(stuff(suser_sname(),(1),charindex('\',suser_sname()),''))]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[audit].[Servers]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[audit].[Servers].[UserName]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="33" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[audit].[Servers]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[audit].[Servers].[DateTo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="34" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(stuff(suser_sname(),(1),charindex('\',suser_sname()),''))]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[audit].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[audit].[Accounts].[UserName]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="35" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[audit].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[audit].[Accounts].[DateTo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="36" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(newid())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
 				<Entry>
 					<References Name="[repository].[Systems]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="44" />
-		</Element>
-		<Element Type="SqlForeignKeyConstraint">
-			<Relationship Name="Columns">
+			<Relationship Name="ForColumn">
 				<Entry>
-					<References Name="[repository].[Accounts].[UserId]" />
+					<References Name="[repository].[Systems].[ExternalId]" />
 				</Entry>
 			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="37" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
+			</Property>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[repository].[Accounts]" />
+					<References Name="[repository].[Systems]" />
 				</Entry>
 			</Relationship>
-			<Relationship Name="ForeignColumns">
+			<Relationship Name="ForColumn">
 				<Entry>
-					<References Name="[gr_user].[Users].[UserId]" />
+					<References Name="[repository].[Systems].[CreationDate]" />
 				</Entry>
 			</Relationship>
-			<Relationship Name="ForeignTable">
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="38" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[gr_user].[Users]" />
+					<References Name="[repository].[CountryRegion]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="45" />
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[repository].[CountryRegion].[CreationDate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="39" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(stuff(suser_sname(),(1),charindex('\',suser_sname()),''))]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[audit].[CountryRegion]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[audit].[CountryRegion].[UserName]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="40" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[audit].[CountryRegion]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[audit].[CountryRegion].[DateTo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="41" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint">
 			<Relationship Name="Columns">
@@ -777,7 +678,7 @@
 					<References Name="[repository].[CountryRegion]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="46" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="42" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint">
 			<Relationship Name="Columns">
@@ -800,7 +701,122 @@
 					<References Name="[recon].[Servers]" />
 				</Entry>
 			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="43" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[repository].[Accounts].[CountryId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[repository].[CountryRegion].[CountryId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[repository].[CountryRegion]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="44" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[repository].[Accounts].[RecAccountId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[recon].[Accounts].[RecAccountId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[recon].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="45" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[repository].[Accounts].[ServerId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[repository].[Servers].[ServerId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[repository].[Servers]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="46" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[repository].[Accounts].[SystemId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[repository].[Systems].[SystemId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[repository].[Systems]" />
+				</Entry>
+			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="47" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[repository].[Accounts].[UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[gr_user].[Users].[UserId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[gr_user].[Users]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="48" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint">
 			<Relationship Name="Columns">
@@ -823,7 +839,7 @@
 					<References Name="[recon].[Systems]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="48" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="49" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -842,7 +858,7 @@
 					<References Name="[error].[ErrorMessages]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="49" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="50" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -861,45 +877,7 @@
 					<References Name="[recon].[Accounts]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="50" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[repository].[CountryRegion].[CountryId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[CountryRegion]" />
-				</Entry>
-			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="51" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[repository].[Accounts].[AccountId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Accounts]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="52" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -918,45 +896,7 @@
 					<References Name="[gr_user].[Users]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="53" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[repository].[Servers].[ServerId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Servers]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="54" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[repository].[Systems].[SystemId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[repository].[Systems]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="55" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="52" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -975,7 +915,7 @@
 					<References Name="[recon].[Servers]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="56" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="53" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -994,7 +934,159 @@
 					<References Name="[recon].[Systems]" />
 				</Entry>
 			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="54" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[repository].[Servers].[ServerId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Servers]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="55" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[repository].[Accounts].[AccountId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="56" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[audit].[Systems].[AudID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[audit].[Systems]" />
+				</Entry>
+			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="57" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[audit].[Servers].[AudID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[audit].[Servers]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="58" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[audit].[Accounts].[AudID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[audit].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="59" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[repository].[Systems].[SystemId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[Systems]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="60" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[repository].[CountryRegion].[CountryId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[repository].[CountryRegion]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="61" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[audit].[CountryRegion].[AudID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[audit].[CountryRegion]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="62" />
 		</Element>
 		<Element Type="SqlSchema" Name="[audit]">
 			<Relationship Name="Authorizer">
@@ -1021,6 +1113,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
+						<AttachedAnnotation Disambiguator="59" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1037,7 +1130,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="15" />
+						<AttachedAnnotation Disambiguator="35" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1069,7 +1162,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="16" />
+						<AttachedAnnotation Disambiguator="36" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1439,6 +1532,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
+						<AttachedAnnotation Disambiguator="62" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1455,7 +1549,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="27" />
+						<AttachedAnnotation Disambiguator="40" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1487,7 +1581,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="28" />
+						<AttachedAnnotation Disambiguator="41" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1594,6 +1688,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
+						<AttachedAnnotation Disambiguator="58" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1610,7 +1705,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="29" />
+						<AttachedAnnotation Disambiguator="33" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1642,7 +1737,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="30" />
+						<AttachedAnnotation Disambiguator="34" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2051,6 +2146,36 @@
 						</Relationship>
 					</Element>
 				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[audit].[Servers].[NEW_RecServerId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[audit].[Servers].[OLD_RecServerId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
 				<Entry>
@@ -2076,6 +2201,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
+						<AttachedAnnotation Disambiguator="57" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2092,7 +2218,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="13" />
+						<AttachedAnnotation Disambiguator="31" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2124,7 +2250,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="14" />
+						<AttachedAnnotation Disambiguator="32" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2310,6 +2436,36 @@
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[audit].[Systems].[NEW_RecSystemId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[audit].[Systems].[OLD_RecSystemId]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -3410,7 +3566,7 @@ END CATCH]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="17" />
+						<AttachedAnnotation Disambiguator="14" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -3565,7 +3721,7 @@ END CATCH]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="18" />
+						<AttachedAnnotation Disambiguator="15" />
 					</Element>
 				</Entry>
 			</Relationship>
@@ -3574,7 +3730,7 @@ END CATCH]]></Value>
 					<References Name="[error]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="49" />
+			<AttachedAnnotation Disambiguator="50" />
 		</Element>
 		<Element Type="SqlView" Name="[error].[ReconAccounts]">
 			<Property Name="QueryScript">
@@ -4656,7 +4812,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="26" />
+						<AttachedAnnotation Disambiguator="20" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -4695,8 +4851,8 @@ END]]></Value>
 					<References Name="[gr_user]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="53" />
-			<AttachedAnnotation Disambiguator="7" />
+			<AttachedAnnotation Disambiguator="52" />
+			<AttachedAnnotation Disambiguator="6" />
 		</Element>
 		<Element Type="SqlIndex" Name="[gr_user].[Users].[IX_Users_UserGUID]">
 			<Relationship Name="ColumnSpecifications">
@@ -4897,7 +5053,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="19" />
+						<AttachedAnnotation Disambiguator="16" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -4914,7 +5070,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="20" />
+						<AttachedAnnotation Disambiguator="17" />
 					</Element>
 				</Entry>
 			</Relationship>
@@ -4923,7 +5079,7 @@ END]]></Value>
 					<References Name="[recon]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="50" />
+			<AttachedAnnotation Disambiguator="51" />
 			<AttachedAnnotation Disambiguator="4" />
 		</Element>
 		<Element Type="SqlDmlTrigger" Name="[recon].[After_I_MergeAccount_trg]">
@@ -5386,6 +5542,7 @@ BEGIN TRY
 			,s.[HardDisk]
 			,s.[UPS]
 			,s.[AntivirusSoftware]
+			,s.[RecServerId]
 		FROM 
 			[GlobalRepository].[recon].[Servers] AS s 
 			LEFT JOIN repository.CountryRegion cr ON s.CountryRegionCode = cr.CountryRegionCode
@@ -5405,7 +5562,8 @@ BEGIN TRY
 				target.[RAM] = source.[RAM],
 				target.[HardDisk] = source.[HardDisk],
 				target.[UPS] = source.[UPS],
-				target.[AntivirusSoftware] = source.[AntivirusSoftware];
+				target.[AntivirusSoftware] = source.[AntivirusSoftware],
+				target.[RecServerId] = source.[RecServerId];
 	COMMIT TRAN merge_recon;
 
 	BEGIN TRAN upd_recon
@@ -5447,6 +5605,7 @@ END CATCH]]></Value>
 				<Entry>
 					<References Name="[repository].[CountryRegion].[CountryId]" />
 				</Entry>
+				<Entry />
 				<Entry />
 				<Entry />
 				<Entry />
@@ -5510,6 +5669,10 @@ END CATCH]]></Value>
 				</Entry>
 				<Entry />
 				<Entry>
+					<References Name="[repository].[Servers].[RecServerId]" />
+				</Entry>
+				<Entry />
+				<Entry>
 					<References Name="[recon].[Servers]" />
 				</Entry>
 				<Entry>
@@ -5537,7 +5700,7 @@ END CATCH]]></Value>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
 				<Property Name="CreateOffset" Value="4" />
-				<Property Name="Length" Value="1670" />
+				<Property Name="Length" Value="1741" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="&#xD;&#xA;&#xD;&#xA;CREATE PROCEDURE [recon].[MergeReconServers]&#xD;&#xA;AS" />
@@ -5558,6 +5721,7 @@ BEGIN TRY
 			,s.[Name]
 			,s.[Version]
 			,s.[TechSupportExpDate]
+			,s.[RecSystemId]
 		FROM 
 			[GlobalRepository].[recon].[Systems] AS s 
 		WHERE 
@@ -5569,7 +5733,8 @@ BEGIN TRY
 				target.[CompanyName] = source.[CompanyName],
 				target.[Name] = source.[Name],
 				target.[Version] = source.[Version],
-				target.[TechSupportExpDate] = source.[TechSupportExpDate];
+				target.[TechSupportExpDate] = source.[TechSupportExpDate],
+				target.[RecSystemId] = source.[RecSystemId];
 	COMMIT TRAN merge_recon;
 
 	BEGIN TRAN upd_recon
@@ -5604,6 +5769,7 @@ END CATCH]]></Value>
 				<Entry />
 				<Entry />
 				<Entry />
+				<Entry />
 				<Entry>
 					<References Name="[repository].[Systems]" />
 				</Entry>
@@ -5625,6 +5791,10 @@ END CATCH]]></Value>
 				<Entry />
 				<Entry>
 					<References Name="[repository].[Systems].[TechSupportExpDate]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[repository].[Systems].[RecSystemId]" />
 				</Entry>
 				<Entry />
 				<Entry>
@@ -5655,7 +5825,7 @@ END CATCH]]></Value>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
 				<Property Name="CreateOffset" Value="6" />
-				<Property Name="Length" Value="1155" />
+				<Property Name="Length" Value="1226" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;CREATE PROCEDURE [recon].[MergeReconSystems]&#xD;&#xA;AS" />
@@ -5883,7 +6053,7 @@ END CATCH]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="37" />
+						<AttachedAnnotation Disambiguator="21" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -5900,7 +6070,7 @@ END CATCH]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="38" />
+						<AttachedAnnotation Disambiguator="22" />
 					</Element>
 				</Entry>
 			</Relationship>
@@ -5909,8 +6079,8 @@ END CATCH]]></Value>
 					<References Name="[recon]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="56" />
-			<AttachedAnnotation Disambiguator="11" />
+			<AttachedAnnotation Disambiguator="53" />
+			<AttachedAnnotation Disambiguator="7" />
 		</Element>
 		<Element Type="SqlTable" Name="[recon].[Systems]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -6025,7 +6195,7 @@ END CATCH]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="39" />
+						<AttachedAnnotation Disambiguator="23" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -6042,7 +6212,7 @@ END CATCH]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="40" />
+						<AttachedAnnotation Disambiguator="24" />
 					</Element>
 				</Entry>
 			</Relationship>
@@ -6051,8 +6221,8 @@ END CATCH]]></Value>
 					<References Name="[recon]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="57" />
-			<AttachedAnnotation Disambiguator="12" />
+			<AttachedAnnotation Disambiguator="54" />
+			<AttachedAnnotation Disambiguator="8" />
 		</Element>
 		<Element Type="SqlTable" Name="[recon].[Users]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -6120,7 +6290,7 @@ END CATCH]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="21" />
+						<AttachedAnnotation Disambiguator="18" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -6137,7 +6307,7 @@ END CATCH]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="22" />
+						<AttachedAnnotation Disambiguator="19" />
 					</Element>
 				</Entry>
 			</Relationship>
@@ -6172,7 +6342,7 @@ END CATCH]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="24" />
+						<AttachedAnnotation Disambiguator="29" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -6319,16 +6489,16 @@ END CATCH]]></Value>
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlComputedColumn" Name="[repository].[Accounts].[Tofix]">
-						<Property Name="ExpressionScript">
-							<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[([repository].[CheckDate]([PasswordExpires]))]]></Value>
-						</Property>
-						<Relationship Name="ExpressionDependencies">
+					<Element Type="SqlSimpleColumn" Name="[repository].[Accounts].[Tofix]">
+						<Relationship Name="TypeSpecifier">
 							<Entry>
-								<References Name="[repository].[CheckDate]" />
-							</Entry>
-							<Entry>
-								<References Name="[repository].[Accounts].[PasswordExpires]" />
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
 							</Entry>
 						</Relationship>
 					</Element>
@@ -6347,7 +6517,7 @@ END CATCH]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="25" />
+						<AttachedAnnotation Disambiguator="30" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -6401,22 +6571,81 @@ END CATCH]]></Value>
 					<References Name="[repository]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="52" />
-			<AttachedAnnotation Disambiguator="6" />
-			<AttachedAnnotation Disambiguator="41" />
-			<AttachedAnnotation Disambiguator="42" />
-			<AttachedAnnotation Disambiguator="43" />
+			<AttachedAnnotation Disambiguator="56" />
+			<AttachedAnnotation Disambiguator="12" />
+			<AttachedAnnotation Disambiguator="13" />
 			<AttachedAnnotation Disambiguator="44" />
 			<AttachedAnnotation Disambiguator="45" />
+			<AttachedAnnotation Disambiguator="46" />
+			<AttachedAnnotation Disambiguator="47" />
+			<AttachedAnnotation Disambiguator="48" />
 		</Element>
 		<Element Type="SqlDmlTrigger" Name="[repository].[After_U_Accounts_trg]">
+			<Property Name="IsUpdateTrigger" Value="True" />
+			<Property Name="UpdateOrderRestriction" Value="2" />
+			<Property Name="SqlTriggerType" Value="2" />
+			<Property Name="BodyScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[ 
+BEGIN TRY
+		UPDATE a
+		SET a.EditDate = getdate()
+		FROM 
+			[repository].Accounts a 
+			JOIN deleted d ON d.AccountId = a.AccountId
+END TRY
+BEGIN CATCH
+
+	if @@trancount > 0
+	rollback;
+
+			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+				@schemaName = 'repository',
+				@tableName = 'Accounts', 
+				@columnName = null,
+				@columnId = null 
+END CATCH]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[Accounts].[AccountId]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[Accounts].[AccountId]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[Accounts].[EditDate]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+			</Relationship>
+			<Relationship Name="Parent">
+				<Entry>
+					<References Name="[repository].[Accounts]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Offset" Value="7207" />
+				<Property Name="CreateOffset" Value="2" />
+				<Property Name="Length" Value="478" />
+				<Property Name="StartLine" Value="164" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;CREATE TRIGGER [repository].[After_U_Accounts_trg]&#xD;&#xA;ON [repository].[Accounts]&#xD;&#xA;AFTER UPDATE&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlDmlTrigger" Name="[repository].[After_U_AuditAccounts_trg]">
 			<Property Name="IsUpdateTrigger" Value="True" />
 			<Property Name="UpdateOrderRestriction" Value="1" />
 			<Property Name="SqlTriggerType" Value="2" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[ 
 BEGIN TRY
-	BEGIN TRAN aud
 	   INSERT INTO [GlobalRepository].[audit].[Accounts]
 	   (   
 		  [DateFrom],
@@ -6470,17 +6699,10 @@ BEGIN TRY
 		FROM 
 			[repository].Accounts a 
 			JOIN  deleted d ON d.AccountId = a.AccountId
-	COMMIT TRAN aud
-
-	BEGIN TRAN upd
-		UPDATE a
-		SET a.EditDate = getdate()
-		FROM 
-			[repository].Accounts a 
-			JOIN deleted d ON d.AccountId = a.AccountId
-	COMMIT TRAN upd
 END TRY
-	BEGIN CATCH
+BEGIN CATCH
+
+
 			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
 				@schemaName = 'repository',
 				@tableName = 'Accounts', 
@@ -6604,126 +6826,21 @@ END CATCH]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Offset" Value="5717" />
+				<Property Name="Offset" Value="5701" />
 				<Property Name="CreateOffset" Value="2" />
-				<Property Name="Length" Value="1556" />
-				<Property Name="StartLine" Value="90" />
+				<Property Name="Length" Value="1364" />
+				<Property Name="StartLine" Value="91" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="&#xD;&#xA;CREATE TRIGGER [repository].[After_U_Accounts_trg]&#xD;&#xA;ON [repository].[Accounts]&#xD;&#xA;AFTER UPDATE&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;CREATE TRIGGER [repository].[After_U_AuditAccounts_trg]&#xD;&#xA;ON [repository].[Accounts]&#xD;&#xA;AFTER UPDATE&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
-		<Element Type="SqlDmlTrigger" Name="[repository].[After_U_CountryRegion_trg]">
+		<Element Type="SqlDmlTrigger" Name="[repository].[After_U_AuditServer_trg]">
 			<Property Name="IsUpdateTrigger" Value="True" />
+			<Property Name="UpdateOrderRestriction" Value="1" />
 			<Property Name="SqlTriggerType" Value="2" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[ 
 BEGIN TRY
-	BEGIN TRAN aud
-		INSERT INTO [GlobalRepository].[audit].[CountryRegion]
-		(
-			[DateTo],
-			[CountryId],
-			[NEW_CountryRegionCode],
-			[OLD_CountryRegionCode],
-			[NEW_Name],
-			[OLD_Name]
-		)
-		SELECT 
-			 isnull(c.EditDate,c.CreationDate)
-			,c.[CountryId]
-			,c.[CountryRegionCode]
-			,d.[CountryRegionCode]
-			,c.[Name]
-			,d.[Name]
-		FROM 
-			[repository].[CountryRegion] c
-			JOIN  deleted d ON d.[CountryId] = c.[CountryId]
-	COMMIT TRAN aud
-
-	BEGIN TRAN upd
-		UPDATE a
-		SET a.EditDate = getdate()
-		FROM 
-			[repository].[CountryRegion] a 
-			JOIN deleted d ON d.[CountryId] = a.[CountryId]
-	COMMIT TRAN upd
-END TRY
-	BEGIN CATCH
-			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
-				@schemaName = 'repository',
-				@tableName = 'Accounts', 
-				@columnName = null,
-				@columnId = null 
-END CATCH]]></Value>
-			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
-			<Relationship Name="BodyDependencies">
-				<Entry />
-				<Entry />
-				<Entry />
-				<Entry />
-				<Entry />
-				<Entry />
-				<Entry />
-				<Entry>
-					<References Name="[repository].[CountryRegion]" />
-				</Entry>
-				<Entry>
-					<References Name="[repository].[CountryRegion].[CountryId]" />
-				</Entry>
-				<Entry>
-					<References Name="[repository].[CountryRegion].[CountryId]" />
-				</Entry>
-				<Entry>
-					<References Name="[repository].[CountryRegion].[EditDate]" />
-				</Entry>
-				<Entry>
-					<References Name="[repository].[CountryRegion].[CreationDate]" />
-				</Entry>
-				<Entry>
-					<References Name="[repository].[CountryRegion].[CountryRegionCode]" />
-				</Entry>
-				<Entry>
-					<References Name="[repository].[CountryRegion].[CountryRegionCode]" />
-				</Entry>
-				<Entry>
-					<References Name="[repository].[CountryRegion].[Name]" />
-				</Entry>
-				<Entry>
-					<References Name="[repository].[CountryRegion].[Name]" />
-				</Entry>
-				<Entry>
-					<References Name="[repository].[CountryRegion].[CountryId]" />
-				</Entry>
-				<Entry>
-					<References Name="[repository].[CountryRegion].[EditDate]" />
-				</Entry>
-				<Entry />
-				<Entry />
-				<Entry />
-				<Entry />
-				<Entry />
-			</Relationship>
-			<Relationship Name="Parent">
-				<Entry>
-					<References Name="[repository].[CountryRegion]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Offset" Value="428" />
-				<Property Name="Length" Value="969" />
-				<Property Name="StartLine" Value="15" />
-				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE TRIGGER [repository].[After_U_CountryRegion_trg]&#xD;&#xA;ON [repository].[CountryRegion]&#xD;&#xA;AFTER UPDATE&#xD;&#xA;AS" />
-			</Annotation>
-		</Element>
-		<Element Type="SqlDmlTrigger" Name="[repository].[After_U_Server_trg]">
-			<Property Name="IsUpdateTrigger" Value="True" />
-			<Property Name="SqlTriggerType" Value="2" />
-			<Property Name="BodyScript">
-				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[ 
-BEGIN TRY
-	BEGIN TRAN aud
 		INSERT INTO [GlobalRepository].[audit].[Servers]
 		(
 		    [DateFrom],
@@ -6752,7 +6869,9 @@ BEGIN TRY
 		    [NEW_UPS],
 		    [OLD_UPS],
 		    [NEW_AntivirusSoftware],
-		    [OLD_AntivirusSoftware]
+		    [OLD_AntivirusSoftware],
+			[NEW_RecServerId],
+			[OLD_RecServerId]
 		)
 
 		SELECT 
@@ -6782,30 +6901,29 @@ BEGIN TRY
 			s.[UPS],
 			d.[UPS],
 			s.[AntivirusSoftware],
-			d.[AntivirusSoftware]
+			d.[AntivirusSoftware],
+			s.[RecServerId],
+			d.[RecServerId]
 		FROM 
 			[repository].[Servers] s
 			JOIN  deleted d ON d.[ServerId] = s.[ServerId]
-	COMMIT TRAN aud
-
-	BEGIN TRAN upd
-		UPDATE a
-		SET a.EditDate = getdate()
-		FROM 
-			[repository].Servers a 
-			join deleted d ON d.ServerId = a.ServerId
-	COMMIT TRAN upd
 END TRY
 	BEGIN CATCH
-			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
-				@schemaName = 'repository',
-				@tableName = 'Servers', 
-				@columnName = null,
-				@columnId = null 
+
+	if @@trancount > 0
+	rollback;
+
+	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+		@schemaName = 'repository',
+		@tableName = 'Servers', 
+		@columnName = null,
+		@columnId = null 
 END CATCH]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
+				<Entry />
+				<Entry />
 				<Entry />
 				<Entry />
 				<Entry />
@@ -6925,10 +7043,10 @@ END CATCH]]></Value>
 					<References Name="[repository].[Servers].[AntivirusSoftware]" />
 				</Entry>
 				<Entry>
-					<References Name="[repository].[Servers].[ServerId]" />
+					<References Name="[repository].[Servers].[RecServerId]" />
 				</Entry>
 				<Entry>
-					<References Name="[repository].[Servers].[EditDate]" />
+					<References Name="[repository].[Servers].[RecServerId]" />
 				</Entry>
 				<Entry />
 				<Entry />
@@ -6944,23 +7062,22 @@ END CATCH]]></Value>
 			<Annotation Type="SysCommentsObjectAnnotation">
 				<Property Name="Offset" Value="1737" />
 				<Property Name="CreateOffset" Value="2" />
-				<Property Name="Length" Value="1823" />
+				<Property Name="Length" Value="1746" />
 				<Property Name="StartLine" Value="39" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="&#xD;&#xA;CREATE TRIGGER [repository].[After_U_Server_trg]&#xD;&#xA;ON [repository].[Servers]&#xD;&#xA;AFTER UPDATE&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;CREATE TRIGGER [repository].[After_U_AuditServer_trg]&#xD;&#xA;ON [repository].[Servers]&#xD;&#xA;AFTER UPDATE&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
-		<Element Type="SqlDmlTrigger" Name="[repository].[After_U_System_trg]">
+		<Element Type="SqlDmlTrigger" Name="[repository].[After_U_AuditSystem_trg]">
 			<Property Name="IsUpdateTrigger" Value="True" />
 			<Property Name="UpdateOrderRestriction" Value="1" />
 			<Property Name="SqlTriggerType" Value="2" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[ 
 BEGIN TRY
-	BEGIN TRAN aud
 	   INSERT INTO [GlobalRepository].[audit].[Systems]
 	   (   
-			[DateTo],
+			[DateFrom],
 			[ExternalId],
 			[SystemId],
 			[NEW_CompanyName],
@@ -6972,7 +7089,9 @@ BEGIN TRY
 			[NEW_TechSupport],
 			[OLD_TechSupport],
 			[NEW_TechSupportExpDate],
-			[OLD_TechSupportExpDate]
+			[OLD_TechSupportExpDate],
+			[NEW_RecSystemId],
+			[OLD_RecSystemId]
 	   )
 	   SELECT 
 	        isnull(s.EditDate,s.CreationDate),
@@ -6987,30 +7106,29 @@ BEGIN TRY
 			s.[TechSupport],
 			d.[TechSupport],
 			s.[TechSupportExpDate],
-			d.[TechSupportExpDate]
+			d.[TechSupportExpDate],
+			s.[RecSystemId],
+			d.[RecSystemId]
 		FROM 
 			[repository].[Systems] s
 			JOIN deleted d ON d.SystemId = s.SystemId
-	COMMIT TRAN aud
-
-	BEGIN TRAN upd
-		UPDATE a
-		SET a.EditDate = getdate()
-		FROM 
-			[repository].Systems a 
-			JOIN deleted d ON d.SystemId = a.SystemId
-	COMMIT TRAN upd
 END TRY
 	BEGIN CATCH
-			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
-				@schemaName = 'repository',
-				@tableName = 'Systems', 
-				@columnName = null,
-				@columnId = null 
+
+	if @@trancount > 0
+	rollback
+
+	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+		@schemaName = 'repository',
+		@tableName = 'Systems', 
+		@columnName = null,
+		@columnId = null 
 END CATCH]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
+				<Entry />
+				<Entry />
 				<Entry />
 				<Entry />
 				<Entry />
@@ -7074,6 +7192,229 @@ END CATCH]]></Value>
 					<References Name="[repository].[Systems].[TechSupportExpDate]" />
 				</Entry>
 				<Entry>
+					<References Name="[repository].[Systems].[RecSystemId]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[Systems].[RecSystemId]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+			</Relationship>
+			<Relationship Name="Parent">
+				<Entry>
+					<References Name="[repository].[Systems]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Offset" Value="930" />
+				<Property Name="CreateOffset" Value="2" />
+				<Property Name="Length" Value="1152" />
+				<Property Name="StartLine" Value="24" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;CREATE TRIGGER [repository].[After_U_AuditSystem_trg]&#xD;&#xA;ON [repository].[Systems]&#xD;&#xA;AFTER UPDATE&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlDmlTrigger" Name="[repository].[After_U_CountryRegion_trg]">
+			<Property Name="IsUpdateTrigger" Value="True" />
+			<Property Name="SqlTriggerType" Value="2" />
+			<Property Name="BodyScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[ 
+BEGIN TRY
+	BEGIN TRAN aud
+		INSERT INTO [GlobalRepository].[audit].[CountryRegion]
+		(
+			[DateTo],
+			[CountryId],
+			[NEW_CountryRegionCode],
+			[OLD_CountryRegionCode],
+			[NEW_Name],
+			[OLD_Name]
+		)
+		SELECT 
+			 isnull(c.EditDate,c.CreationDate)
+			,c.[CountryId]
+			,c.[CountryRegionCode]
+			,d.[CountryRegionCode]
+			,c.[Name]
+			,d.[Name]
+		FROM 
+			[repository].[CountryRegion] c
+			JOIN  deleted d ON d.[CountryId] = c.[CountryId]
+	COMMIT TRAN aud
+
+	BEGIN TRAN upd
+		UPDATE a
+		SET a.EditDate = getdate()
+		FROM 
+			[repository].[CountryRegion] a 
+			JOIN deleted d ON d.[CountryId] = a.[CountryId]
+	COMMIT TRAN upd
+END TRY
+	BEGIN CATCH
+			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+				@schemaName = 'repository',
+				@tableName = 'Accounts', 
+				@columnName = null,
+				@columnId = null 
+END CATCH]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[repository].[CountryRegion]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[CountryRegion].[CountryId]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[CountryRegion].[CountryId]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[CountryRegion].[EditDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[CountryRegion].[CreationDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[CountryRegion].[CountryRegionCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[CountryRegion].[CountryRegionCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[CountryRegion].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[CountryRegion].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[CountryRegion].[CountryId]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[CountryRegion].[EditDate]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+			</Relationship>
+			<Relationship Name="Parent">
+				<Entry>
+					<References Name="[repository].[CountryRegion]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Offset" Value="422" />
+				<Property Name="Length" Value="969" />
+				<Property Name="StartLine" Value="12" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE TRIGGER [repository].[After_U_CountryRegion_trg]&#xD;&#xA;ON [repository].[CountryRegion]&#xD;&#xA;AFTER UPDATE&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlDmlTrigger" Name="[repository].[After_U_Server_trg]">
+			<Property Name="IsUpdateTrigger" Value="True" />
+			<Property Name="UpdateOrderRestriction" Value="2" />
+			<Property Name="SqlTriggerType" Value="2" />
+			<Property Name="BodyScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[ 
+BEGIN TRY
+		UPDATE a
+		SET a.EditDate = getdate()
+		FROM 
+			[repository].Servers a 
+			join deleted d ON d.ServerId = a.ServerId
+END TRY
+	BEGIN CATCH
+
+	if @@trancount > 0
+	rollback;
+
+	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+		@schemaName = 'repository',
+		@tableName = 'Servers', 
+		@columnName = null,
+		@columnId = null 
+END CATCH]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[repository].[Servers]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[Servers].[ServerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[Servers].[ServerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[Servers].[EditDate]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+			</Relationship>
+			<Relationship Name="Parent">
+				<Entry>
+					<References Name="[repository].[Servers]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Offset" Value="3623" />
+				<Property Name="CreateOffset" Value="4" />
+				<Property Name="Length" Value="464" />
+				<Property Name="StartLine" Value="127" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;&#xD;&#xA;CREATE TRIGGER [repository].[After_U_Server_trg]&#xD;&#xA;ON [repository].[Servers]&#xD;&#xA;AFTER UPDATE&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlDmlTrigger" Name="[repository].[After_U_System_trg]">
+			<Property Name="IsUpdateTrigger" Value="True" />
+			<Property Name="UpdateOrderRestriction" Value="2" />
+			<Property Name="SqlTriggerType" Value="2" />
+			<Property Name="BodyScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[ 
+BEGIN TRY
+		UPDATE a
+		SET a.EditDate = getdate()
+		FROM 
+			[repository].Systems a 
+			JOIN deleted d ON d.SystemId = a.SystemId
+END TRY
+	BEGIN CATCH
+
+	if @@trancount > 0
+	rollback
+
+	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+		@schemaName = 'repository',
+		@tableName = 'Systems', 
+		@columnName = null,
+		@columnId = null 
+END CATCH]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[repository].[Systems]" />
+				</Entry>
+				<Entry>
+					<References Name="[repository].[Systems].[SystemId]" />
+				</Entry>
+				<Entry>
 					<References Name="[repository].[Systems].[SystemId]" />
 				</Entry>
 				<Entry>
@@ -7091,10 +7432,10 @@ END CATCH]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Offset" Value="930" />
+				<Property Name="Offset" Value="2220" />
 				<Property Name="CreateOffset" Value="2" />
-				<Property Name="Length" Value="1228" />
-				<Property Name="StartLine" Value="24" />
+				<Property Name="Length" Value="461" />
+				<Property Name="StartLine" Value="82" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="&#xD;&#xA;CREATE TRIGGER [repository].[After_U_System_trg]&#xD;&#xA;ON [repository].[Systems]&#xD;&#xA;AFTER UPDATE&#xD;&#xA;AS" />
 			</Annotation>
@@ -7120,11 +7461,11 @@ DECLARE
 	@return_val int = NULL
 	IF @Param1 < getdate()
 		begin 
-		SELECT @return_val = 1
+		SELECT @return_val = 0
 		END 
 	ELSE 
 	    begin 
-		SELECT @return_val = 0
+		SELECT @return_val = 1
 		END 
 	RETURN @return_val;
 END]]></Value>
@@ -7241,7 +7582,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="23" />
+						<AttachedAnnotation Disambiguator="39" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -7280,7 +7621,7 @@ END]]></Value>
 					<References Name="[repository]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="51" />
+			<AttachedAnnotation Disambiguator="61" />
 		</Element>
 		<Element Type="SqlTable" Name="[repository].[Servers]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -7299,7 +7640,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="31" />
+						<AttachedAnnotation Disambiguator="25" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -7495,7 +7836,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="32" />
+						<AttachedAnnotation Disambiguator="26" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -7513,7 +7854,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="33" />
+						<AttachedAnnotation Disambiguator="27" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -7530,7 +7871,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="34" />
+						<AttachedAnnotation Disambiguator="28" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -7584,12 +7925,12 @@ END]]></Value>
 					<References Name="[repository]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="54" />
-			<AttachedAnnotation Disambiguator="8" />
+			<AttachedAnnotation Disambiguator="55" />
 			<AttachedAnnotation Disambiguator="9" />
 			<AttachedAnnotation Disambiguator="10" />
-			<AttachedAnnotation Disambiguator="46" />
-			<AttachedAnnotation Disambiguator="47" />
+			<AttachedAnnotation Disambiguator="11" />
+			<AttachedAnnotation Disambiguator="42" />
+			<AttachedAnnotation Disambiguator="43" />
 		</Element>
 		<Element Type="SqlIndex" Name="[repository].[Servers].[IX_Servers_CountryId]">
 			<Relationship Name="ColumnSpecifications">
@@ -7644,7 +7985,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="35" />
+						<AttachedAnnotation Disambiguator="37" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -7760,7 +8101,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="36" />
+						<AttachedAnnotation Disambiguator="38" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -7814,8 +8155,8 @@ END]]></Value>
 					<References Name="[repository]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="55" />
-			<AttachedAnnotation Disambiguator="48" />
+			<AttachedAnnotation Disambiguator="60" />
+			<AttachedAnnotation Disambiguator="49" />
 		</Element>
 		<Element Type="SqlIndex" Name="[repository].[Systems].[IX_Systems_SystemId]">
 			<Relationship Name="ColumnSpecifications">
@@ -8394,6 +8735,16 @@ END CATCH]]></Value>
 				</Entry>
 			</Relationship>
 		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[audit].[Servers].[NEW_RecServerId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Identity reconciliation of data.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[audit].[Servers].[NEW_RecServerId]" />
+				</Entry>
+			</Relationship>
+		</Element>
 		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[audit].[Servers].[NEW_SerialNumber].[MS_Description]">
 			<Property Name="Value">
 				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Serial number of the server']]></Value>
@@ -8511,6 +8862,16 @@ END CATCH]]></Value>
 			<Relationship Name="Host">
 				<Entry>
 					<References Name="[audit].[Servers].[OLD_RAM]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[audit].[Servers].[OLD_RecServerId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Identity reconciliation of data.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[audit].[Servers].[OLD_RecServerId]" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -8634,6 +8995,16 @@ END CATCH]]></Value>
 				</Entry>
 			</Relationship>
 		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[audit].[Systems].[NEW_RecSystemId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Identity reconciliation of data.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[audit].[Systems].[NEW_RecSystemId]" />
+				</Entry>
+			</Relationship>
+		</Element>
 		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[audit].[Systems].[NEW_TechSupport].[MS_Description]">
 			<Property Name="Value">
 				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Flag informing that there is support for the system. Default value is false.  ']]></Value>
@@ -8681,6 +9052,16 @@ END CATCH]]></Value>
 			<Relationship Name="Host">
 				<Entry>
 					<References Name="[audit].[Systems].[OLD_Name]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[audit].[Systems].[OLD_RecSystemId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Identity reconciliation of data.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[audit].[Systems].[OLD_RecSystemId]" />
 				</Entry>
 			</Relationship>
 		</Element>

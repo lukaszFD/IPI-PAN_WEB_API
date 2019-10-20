@@ -9,13 +9,14 @@
     [Description]     NVARCHAR (200)   NULL,
     [Type]            CHAR (1)         NOT NULL,
     [PasswordExpires] DATE         NULL,
-    [Tofix]           AS               ([repository].[CheckDate]([PasswordExpires])),
+    [Tofix]           int null,
     [CreationDate]    DATETIME         DEFAULT (getdate()) NOT NULL,
     [EditDate]        DATETIME         NULL,
     [DeleteDate]      DATETIME         NULL,
     [RecAccountId]    INT              NULL,
     PRIMARY KEY CLUSTERED ([AccountId] ASC),
     CHECK ([Type]='D' OR [Type]='U'),
+	CHECK ([Tofix]=(0) OR [Tofix]=(1)),
     FOREIGN KEY ([CountryId]) REFERENCES [repository].[CountryRegion] ([CountryId]),
     FOREIGN KEY ([RecAccountId]) REFERENCES [recon].[Accounts] ([RecAccountId]),
     FOREIGN KEY ([ServerId]) REFERENCES [repository].[Servers] ([ServerId]),
@@ -88,12 +89,11 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Identity re
 
 GO
 
-CREATE TRIGGER [repository].[After_U_Accounts_trg]
+CREATE TRIGGER [repository].[After_U_AuditAccounts_trg]
 ON [repository].[Accounts]
 AFTER UPDATE
 AS 
 BEGIN TRY
-	BEGIN TRAN aud
 	   INSERT INTO [GlobalRepository].[audit].[Accounts]
 	   (   
 		  [DateFrom],
@@ -147,17 +147,10 @@ BEGIN TRY
 		FROM 
 			[repository].Accounts a 
 			JOIN  deleted d ON d.AccountId = a.AccountId
-	COMMIT TRAN aud
-
-	BEGIN TRAN upd
-		UPDATE a
-		SET a.EditDate = getdate()
-		FROM 
-			[repository].Accounts a 
-			JOIN deleted d ON d.AccountId = a.AccountId
-	COMMIT TRAN upd
 END TRY
-	BEGIN CATCH
+BEGIN CATCH
+
+
 			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
 				@schemaName = 'repository',
 				@tableName = 'Accounts', 
@@ -166,5 +159,31 @@ END TRY
 END CATCH
 
 GO
-EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_Accounts_trg]', @order = N'first', @stmttype = N'update';
+EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_AuditAccounts_trg]', @order = N'first', @stmttype = N'update';
+go
 
+CREATE TRIGGER [repository].[After_U_Accounts_trg]
+ON [repository].[Accounts]
+AFTER UPDATE
+AS 
+BEGIN TRY
+		UPDATE a
+		SET a.EditDate = getdate()
+		FROM 
+			[repository].Accounts a 
+			JOIN deleted d ON d.AccountId = a.AccountId
+END TRY
+BEGIN CATCH
+
+	if @@trancount > 0
+	rollback;
+
+			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+				@schemaName = 'repository',
+				@tableName = 'Accounts', 
+				@columnName = null,
+				@columnId = null 
+END CATCH
+
+GO
+EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_Accounts_trg]', @order = N'last', @stmttype = N'update';

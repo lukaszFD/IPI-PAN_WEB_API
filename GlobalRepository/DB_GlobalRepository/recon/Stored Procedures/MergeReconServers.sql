@@ -21,6 +21,7 @@ BEGIN TRY
 			,s.[HardDisk]
 			,s.[UPS]
 			,s.[AntivirusSoftware]
+			,s.[RecServerId]
 		FROM 
 			[GlobalRepository].[recon].[Servers] AS s 
 			LEFT JOIN repository.CountryRegion cr ON s.CountryRegionCode = cr.CountryRegionCode
@@ -40,7 +41,8 @@ BEGIN TRY
 				target.[RAM] = source.[RAM],
 				target.[HardDisk] = source.[HardDisk],
 				target.[UPS] = source.[UPS],
-				target.[AntivirusSoftware] = source.[AntivirusSoftware];
+				target.[AntivirusSoftware] = source.[AntivirusSoftware],
+				target.[RecServerId] = source.[RecServerId];
 	COMMIT TRAN merge_recon;
 
 	BEGIN TRAN upd_recon

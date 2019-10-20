@@ -15,6 +15,7 @@ BEGIN TRY
 			,s.[Name]
 			,s.[Version]
 			,s.[TechSupportExpDate]
+			,s.[RecSystemId]
 		FROM 
 			[GlobalRepository].[recon].[Systems] AS s 
 		WHERE 
@@ -26,7 +27,8 @@ BEGIN TRY
 				target.[CompanyName] = source.[CompanyName],
 				target.[Name] = source.[Name],
 				target.[Version] = source.[Version],
-				target.[TechSupportExpDate] = source.[TechSupportExpDate];
+				target.[TechSupportExpDate] = source.[TechSupportExpDate],
+				target.[RecSystemId] = source.[RecSystemId];
 	COMMIT TRAN merge_recon;
 
 	BEGIN TRAN upd_recon

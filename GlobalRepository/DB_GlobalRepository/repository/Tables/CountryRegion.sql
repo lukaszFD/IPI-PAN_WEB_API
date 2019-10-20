@@ -8,9 +8,6 @@
     PRIMARY KEY CLUSTERED ([CountryId] ASC)
 );
 
-
-
-
 GO
 CREATE TRIGGER [repository].[After_U_CountryRegion_trg]
 ON [repository].[CountryRegion]

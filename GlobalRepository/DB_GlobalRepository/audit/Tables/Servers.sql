@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [audit].[Servers] (
-    [AudID]                      INT              IDENTITY (1, 1) NOT NULL,
+    [AudID]                      INT              IDENTITY (1, 1) NOT NULL primary key,
     [UserName]                   NVARCHAR (100)   DEFAULT (stuff(suser_sname(),(1),charindex('\',suser_sname()),'')) NULL,
     [DateFrom]                   DATETIME         NOT NULL,
     [DateTo]                     DATETIME         DEFAULT (getdate()) NULL,
@@ -28,7 +28,9 @@
     [NEW_UPS]                    CHAR (1)         NULL,
     [OLD_UPS]                    CHAR (1)         NULL,
     [NEW_AntivirusSoftware]      CHAR (1)         NULL,
-    [OLD_AntivirusSoftware]      CHAR (1)         NULL
+    [OLD_AntivirusSoftware]      CHAR (1)         NULL,
+	[NEW_RecServerId] int NULL,
+	[OLD_RecServerId] int NULL
 );
 
 
@@ -129,23 +131,6 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Old value -
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'New value - Server name.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'NEW_Name';
 
-
-GO
-
-
-
-GO
-
-
-
-GO
-
-
-
-GO
-
-
-
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date to', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'DateTo';
 
@@ -168,4 +153,10 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Unique id f
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication for [repository].[Servers] table.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'ExternalId';
+go
 
+EXECUTE sys.sp_addextendedproperty @name=N'MS_Description', @value=N'New value - Identity reconciliation of data.' , @level0type=N'SCHEMA',@level0name=N'audit', @level1type=N'TABLE',@level1name=N'Servers', @level2type=N'COLUMN',@level2name=N'NEW_RecServerId'
+GO
+
+EXECUTE sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Old value - Identity reconciliation of data.' , @level0type=N'SCHEMA',@level0name=N'audit', @level1type=N'TABLE',@level1name=N'Servers', @level2type=N'COLUMN',@level2name=N'OLD_RecServerId'
+GO

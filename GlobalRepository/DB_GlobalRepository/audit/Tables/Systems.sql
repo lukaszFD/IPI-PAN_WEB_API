@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [audit].[Systems] (
-    [AudID]                  INT              IDENTITY (1, 1) NOT NULL,
+    [AudID]                  INT              IDENTITY (1, 1) NOT NULL primary key,
     [UserName]               NVARCHAR (100)   DEFAULT (stuff(suser_sname(),(1),charindex('\',suser_sname()),'')) NULL,
     [DateFrom]               DATETIME         NOT NULL,
     [DateTo]                 DATETIME         DEFAULT (getdate()) NULL,
@@ -14,7 +14,9 @@
     [NEW_TechSupport]        CHAR (1)         NULL,
     [OLD_TechSupport]        CHAR (1)         NULL,
     [NEW_TechSupportExpDate] DATE             NULL,
-    [OLD_TechSupportExpDate] DATE             NULL
+    [OLD_TechSupportExpDate] DATE             NULL,
+	[NEW_RecSystemId] int NULL,
+	[OLD_RecSystemId] int NULL
 );
 
 
@@ -61,22 +63,6 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'New value -
 
 
 GO
-
-
-
-GO
-
-
-
-GO
-
-
-
-GO
-
-
-
-GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date to', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Systems', @level2type = N'COLUMN', @level2name = N'DateTo';
 
 
@@ -98,4 +84,12 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Unique id f
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication for [repository].[Systems] table.', @level0type = N'SCHEMA', @level0name = N'audit', @level1type = N'TABLE', @level1name = N'Systems', @level2type = N'COLUMN', @level2name = N'ExternalId';
+go 
+
+EXECUTE sp_addextendedproperty @name=N'MS_Description', @value=N'New value - Identity reconciliation of data.' , @level0type=N'SCHEMA',@level0name=N'audit', @level1type=N'TABLE',@level1name=N'Systems', @level2type=N'COLUMN',@level2name=N'NEW_RecSystemId'
+GO
+
+EXECUTE sp_addextendedproperty @name=N'MS_Description', @value=N'Old value - Identity reconciliation of data.' , @level0type=N'SCHEMA',@level0name=N'audit', @level1type=N'TABLE',@level1name=N'Systems', @level2type=N'COLUMN',@level2name=N'OLD_RecSystemId'
+GO
+
 
