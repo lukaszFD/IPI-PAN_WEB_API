@@ -10,12 +10,6 @@
     CHECK ([Type]='A' OR [Type]='N')
 );
 
-
-GO
-CREATE NONCLUSTERED INDEX [IX_Users_UserGUID]
-    ON [gr_user].[Users]([ExternalId] ASC);
-
-
 GO
 CREATE TRIGGER gr_user.After_U_Users_trg
 ON gr_user.[Users]

@@ -2,6 +2,7 @@ C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalReposito
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\bin\Debug\DB_GlobalRepository.dll
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\bin\Debug\DB_GlobalRepository.pdb
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\bin\Debug\master.dacpac
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\DB_GlobalRepository.sqlprojAssemblyReference.cache
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\Model.xml
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\refactor.xml
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\postdeploy.sql
@@ -9,4 +10,3 @@ C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalReposito
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\DB_GlobalRepository.sqlproj.CopyComplete
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\DB_GlobalRepository.dll
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\DB_GlobalRepository.pdb
-C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\DB_GlobalRepository.sqlprojAssemblyReference.cache
