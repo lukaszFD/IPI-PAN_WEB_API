@@ -25,15 +25,6 @@
     FOREIGN KEY ([RecServerId]) REFERENCES [recon].[Servers] ([RecServerId])
 );
 
-GO
-CREATE NONCLUSTERED INDEX [IX_Servers_ServerId]
-    ON [repository].[Servers]([ServerId] ASC);
-
-
-GO
-CREATE NONCLUSTERED INDEX [IX_Servers_CountryId]
-    ON [repository].[Servers]([CountryId] ASC);
-
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'ExternalId';
@@ -108,12 +99,13 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Identity re
 
 go
 
-CREATE TRIGGER [repository].[After_U_AuditServer_trg]
+CREATE TRIGGER [repository].After_U_Server_trg
 ON [repository].[Servers]
 AFTER UPDATE
 AS 
 BEGIN TRY
-		INSERT INTO [GlobalRepository].[audit].[Servers]
+begin tran aud
+		INSERT INTO [audit].[Servers]
 		(
 		    [DateFrom],
 		    [ExternalId],
@@ -179,41 +171,22 @@ BEGIN TRY
 		FROM 
 			[repository].[Servers] s
 			JOIN  deleted d ON d.[ServerId] = s.[ServerId]
-END TRY
-	BEGIN CATCH
+commit tran aud 
 
-	if @@trancount > 0
-	rollback;
-
-	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
-		@schemaName = 'repository',
-		@tableName = 'Servers', 
-		@columnName = null,
-		@columnId = null 
-END CATCH
-go
-
-EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_AuditServer_trg]', @order = N'first', @stmttype = N'update';
-go
-
-
-CREATE TRIGGER [repository].[After_U_Server_trg]
-ON [repository].[Servers]
-AFTER UPDATE
-AS 
-BEGIN TRY
+begin tran upd
 		UPDATE a
 		SET a.EditDate = getdate()
 		FROM 
 			[repository].Servers a 
 			join deleted d ON d.ServerId = a.ServerId
+commit tran upd
 END TRY
 	BEGIN CATCH
 
 	if @@trancount > 0
 	rollback;
 
-	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+	EXECUTE [error].[AddErrorMessage] 
 		@schemaName = 'repository',
 		@tableName = 'Servers', 
 		@columnName = null,
@@ -221,5 +194,5 @@ END TRY
 END CATCH
 go
 
-EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_Server_trg]', @order = N'last', @stmttype = N'update';
+EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_Server_trg]', @order = N'first', @stmttype = N'update';
 go

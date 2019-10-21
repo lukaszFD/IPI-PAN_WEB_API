@@ -89,12 +89,13 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Identity re
 
 GO
 
-CREATE TRIGGER [repository].[After_U_AuditAccounts_trg]
+CREATE TRIGGER [repository].[After_U_Accounts_trg]
 ON [repository].[Accounts]
 AFTER UPDATE
 AS 
 BEGIN TRY
-	   INSERT INTO [GlobalRepository].[audit].[Accounts]
+begin tran aud
+	   INSERT INTO [audit].[Accounts]
 	   (   
 		  [DateFrom],
 		  [ExternalId],
@@ -147,38 +148,20 @@ BEGIN TRY
 		FROM 
 			[repository].Accounts a 
 			JOIN  deleted d ON d.AccountId = a.AccountId
-END TRY
-BEGIN CATCH
+commit tran aud 
 
-
-			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
-				@schemaName = 'repository',
-				@tableName = 'Accounts', 
-				@columnName = null,
-				@columnId = null 
-END CATCH
-
-GO
-EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_AuditAccounts_trg]', @order = N'first', @stmttype = N'update';
-go
-
-CREATE TRIGGER [repository].[After_U_Accounts_trg]
-ON [repository].[Accounts]
-AFTER UPDATE
-AS 
-BEGIN TRY
+begin tran upd
 		UPDATE a
 		SET a.EditDate = getdate()
 		FROM 
 			[repository].Accounts a 
 			JOIN deleted d ON d.AccountId = a.AccountId
+commit tran upd
 END TRY
 BEGIN CATCH
 
-	if @@trancount > 0
-	rollback;
 
-			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+			EXECUTE [error].[AddErrorMessage] 
 				@schemaName = 'repository',
 				@tableName = 'Accounts', 
 				@columnName = null,
@@ -186,4 +169,5 @@ BEGIN CATCH
 END CATCH
 
 GO
-EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_Accounts_trg]', @order = N'last', @stmttype = N'update';
+EXECUTE sp_settriggerorder @triggername = N'[repository].[After_U_Accounts_trg]', @order = N'first', @stmttype = N'update';
+go

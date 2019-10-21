@@ -122,6 +122,7 @@
     <Folder Include="recon\Stored Procedures\" />
     <Folder Include="service\" />
     <Folder Include="service\Stored Procedures\" />
+    <Folder Include="service\Views\" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\110\SqlSchemas\master.dacpac">
@@ -172,10 +173,6 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
     <Build Include="documentation\Views\views.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="documentation\Views\foreign_keys.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
@@ -258,6 +255,14 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
     <Build Include="Security\service.sql" />
+    <Build Include="service\Views\Indexes.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="service\Views\foreign_keys.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
   </ItemGroup>
   <ItemGroup>
     <None Include="GlobalRepository.publish.xml" />
