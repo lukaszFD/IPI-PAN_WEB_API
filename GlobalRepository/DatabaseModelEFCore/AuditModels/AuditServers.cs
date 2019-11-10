@@ -5,17 +5,16 @@ namespace DatabaseModelEFCore.AuditModels
 {
     public partial class AuditServers
     {
+        public Guid ServerExId { get; set; }
         public string UserName { get; set; }
         public DateTime DateFrom { get; set; }
         public DateTime? DateTo { get; set; }
-        public Guid ExternalId { get; set; }
-        public int ServerId { get; set; }
         public string NewName { get; set; }
         public string OldName { get; set; }
         public string NewHost { get; set; }
         public string OldHost { get; set; }
-        public int? NewCountryId { get; set; }
-        public int? OldCountryId { get; set; }
+        public string NewCountryRegionCode { get; set; }
+        public string OldCountryRegionCode { get; set; }
         public string NewModel { get; set; }
         public string OldModel { get; set; }
         public int? NewSerialNumber { get; set; }

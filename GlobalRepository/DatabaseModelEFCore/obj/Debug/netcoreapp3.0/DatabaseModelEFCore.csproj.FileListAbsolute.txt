@@ -7,4 +7,3 @@ C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DatabaseModelEFCo
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DatabaseModelEFCore\bin\Debug\netcoreapp3.0\DatabaseModelEFCore.pdb
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DatabaseModelEFCore\obj\Debug\netcoreapp3.0\DatabaseModelEFCore.dll
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DatabaseModelEFCore\obj\Debug\netcoreapp3.0\DatabaseModelEFCore.pdb
-C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DatabaseModelEFCore\obj\Debug\netcoreapp3.0\DatabaseModelEFCore.csprojAssemblyReference.cache
