@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Tables "repository.Accounts", "repository.Servers", "repository.Systems", "recon.Accounts", "recon.Servers", "recon.Systems"
