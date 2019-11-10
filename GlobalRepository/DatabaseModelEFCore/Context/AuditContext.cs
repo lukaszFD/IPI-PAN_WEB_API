@@ -41,7 +41,9 @@ namespace DatabaseModelEFCore.Context
 
                 entity.Property(e => e.DateTo).HasColumnType("datetime");
 
-                entity.Property(e => e.NewCountryId).HasColumnName("NEW_CountryId");
+                entity.Property(e => e.NewCountryRegionCode)
+                    .HasColumnName("NEW_CountryRegionCode")
+                    .HasMaxLength(3);
 
                 entity.Property(e => e.NewDescription)
                     .HasColumnName("NEW_Description")
@@ -56,9 +58,9 @@ namespace DatabaseModelEFCore.Context
                     .HasColumnName("NEW_PasswordExpires")
                     .HasColumnType("datetime");
 
-                entity.Property(e => e.NewServerId).HasColumnName("NEW_ServerId");
+                entity.Property(e => e.NewServerExId).HasColumnName("NEW_ServerExId");
 
-                entity.Property(e => e.NewSystemId).HasColumnName("NEW_SystemId");
+                entity.Property(e => e.NewSystemExId).HasColumnName("NEW_SystemExId");
 
                 entity.Property(e => e.NewTofix)
                     .HasColumnName("NEW_Tofix")
@@ -74,7 +76,9 @@ namespace DatabaseModelEFCore.Context
 
                 entity.Property(e => e.NewUserId).HasColumnName("NEW_UserId");
 
-                entity.Property(e => e.OldCountryId).HasColumnName("OLD_CountryId");
+                entity.Property(e => e.OldCountryRegionCode)
+                    .HasColumnName("OLD_CountryRegionCode")
+                    .HasMaxLength(3);
 
                 entity.Property(e => e.OldDescription)
                     .HasColumnName("OLD_Description")
@@ -89,9 +93,7 @@ namespace DatabaseModelEFCore.Context
                     .HasColumnName("OLD_PasswordExpires")
                     .HasColumnType("datetime");
 
-                entity.Property(e => e.OldServerId).HasColumnName("OLD_ServerId");
-
-                entity.Property(e => e.OldSystemId).HasColumnName("OLD_SystemId");
+                entity.Property(e => e.OldServerExId).HasColumnName("OLD_ServerExId");
 
                 entity.Property(e => e.OldTofix)
                     .HasColumnName("OLD_Tofix")
@@ -106,6 +108,8 @@ namespace DatabaseModelEFCore.Context
                     .IsFixedLength();
 
                 entity.Property(e => e.OldUserId).HasColumnName("OLD_UserId");
+
+                entity.Property(e => e.OldsystemExId).HasColumnName("OLDSystemExId");
 
                 entity.Property(e => e.UserName).HasMaxLength(100);
             });
@@ -126,7 +130,9 @@ namespace DatabaseModelEFCore.Context
                     .IsUnicode(false)
                     .IsFixedLength();
 
-                entity.Property(e => e.NewCountryId).HasColumnName("NEW_CountryId");
+                entity.Property(e => e.NewCountryRegionCode)
+                    .HasColumnName("NEW_CountryRegionCode")
+                    .HasMaxLength(3);
 
                 entity.Property(e => e.NewCputype).HasColumnName("NEW_CPUType");
 
@@ -174,7 +180,9 @@ namespace DatabaseModelEFCore.Context
                     .IsUnicode(false)
                     .IsFixedLength();
 
-                entity.Property(e => e.OldCountryId).HasColumnName("OLD_CountryId");
+                entity.Property(e => e.OldCountryRegionCode)
+                    .HasColumnName("OLD_CountryRegionCode")
+                    .HasMaxLength(3);
 
                 entity.Property(e => e.OldCputype).HasColumnName("OLD_CPUType");
 

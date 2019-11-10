@@ -5,19 +5,19 @@ namespace DatabaseModelEFCore.AuditModels
 {
     public partial class AuditAccounts
     {
+        public Guid AccountExId { get; set; }
         public string UserName { get; set; }
         public DateTime DateFrom { get; set; }
         public DateTime? DateTo { get; set; }
-        public Guid ExternalId { get; set; }
         public int AccountId { get; set; }
-        public int? NewCountryId { get; set; }
-        public int? OldCountryId { get; set; }
+        public string NewCountryRegionCode { get; set; }
+        public string OldCountryRegionCode { get; set; }
         public int? NewUserId { get; set; }
         public int? OldUserId { get; set; }
-        public int? NewSystemId { get; set; }
-        public int? OldSystemId { get; set; }
-        public int? NewServerId { get; set; }
-        public int? OldServerId { get; set; }
+        public Guid? NewSystemExId { get; set; }
+        public Guid? OldsystemExId { get; set; }
+        public Guid? NewServerExId { get; set; }
+        public Guid? OldServerExId { get; set; }
         public string NewName { get; set; }
         public string OldName { get; set; }
         public string NewDescription { get; set; }
