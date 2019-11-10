@@ -4,6 +4,7 @@
 
 
 
+
 CREATE PROCEDURE [error].[CheckReconAccounts]
 AS
 
@@ -12,7 +13,7 @@ BEGIN TRY
 		UPDATE a
 		SET a.[Status] = 'E'
 		FROM 
-			[GlobalRepository].[recon].[Accounts] a 
+			[recon].[Accounts] a 
 		WHERE 
 			(
 			a.AccountExId IS NULL
@@ -34,7 +35,7 @@ BEGIN TRY
 	FOR
 	SELECT [RecAccountId]
 		  ,[ColumnName]
-	FROM [GlobalRepository].[error].[ReconAccounts];
+	FROM [error].[ReconAccounts];
 
 		OPEN cur 
 		FETCH NEXT FROM cur INTO 
@@ -44,7 +45,7 @@ BEGIN TRY
 		WHILE @@FETCH_STATUS = 0
 
 			BEGIN 
-				EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+				EXECUTE [error].[AddErrorMessage] 
 					@schemaName = 'recon',
 					@tableName = 'Accounts', 
 					@columnName = @columnName,
@@ -63,7 +64,7 @@ BEGIN CATCH
 	ROLLBACK TRAN upd_error;
 	ROLLBACK TRAN insert_error;
 
-	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+	EXECUTE [error].[AddErrorMessage] 
 			@schemaName = 'recon',
 			@tableName = 'Accounts', 
 			@columnName = null,

@@ -1,5 +1,6 @@
 ﻿
 
+
 CREATE PROCEDURE [error].[CheckReconSystems]
 AS
 
@@ -8,7 +9,7 @@ BEGIN TRY
 		UPDATE a
 		SET a.[Status] = 'E'
 		FROM 
-			[GlobalRepository].[recon].[Systems] a 
+			[recon].[Systems] a 
 		WHERE 
 			(
 			a.CompanyName IS NULL 
@@ -32,7 +33,7 @@ BEGIN TRY
 			s.[RecSystemId],
 			s.[ColumnName]
 		FROM 
-			[GlobalRepository].[error].[ReconSystems] s;
+			[error].[ReconSystems] s;
 
 			OPEN cur 
 			FETCH NEXT FROM cur INTO 
@@ -42,7 +43,7 @@ BEGIN TRY
 			WHILE @@FETCH_STATUS = 0
 
 				BEGIN 
-					EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+					EXECUTE [error].[AddErrorMessage] 
 						@schemaName = 'recon',
 						@tableName = 'Systems', 
 						@columnName = @columnName,
@@ -61,7 +62,7 @@ BEGIN CATCH
 	ROLLBACK TRAN upd_error;
 	ROLLBACK TRAN insert_error;
 
-	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+	EXECUTE [error].[AddErrorMessage] 
 			@schemaName = 'recon',
 			@tableName = 'Systems', 
 			@columnName = null,

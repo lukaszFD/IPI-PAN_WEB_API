@@ -1,4 +1,5 @@
 ﻿
+
 CREATE PROCEDURE [error].[CheckReconServers]
 AS
 
@@ -7,7 +8,7 @@ BEGIN TRY
 		UPDATE a
 		SET a.[Status] = 'E'
 		FROM 
-			[GlobalRepository].[recon].[Servers] a 
+			[recon].[Servers] a 
 		WHERE 
 			(
 			a.CountryRegionCode IS NULL 
@@ -41,7 +42,7 @@ BEGIN TRY
 			s.[RecServerId],
 			s.[ColumnName]
 		FROM 
-			[GlobalRepository].[error].[ReconServers] s;
+			[error].[ReconServers] s;
 
 			OPEN cur 
 			FETCH NEXT FROM cur INTO 
@@ -51,7 +52,7 @@ BEGIN TRY
 			WHILE @@FETCH_STATUS = 0
 
 				BEGIN 
-					EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+					EXECUTE [error].[AddErrorMessage] 
 						@schemaName = 'recon',
 						@tableName = 'Servers', 
 						@columnName = @columnName,
@@ -70,7 +71,7 @@ BEGIN CATCH
 	ROLLBACK TRAN upd_error;
 	ROLLBACK TRAN insert_error;
 
-	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+	EXECUTE [error].[AddErrorMessage] 
 			@schemaName = 'recon',
 			@tableName = 'Servers', 
 			@columnName = null,
