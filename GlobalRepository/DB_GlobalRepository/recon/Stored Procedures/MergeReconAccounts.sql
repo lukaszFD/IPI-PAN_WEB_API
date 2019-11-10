@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [recon].[MergeReconAccounts]
+﻿
+CREATE PROCEDURE [recon].[MergeReconAccounts]
 AS
 
 BEGIN TRY
@@ -18,7 +19,7 @@ BEGIN TRY
 			,a.[PasswordExpires]
 			,a.RecAccountId
 		FROM 
-			[GlobalRepository].[recon].[Accounts] AS a 
+			[recon].[Accounts] AS a 
 			LEFT JOIN repository.CountryRegion cr ON a.CountryRegionCode = cr.CountryRegionCode
 			LEFT JOIN gr_user.Users u ON u.ExternalId = a.UserExId
 			LEFT JOIN repository.Systems s ON s.ExternalId = a.SystemExId
@@ -56,7 +57,7 @@ BEGIN CATCH
 
 	ROLLBACK TRAN upd_recon;
 
-	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+	EXECUTE [error].[AddErrorMessage] 
 			@schemaName = 'recon',
 			@tableName = 'Accounts', 
 			@columnName = null,

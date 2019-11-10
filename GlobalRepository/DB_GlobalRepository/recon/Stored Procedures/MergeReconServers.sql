@@ -1,5 +1,6 @@
 ﻿
 
+
 CREATE PROCEDURE [recon].[MergeReconServers]
 AS
 
@@ -23,7 +24,7 @@ BEGIN TRY
 			,s.[AntivirusSoftware]
 			,s.[RecServerId]
 		FROM 
-			[GlobalRepository].[recon].[Servers] AS s 
+			[recon].[Servers] AS s 
 			LEFT JOIN repository.CountryRegion cr ON s.CountryRegionCode = cr.CountryRegionCode
 		WHERE 
 			s.STATUS = 'I'
@@ -61,7 +62,7 @@ BEGIN CATCH
 
 	ROLLBACK TRAN upd_recon;
 
-	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+	EXECUTE [error].[AddErrorMessage] 
 			@schemaName = 'recon',
 			@tableName = 'Servers', 
 			@columnName = null,

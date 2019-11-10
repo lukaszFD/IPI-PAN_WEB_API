@@ -1,6 +1,7 @@
 ﻿
 
 
+
 CREATE PROCEDURE [recon].[MergeReconSystems]
 AS
 
@@ -17,7 +18,7 @@ BEGIN TRY
 			,s.[TechSupportExpDate]
 			,s.[RecSystemId]
 		FROM 
-			[GlobalRepository].[recon].[Systems] AS s 
+			[recon].[Systems] AS s 
 		WHERE 
 			s.STATUS = 'I'
 		) AS source ON source.[SystemExId] = target.[ExternalId]
@@ -47,7 +48,7 @@ BEGIN CATCH
 
 	ROLLBACK TRAN upd_recon;
 
-	EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+	EXECUTE [error].[AddErrorMessage] 
 			@schemaName = 'recon',
 			@tableName = 'Systems', 
 			@columnName = null,

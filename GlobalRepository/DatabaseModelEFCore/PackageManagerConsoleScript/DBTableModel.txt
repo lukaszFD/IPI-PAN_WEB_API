@@ -2,3 +2,5 @@
 
 Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir AuditModels -Tables "web.AuditSystems", "web.AuditAccounts", "web.AuditServers" -ContextDir Context -Context AuditContext
 Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir RepositoryModels -Tables "web.Systems", "web.Accounts", "web.Servers" -ContextDir Context -Context RepositoryContext
+
+Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir DocumentationModels -Tables "documentation.views" -ContextDir Context -Context DocumentationContext
