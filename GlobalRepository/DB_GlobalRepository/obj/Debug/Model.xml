@@ -11718,6 +11718,425 @@ SELECT [ExternalId] AS [SystemExId]
 				<Property Name="HeaderContents" Value="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;CREATE VIEW [web].[AuditSystems]&#xD;&#xA;as" />
 			</Annotation>
 		</Element>
+		<Element Type="SqlView" Name="[web].[ReconAccounts]">
+			<Property Name="QueryScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[
+
+SELECT
+	 [AccountExId]
+    ,[CountryRegionCode]
+    ,[UserExId]
+    ,[SystemExId]
+    ,[ServerExId]
+    ,[Name]
+    ,[Description]
+    ,[Type]
+    ,[PasswordExpires]
+FROM 
+	[recon].[Accounts]]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconAccounts].[AccountExId]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Accounts].[AccountExId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconAccounts].[CountryRegionCode]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Accounts].[CountryRegionCode]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconAccounts].[UserExId]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Accounts].[UserExId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconAccounts].[SystemExId]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Accounts].[SystemExId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconAccounts].[ServerExId]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Accounts].[ServerExId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconAccounts].[Name]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Accounts].[Name]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconAccounts].[Description]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Accounts].[Description]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconAccounts].[Type]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Accounts].[Type]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconAccounts].[PasswordExpires]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Accounts].[PasswordExpires]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[recon].[Accounts]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Accounts].[AccountExId]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Accounts].[CountryRegionCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Accounts].[UserExId]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Accounts].[SystemExId]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Accounts].[ServerExId]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Accounts].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Accounts].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Accounts].[Type]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Accounts].[PasswordExpires]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[web]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="239" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW web.ReconAccounts&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[web].[ReconServers]">
+			<Property Name="QueryScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[
+SELECT [ServerExId]
+      ,[Name]
+      ,[Host]
+      ,[CountryRegionCode]
+      ,[Model]
+      ,[SerialNumber]
+      ,[WarrantyExpirationDate]
+      ,[CPUType]
+      ,[RAM]
+      ,[HardDisk]
+      ,[UPS]
+      ,[AntivirusSoftware]
+  FROM [recon].[Servers]]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconServers].[ServerExId]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Servers].[ServerExId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconServers].[Name]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Servers].[Name]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconServers].[Host]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Servers].[Host]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconServers].[CountryRegionCode]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Servers].[CountryRegionCode]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconServers].[Model]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Servers].[Model]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconServers].[SerialNumber]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Servers].[SerialNumber]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconServers].[WarrantyExpirationDate]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Servers].[WarrantyExpirationDate]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconServers].[CPUType]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Servers].[CPUType]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconServers].[RAM]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Servers].[RAM]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconServers].[HardDisk]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Servers].[HardDisk]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconServers].[UPS]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Servers].[UPS]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconServers].[AntivirusSoftware]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Servers].[AntivirusSoftware]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[recon].[Servers]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Servers].[ServerExId]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Servers].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Servers].[Host]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Servers].[CountryRegionCode]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Servers].[Model]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Servers].[SerialNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Servers].[WarrantyExpirationDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Servers].[CPUType]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Servers].[RAM]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Servers].[HardDisk]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Servers].[UPS]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Servers].[AntivirusSoftware]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[web]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="2" />
+				<Property Name="Length" Value="308" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;CREATE VIEW [web].[ReconServers]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[web].[ReconSystems]">
+			<Property Name="QueryScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[
+
+SELECT[SystemExId]
+      ,[CompanyName]
+      ,[Name]
+      ,[Version]
+      ,[TechSupportExpDate]
+  FROM [recon].[Systems]]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconSystems].[SystemExId]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Systems].[SystemExId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconSystems].[CompanyName]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Systems].[CompanyName]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconSystems].[Name]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Systems].[Name]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconSystems].[Version]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Systems].[Version]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[web].[ReconSystems].[TechSupportExpDate]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[recon].[Systems].[TechSupportExpDate]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[recon].[Systems]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Systems].[SystemExId]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Systems].[CompanyName]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Systems].[Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Systems].[Version]" />
+				</Entry>
+				<Entry>
+					<References Name="[recon].[Systems].[TechSupportExpDate]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[web]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="2" />
+				<Property Name="Length" Value="170" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;CREATE VIEW [web].[ReconSystems]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlView" Name="[web].[Servers]">
 			<Property Name="QueryScript">
 				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[

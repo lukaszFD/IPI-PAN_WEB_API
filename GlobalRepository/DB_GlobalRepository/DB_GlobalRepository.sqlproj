@@ -291,6 +291,18 @@
     </Build>
     <Build Include="Security\webUser.sql" />
     <Build Include="Security\web.sql" />
+    <Build Include="web\Views\ReconSystems.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="web\Views\ReconServers.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="web\Views\ReconAccounts.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
   </ItemGroup>
   <ItemGroup>
     <None Include="GlobalRepository.publish.xml" />

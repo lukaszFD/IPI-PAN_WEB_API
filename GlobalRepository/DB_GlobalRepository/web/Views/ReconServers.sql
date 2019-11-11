@@ -1,0 +1,16 @@
+﻿
+CREATE VIEW [web].[ReconServers]
+AS
+SELECT [ServerExId]
+      ,[Name]
+      ,[Host]
+      ,[CountryRegionCode]
+      ,[Model]
+      ,[SerialNumber]
+      ,[WarrantyExpirationDate]
+      ,[CPUType]
+      ,[RAM]
+      ,[HardDisk]
+      ,[UPS]
+      ,[AntivirusSoftware]
+  FROM [recon].[Servers]
