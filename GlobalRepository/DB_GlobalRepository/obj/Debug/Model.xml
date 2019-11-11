@@ -10537,6 +10537,1196 @@ and index_id > 0]]></Value>
 				</Entry>
 			</Relationship>
 		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Accounts].[AccountExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The identifier transmitted in web communication.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Accounts].[AccountExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Accounts].[CountryRegionCode].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Account location - country code.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Accounts].[CountryRegionCode]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Accounts].[Description].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Short description of the account. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Accounts].[Description]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Accounts].[Name].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Account name. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Accounts].[Name]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Accounts].[PasswordExpires].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Password expiration date. Accounts that have invalid passwords have the Tofix flag set to Y.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Accounts].[PasswordExpires]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Accounts].[ServerExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Server ExID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Accounts].[ServerExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Accounts].[SystemExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'System ExID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Accounts].[SystemExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Accounts].[Tofix].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Flag indicating accounts that have missing attributes. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Accounts].[Tofix]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Accounts].[Type].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Account type. U - user account, D - database account. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Accounts].[Type]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Accounts].[UserId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'User ExID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Accounts].[UserId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[AccountExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The identifier transmitted in web communication .']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[AccountExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[DateFrom].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Date From']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[DateFrom]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[DateTo].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Date to']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[DateTo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[NEW_CountryRegionCode].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Account location - country code.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[NEW_CountryRegionCode]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[NEW_Description].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Short description of the account. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[NEW_Description]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[NEW_Name].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Account name. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[NEW_Name]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[NEW_PasswordExpires].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Password expiration date. Accounts that have invalid passwords have the Tofix flag set to Y.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[NEW_PasswordExpires]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[NEW_ServerExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Server ExID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[NEW_ServerExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[NEW_SystemExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - System ExID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[NEW_SystemExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[NEW_Tofix].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Flag indicating Accounts that have missing attributes. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[NEW_Tofix]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[NEW_Type].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Account type. U - user account, D - database account. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[NEW_Type]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[NEW_UserId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - User ExID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[NEW_UserId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[OLD_CountryRegionCode].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Account location - country code.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[OLD_CountryRegionCode]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[OLD_Description].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Short description of the account. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[OLD_Description]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[OLD_Name].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Account name. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[OLD_Name]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[OLD_PasswordExpires].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Password expiration date. Accounts that have invalid passwords have the Tofix flag set to Y.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[OLD_PasswordExpires]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[OLD_ServerExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Server ExID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[OLD_ServerExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[OLD_SystemExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - System ExID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[OLD_SystemExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[OLD_Tofix].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Flag indicating Accounts that have missing attributes. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[OLD_Tofix]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[OLD_Type].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Account type. U - user account, D - database account. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[OLD_Type]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[OLD_UserId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - User ExID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[OLD_UserId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditAccounts].[UserName].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The user who made the change ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditAccounts].[UserName]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[DateFrom].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Date From']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[DateFrom]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[DateTo].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Date to']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[DateTo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[NEW_AntivirusSoftware].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Anti-virus software. default value is false. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[NEW_AntivirusSoftware]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[NEW_CountryRegionCode].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Server location - country code.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[NEW_CountryRegionCode]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[NEW_CPUType].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Processor type ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[NEW_CPUType]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[NEW_HardDisk].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - The type of disk used on the server. D - normal drive, S - SSD']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[NEW_HardDisk]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[NEW_Host].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Server host name.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[NEW_Host]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[NEW_Model].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Server model.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[NEW_Model]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[NEW_Name].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Server name.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[NEW_Name]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[NEW_RAM].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Number of ram memories on the server (MB)']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[NEW_RAM]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[NEW_SerialNumber].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Serial number of the server']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[NEW_SerialNumber]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[NEW_TechSupport].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Technical support for the server. The default value is false. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[NEW_TechSupport]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[NEW_UPS].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Security of the server in elenctic energy. The default value is false. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[NEW_UPS]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[NEW_WarrantyExpirationDate].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Warranty expiration date. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[NEW_WarrantyExpirationDate]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[OLD_AntivirusSoftware].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Anti-virus software. default value is false. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[OLD_AntivirusSoftware]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[OLD_CountryRegionCode].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Server location - country code.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[OLD_CountryRegionCode]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[OLD_CPUType].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Processor type ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[OLD_CPUType]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[OLD_HardDisk].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - The type of disk used on the server. D - normal drive, S - SSD']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[OLD_HardDisk]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[OLD_Host].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Server host name.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[OLD_Host]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[OLD_Model].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Server model.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[OLD_Model]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[OLD_Name].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Server name.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[OLD_Name]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[OLD_RAM].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Number of ram memories on the server (MB)']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[OLD_RAM]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[OLD_SerialNumber].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Serial number of the server']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[OLD_SerialNumber]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[OLD_TechSupport].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Technical support for the server. The default value is false. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[OLD_TechSupport]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[OLD_UPS].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Security of the server in elenctic energy. The default value is false. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[OLD_UPS]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[OLD_WarrantyExpirationDate].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Warranty expiration date. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[OLD_WarrantyExpirationDate]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[ServerExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Server ExID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[ServerExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditServers].[UserName].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The user who made the change ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditServers].[UserName]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditSystems].[DateFrom].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Date From']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditSystems].[DateFrom]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditSystems].[DateTo].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Date to']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditSystems].[DateTo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditSystems].[NEW_CompanyName].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Name of the system provider']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditSystems].[NEW_CompanyName]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditSystems].[NEW_Name].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - System name']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditSystems].[NEW_Name]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditSystems].[NEW_TechSupport].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Flag informing that there is support for the system. Default value is false.  ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditSystems].[NEW_TechSupport]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditSystems].[NEW_TechSupportExpDate].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - Expiry date of support for the system ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditSystems].[NEW_TechSupportExpDate]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditSystems].[NEW_Version].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'New value - System version']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditSystems].[NEW_Version]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditSystems].[OLD_CompanyName].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Name of the system provider']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditSystems].[OLD_CompanyName]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditSystems].[OLD_Name].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - System name']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditSystems].[OLD_Name]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditSystems].[OLD_TechSupport].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Flag informing that there is support for the system. Default value is false.  ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditSystems].[OLD_TechSupport]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditSystems].[OLD_TechSupportExpDate].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - Expiry date of support for the system ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditSystems].[OLD_TechSupportExpDate]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditSystems].[OLD_Version].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Old value - System version']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditSystems].[OLD_Version]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditSystems].[SystemExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'System ExID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditSystems].[SystemExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[AuditSystems].[UserName].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The user who made the change ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[AuditSystems].[UserName]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconAccounts].[AccountExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The identifier transmitted in web communication.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconAccounts].[AccountExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconAccounts].[CountryRegionCode].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Account location - country code.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconAccounts].[CountryRegionCode]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconAccounts].[Description].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Short description of the account.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconAccounts].[Description]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconAccounts].[Name].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Account name.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconAccounts].[Name]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconAccounts].[PasswordExpires].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Password expiration date. Accounts that have invalid passwords have the Tofix flag set to Y.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconAccounts].[PasswordExpires]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconAccounts].[ServerExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Server ExID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconAccounts].[ServerExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconAccounts].[SystemExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'System ExID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconAccounts].[SystemExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconAccounts].[Type].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Account type. U - user account, D - database account.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconAccounts].[Type]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconAccounts].[UserExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'User ExID on a database.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconAccounts].[UserExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconServers].[AntivirusSoftware].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Anti-virus software.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconServers].[AntivirusSoftware]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconServers].[CountryRegionCode].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Account location - country code.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconServers].[CountryRegionCode]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconServers].[CPUType].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Processor type.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconServers].[CPUType]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconServers].[HardDisk].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The type of disk used on the server. D - normal drive, S - SSD']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconServers].[HardDisk]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconServers].[Host].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Server host name.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconServers].[Host]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconServers].[Model].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Server model.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconServers].[Model]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconServers].[Name].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Server name.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconServers].[Name]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconServers].[RAM].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Number of ram memories on the server (MB)']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconServers].[RAM]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconServers].[SerialNumber].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Serial number of the server']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconServers].[SerialNumber]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconServers].[ServerExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The identifier transmitted in web communication.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconServers].[ServerExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconServers].[UPS].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Security of the server in elenctic energy.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconServers].[UPS]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconServers].[WarrantyExpirationDate].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Warranty expiration date.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconServers].[WarrantyExpirationDate]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconSystems].[CompanyName].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Name of the system provider']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconSystems].[CompanyName]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconSystems].[Name].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'System name']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconSystems].[Name]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconSystems].[SystemExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The identifier transmitted in web communication.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconSystems].[SystemExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconSystems].[TechSupportExpDate].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Expiry date of support for the system ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconSystems].[TechSupportExpDate]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[ReconSystems].[Version].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'System version']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[ReconSystems].[Version]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Servers].[AntivirusSoftware].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Anti-virus software. default value is false. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Servers].[AntivirusSoftware]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Servers].[CountryRegionCode].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Server location - country code.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Servers].[CountryRegionCode]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Servers].[CPUType].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Processor type ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Servers].[CPUType]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Servers].[HardDisk].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The type of disk used on the server. D - normal drive, S - SSD']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Servers].[HardDisk]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Servers].[Host].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Server host name.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Servers].[Host]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Servers].[Model].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Server model.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Servers].[Model]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Servers].[Name].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Server name.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Servers].[Name]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Servers].[RAM].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Number of ram memories on the server (MB)']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Servers].[RAM]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Servers].[SerialNumber].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Serial number of the server']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Servers].[SerialNumber]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Servers].[ServerExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The identifier transmitted in web communication.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Servers].[ServerExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Servers].[TechSupport].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Technical support for the server. The default value is false. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Servers].[TechSupport]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Servers].[UPS].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Security of the server in elenctic energy. The default value is false. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Servers].[UPS]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Servers].[WarrantyExpirationDate].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Warranty expiration date. ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Servers].[WarrantyExpirationDate]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Systems].[CompanyName].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Name of the system provider']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Systems].[CompanyName]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Systems].[Name].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'System name']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Systems].[Name]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Systems].[SystemExId].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'The identifier transmitted in web communication.']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Systems].[SystemExId]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Systems].[TechSupport].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Flag informing that there is support for the system. Default value is false.  ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Systems].[TechSupport]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Systems].[TechSupportExpDate].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'Expiry date of support for the system ']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Systems].[TechSupportExpDate]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlExtendedProperty" Name="[SqlColumn].[web].[Systems].[Version].[MS_Description]">
+			<Property Name="Value">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[N'System version']]></Value>
+			</Property>
+			<Relationship Name="Host">
+				<Entry>
+					<References Name="[web].[Systems].[Version]" />
+				</Entry>
+			</Relationship>
+		</Element>
 		<Element Type="SqlSchema" Name="[web]">
 			<Relationship Name="Authorizer">
 				<Entry>
@@ -10746,7 +11936,7 @@ SELECT
       ,a.[NEW_UserId]
       ,a.[OLD_UserId]
       ,sy1.[ExternalId] AS [NEW_SystemExId]
-      ,sy2.[ExternalId] AS [OLDSystemExId]
+      ,sy2.[ExternalId] AS [OLD_SystemExId]
       ,s1.[ExternalId] AS [NEW_ServerExId]
       ,s2.[ExternalId] AS [OLD_ServerExId]
       ,a.[NEW_Name]
@@ -10852,7 +12042,7 @@ FROM
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlComputedColumn" Name="[web].[AuditAccounts].[OLDSystemExId]">
+					<Element Type="SqlComputedColumn" Name="[web].[AuditAccounts].[OLD_SystemExId]">
 						<Relationship Name="ExpressionDependencies">
 							<Entry>
 								<References Name="[repository].[Systems].[ExternalId]" />
@@ -11091,11 +12281,11 @@ FROM
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="CreateOffset" Value="8" />
-				<Property Name="Length" Value="1221" />
+				<Property Name="CreateOffset" Value="10" />
+				<Property Name="Length" Value="1224" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;CREATE VIEW [web].[AuditAccounts]&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;CREATE VIEW [web].[AuditAccounts]&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlView" Name="[web].[AuditServers]">
@@ -11857,10 +13047,11 @@ FROM
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="239" />
+				<Property Name="CreateOffset" Value="2" />
+				<Property Name="Length" Value="245" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE VIEW web.ReconAccounts&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="&#xD;&#xA;CREATE VIEW [web].[ReconAccounts]&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlView" Name="[web].[ReconServers]">
