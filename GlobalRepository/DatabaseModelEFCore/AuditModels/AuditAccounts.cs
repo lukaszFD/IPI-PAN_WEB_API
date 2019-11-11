@@ -9,7 +9,6 @@ namespace DatabaseModelEFCore.AuditModels
         public string UserName { get; set; }
         public DateTime DateFrom { get; set; }
         public DateTime? DateTo { get; set; }
-        public int AccountId { get; set; }
         public string NewCountryRegionCode { get; set; }
         public string OldCountryRegionCode { get; set; }
         public int? NewUserId { get; set; }

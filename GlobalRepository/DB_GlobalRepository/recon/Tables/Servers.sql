@@ -19,6 +19,8 @@
 );
 
 
+
+
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'recon', @level1type = N'TABLE', @level1name = N'Servers', @level2type = N'COLUMN', @level2name = N'ServerExId';
 
@@ -106,20 +108,22 @@ EXECUTE sp_settriggerorder @triggername = N'[recon].[After_I_ReconServer_trg]', 
 
 GO
 
-create  TRIGGER	[recon].[After_I_MergeServer_trg]
+
+CREATE  TRIGGER	[recon].[After_I_MergeServer_trg]
 ON [recon].[Servers]	
 AFTER INSERT
 AS 
 BEGIN TRY
-	EXEC [GlobalRepository].recon.MergeReconServers
+	EXEC .recon.MergeReconServers
 END TRY
 BEGIN CATCH
-		EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+		EXECUTE [error].[AddErrorMessage] 
 			@schemaName = 'recon',
 			@tableName = 'Servers', 
 			@columnName = null,
 			@columnId = null 
 END CATCH
+
 GO
 EXECUTE sp_settriggerorder @triggername = N'[recon].[After_I_MergeServer_trg]', @order = N'last', @stmttype = N'insert';
 

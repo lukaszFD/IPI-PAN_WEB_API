@@ -26,6 +26,8 @@
 
 
 
+
+
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The identifier transmitted in web communication.', @level0type = N'SCHEMA', @level0name = N'recon', @level1type = N'TABLE', @level1name = N'Accounts', @level2type = N'COLUMN', @level2name = N'AccountExId';
 
@@ -77,40 +79,44 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Identifier 
 
 
 GO
+
 CREATE TRIGGER	[recon].[After_I_ReconAccount_trg]
 ON [recon].[Accounts]	
 AFTER INSERT
 AS 
 BEGIN TRY
-	EXEC [GlobalRepository].[error].[CheckReconAccounts]
+	EXEC [error].[CheckReconAccounts]
 END TRY
 BEGIN CATCH
-		EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+		EXECUTE [error].[AddErrorMessage] 
 			@schemaName = 'recon',
 			@tableName = 'Accounts', 
 			@columnName = null,
 			@columnId = null 
 END CATCH
+
 GO
 EXECUTE sp_settriggerorder @triggername = N'[recon].[After_I_ReconAccount_trg]', @order = N'first', @stmttype = N'insert';
 
 
 GO
 
-create  TRIGGER	[recon].[After_I_MergeAccount_trg]
+
+CREATE  TRIGGER	[recon].[After_I_MergeAccount_trg]
 ON [recon].[Accounts]	
 AFTER INSERT
 AS 
 BEGIN TRY
-	EXEC [GlobalRepository].recon.MergeReconAccounts
+	EXEC recon.MergeReconAccounts
 END TRY
 BEGIN CATCH
-		EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+		EXECUTE [error].[AddErrorMessage] 
 			@schemaName = 'recon',
 			@tableName = 'Accounts', 
 			@columnName = null,
 			@columnId = null 
 END CATCH
+
 GO
 EXECUTE sp_settriggerorder @triggername = N'[recon].[After_I_MergeAccount_trg]', @order = N'last', @stmttype = N'insert';
 

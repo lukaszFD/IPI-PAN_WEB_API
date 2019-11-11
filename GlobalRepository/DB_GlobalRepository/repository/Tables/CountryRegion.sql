@@ -9,6 +9,8 @@
 );
 
 
+
+
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Country id in the database. In relation to [GlobalRepository]. [repository]. [Servers]. [CountryId].', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'CountryRegion', @level2type = N'COLUMN', @level2name = N'CountryId';
 
@@ -33,13 +35,14 @@ GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Date of deletion of the entry', @level0type = N'SCHEMA', @level0name = N'repository', @level1type = N'TABLE', @level1name = N'CountryRegion', @level2type = N'COLUMN', @level2name = N'DeleteDate';
 
 GO
+
 CREATE TRIGGER [repository].[After_U_CountryRegion_trg]
 ON [repository].[CountryRegion]
 AFTER UPDATE
 AS 
 BEGIN TRY
 	BEGIN TRAN aud
-		INSERT INTO [GlobalRepository].[audit].[CountryRegion]
+		INSERT INTO [audit].[CountryRegion]
 		(
 			[DateTo],
 			[CountryId],
@@ -69,7 +72,7 @@ BEGIN TRY
 	COMMIT TRAN upd
 END TRY
 	BEGIN CATCH
-			EXECUTE [GlobalRepository].[error].[AddErrorMessage] 
+			EXECUTE [error].[AddErrorMessage] 
 				@schemaName = 'repository',
 				@tableName = 'Accounts', 
 				@columnName = null,
