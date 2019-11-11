@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DatabaseModelEFCore.ReconModels
+namespace DatabaseModelEFCore.Models.Recon
 {
     public partial class ReconServers
     {

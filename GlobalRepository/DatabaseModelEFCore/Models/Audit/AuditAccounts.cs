@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DatabaseModelEFCore.AuditModels
+namespace DatabaseModelEFCore.Models.Audit
 {
     public partial class AuditAccounts
     {

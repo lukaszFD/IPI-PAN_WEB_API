@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DatabaseModelEFCore.DocumentationModels
+namespace DatabaseModelEFCore.Models.Documentation
 {
     public partial class Views
     {

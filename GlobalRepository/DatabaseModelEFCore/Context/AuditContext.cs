@@ -1,5 +1,5 @@
 ﻿using System;
-using DatabaseModelEFCore.AuditModels;
+using DatabaseModelEFCore.Models.Audit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 

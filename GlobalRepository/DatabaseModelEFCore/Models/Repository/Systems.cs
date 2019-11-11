@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DatabaseModelEFCore.RepositoryModels
+namespace DatabaseModelEFCore.Models.Repository
 {
     public partial class Systems
     {

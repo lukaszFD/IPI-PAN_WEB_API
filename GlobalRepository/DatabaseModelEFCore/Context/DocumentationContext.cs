@@ -1,5 +1,5 @@
 ﻿using System;
-using DatabaseModelEFCore.DocumentationModels;
+using DatabaseModelEFCore.Models.Documentation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 

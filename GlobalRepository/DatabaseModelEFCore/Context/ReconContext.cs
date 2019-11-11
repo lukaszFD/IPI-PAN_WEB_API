@@ -1,5 +1,5 @@
 ﻿using System;
-using DatabaseModelEFCore.ReconModels;
+using DatabaseModelEFCore.Models.Recon;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
