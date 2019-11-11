@@ -14,7 +14,7 @@ namespace DatabaseModelEFCore.AuditModels
         public int? NewUserId { get; set; }
         public int? OldUserId { get; set; }
         public Guid? NewSystemExId { get; set; }
-        public Guid? OldsystemExId { get; set; }
+        public Guid? OldSystemExId { get; set; }
         public Guid? NewServerExId { get; set; }
         public Guid? OldServerExId { get; set; }
         public string NewName { get; set; }

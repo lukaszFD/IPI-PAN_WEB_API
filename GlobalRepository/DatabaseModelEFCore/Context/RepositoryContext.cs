@@ -37,21 +37,39 @@ namespace DatabaseModelEFCore.Context
 
                 entity.ToView("Accounts", "web");
 
-                entity.Property(e => e.CountryRegionCode).HasMaxLength(3);
+                entity.Property(e => e.AccountExId).HasComment("The identifier transmitted in web communication.");
 
-                entity.Property(e => e.Description).HasMaxLength(200);
+                entity.Property(e => e.CountryRegionCode)
+                    .HasMaxLength(3)
+                    .HasComment("Account location - country code.");
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(200)
+                    .HasComment("Short description of the account. ");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
-                    .HasMaxLength(50);
+                    .HasMaxLength(50)
+                    .HasComment("Account name. ");
 
-                entity.Property(e => e.PasswordExpires).HasColumnType("date");
+                entity.Property(e => e.PasswordExpires)
+                    .HasColumnType("date")
+                    .HasComment("Password expiration date. Accounts that have invalid passwords have the Tofix flag set to Y.");
+
+                entity.Property(e => e.ServerExId).HasComment("Server ExID on a database.");
+
+                entity.Property(e => e.SystemExId).HasComment("System ExID on a database.");
+
+                entity.Property(e => e.Tofix).HasComment("Flag indicating accounts that have missing attributes. ");
 
                 entity.Property(e => e.Type)
                     .IsRequired()
                     .HasMaxLength(1)
                     .IsUnicode(false)
-                    .IsFixedLength();
+                    .IsFixedLength()
+                    .HasComment("Account type. U - user account, D - database account. ");
+
+                entity.Property(e => e.UserId).HasComment("User ExID on a database.");
             });
 
             modelBuilder.Entity<Servers>(entity =>
@@ -64,40 +82,60 @@ namespace DatabaseModelEFCore.Context
                     .IsRequired()
                     .HasMaxLength(1)
                     .IsUnicode(false)
-                    .IsFixedLength();
+                    .IsFixedLength()
+                    .HasComment("Anti-virus software. default value is false. ");
 
-                entity.Property(e => e.CountryRegionCode).HasMaxLength(3);
+                entity.Property(e => e.CountryRegionCode)
+                    .HasMaxLength(3)
+                    .HasComment("Server location - country code.");
 
-                entity.Property(e => e.Cputype).HasColumnName("CPUType");
+                entity.Property(e => e.Cputype)
+                    .HasColumnName("CPUType")
+                    .HasComment("Processor type ");
 
                 entity.Property(e => e.HardDisk)
                     .IsRequired()
                     .HasMaxLength(1)
                     .IsUnicode(false)
-                    .IsFixedLength();
+                    .IsFixedLength()
+                    .HasComment("The type of disk used on the server. D - normal drive, S - SSD");
 
                 entity.Property(e => e.Host)
                     .IsRequired()
-                    .HasMaxLength(50);
+                    .HasMaxLength(50)
+                    .HasComment("Server host name.");
 
                 entity.Property(e => e.Model)
                     .IsRequired()
-                    .HasMaxLength(50);
+                    .HasMaxLength(50)
+                    .HasComment("Server model.");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
-                    .HasMaxLength(50);
+                    .HasMaxLength(50)
+                    .HasComment("Server name.");
 
-                entity.Property(e => e.Ram).HasColumnName("RAM");
+                entity.Property(e => e.Ram)
+                    .HasColumnName("RAM")
+                    .HasComment("Number of ram memories on the server (MB)");
+
+                entity.Property(e => e.SerialNumber).HasComment("Serial number of the server");
+
+                entity.Property(e => e.ServerExId).HasComment("The identifier transmitted in web communication.");
+
+                entity.Property(e => e.TechSupport).HasComment("Technical support for the server. The default value is false. ");
 
                 entity.Property(e => e.Ups)
                     .IsRequired()
                     .HasColumnName("UPS")
                     .HasMaxLength(1)
                     .IsUnicode(false)
-                    .IsFixedLength();
+                    .IsFixedLength()
+                    .HasComment("Security of the server in elenctic energy. The default value is false. ");
 
-                entity.Property(e => e.WarrantyExpirationDate).HasColumnType("date");
+                entity.Property(e => e.WarrantyExpirationDate)
+                    .HasColumnType("date")
+                    .HasComment("Warranty expiration date. ");
             });
 
             modelBuilder.Entity<Systems>(entity =>
@@ -108,17 +146,26 @@ namespace DatabaseModelEFCore.Context
 
                 entity.Property(e => e.CompanyName)
                     .IsRequired()
-                    .HasMaxLength(50);
+                    .HasMaxLength(50)
+                    .HasComment("Name of the system provider");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
-                    .HasMaxLength(50);
+                    .HasMaxLength(50)
+                    .HasComment("System name");
 
-                entity.Property(e => e.TechSupportExpDate).HasColumnType("date");
+                entity.Property(e => e.SystemExId).HasComment("The identifier transmitted in web communication.");
+
+                entity.Property(e => e.TechSupport).HasComment("Flag informing that there is support for the system. Default value is false.  ");
+
+                entity.Property(e => e.TechSupportExpDate)
+                    .HasColumnType("date")
+                    .HasComment("Expiry date of support for the system ");
 
                 entity.Property(e => e.Version)
                     .IsRequired()
-                    .HasMaxLength(50);
+                    .HasMaxLength(50)
+                    .HasComment("System version");
             });
 
             OnModelCreatingPartial(modelBuilder);
