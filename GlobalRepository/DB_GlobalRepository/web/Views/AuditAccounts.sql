@@ -1,6 +1,7 @@
 ﻿
 
 
+
 CREATE VIEW [web].[AuditAccounts]
 AS
 SELECT 
@@ -8,7 +9,6 @@ SELECT
       ,a.[UserName]
       ,a.[DateFrom]
       ,a.[DateTo]
-      ,a.[AccountId]
       ,c1.[CountryRegionCode] AS [NEW_CountryRegionCode]
       ,c2.[CountryRegionCode] AS [OLD_CountryRegionCode]
       ,a.[NEW_UserId]
