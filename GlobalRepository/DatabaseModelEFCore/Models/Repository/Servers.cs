@@ -5,6 +5,10 @@ namespace DatabaseModelEFCore.Models.Repository
 {
     public partial class Servers
     {
+        public Servers()
+        {
+            Accounts = new HashSet<Accounts>();
+        }
         public Guid ServerExId { get; set; }
         public string Name { get; set; }
         public string Host { get; set; }
@@ -18,5 +22,7 @@ namespace DatabaseModelEFCore.Models.Repository
         public string HardDisk { get; set; }
         public string Ups { get; set; }
         public string AntivirusSoftware { get; set; }
+
+        public virtual ICollection<Accounts> Accounts { get; set; }
     }
 }

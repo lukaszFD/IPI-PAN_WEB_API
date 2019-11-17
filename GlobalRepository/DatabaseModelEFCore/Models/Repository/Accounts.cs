@@ -15,5 +15,8 @@ namespace DatabaseModelEFCore.Models.Repository
         public string Type { get; set; }
         public DateTime? PasswordExpires { get; set; }
         public int? Tofix { get; set; }
+
+        public virtual Servers Server { get; set; }
+        public virtual Systems System { get; set; }
     }
 }
