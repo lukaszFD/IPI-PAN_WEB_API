@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DB_GlobalRepository", "DB_GlobalRepository\DB_GlobalRepository.sqlproj", "{EE3E9A22-0B25-4854-A0F4-FC3DE50F7287}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseModelEFCore", "DatabaseModelEFCore\DatabaseModelEFCore.csproj", "{940F3A5E-756B-4F0F-8456-BB582C5A86BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseModelEFCore", "DatabaseModelEFCore\DatabaseModelEFCore.csproj", "{940F3A5E-756B-4F0F-8456-BB582C5A86BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{21FB5080-044C-4933-9AC9-CD841530B565}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{940F3A5E-756B-4F0F-8456-BB582C5A86BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{940F3A5E-756B-4F0F-8456-BB582C5A86BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{940F3A5E-756B-4F0F-8456-BB582C5A86BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21FB5080-044C-4933-9AC9-CD841530B565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21FB5080-044C-4933-9AC9-CD841530B565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21FB5080-044C-4933-9AC9-CD841530B565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21FB5080-044C-4933-9AC9-CD841530B565}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
