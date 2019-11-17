@@ -1,7 +1,7 @@
-﻿using System;
-using DatabaseModelEFCore.Models.Audit;
+﻿using DatabaseModelEFCore.Models.Audit;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
+using System;
 
 namespace DatabaseModelEFCore.Context
 {
@@ -9,8 +9,8 @@ namespace DatabaseModelEFCore.Context
     {
         public AuditContext()
         {
-        }
 
+        }
         public AuditContext(DbContextOptions<AuditContext> options)
             : base(options)
         {
@@ -24,8 +24,11 @@ namespace DatabaseModelEFCore.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;");
+                //optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;");
+                //optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["GlobalRepositoryDatabase"].ConnectionString);
+
+                IConfigurationRoot configuration = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json").Build();
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("GlobalRepositoryDatabase"));
             }
         }
 
