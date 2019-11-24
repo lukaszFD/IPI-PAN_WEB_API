@@ -59,7 +59,6 @@ namespace DatabaseModelEFCore.Controllers
                     }
                     )).ConfigureAwait(true);
 
-
             return list;
         }
 

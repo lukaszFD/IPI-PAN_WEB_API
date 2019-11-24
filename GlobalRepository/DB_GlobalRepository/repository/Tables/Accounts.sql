@@ -18,7 +18,6 @@
     CHECK ([Type]='D' OR [Type]='U'),
 	CHECK ([Tofix]=(0) OR [Tofix]=(1)),
     FOREIGN KEY ([CountryId]) REFERENCES [repository].[CountryRegion] ([CountryId]),
-    FOREIGN KEY ([RecAccountId]) REFERENCES [recon].[Accounts] ([RecAccountId]),
     FOREIGN KEY ([ServerId]) REFERENCES [repository].[Servers] ([ServerId]),
     FOREIGN KEY ([SystemId]) REFERENCES [repository].[Systems] ([SystemId]),
     FOREIGN KEY ([UserId]) REFERENCES [gr_user].[Users] ([UserId])
