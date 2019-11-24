@@ -36,7 +36,7 @@ namespace DatabaseModelEFCore.Models.Repository
         public string ServerAntivirusSoftware { get; set; }
 
         /// <summary>
-        /// 
+        /// System
         /// </summary>
         public Guid SystemExId { get; set; }
         public string? SystemCompanyName { get; set; }

@@ -21,8 +21,7 @@
     CHECK ([AntivirusSoftware]=(0) OR [AntivirusSoftware]=(1)),
     CHECK ([HardDisk]='D' OR [HardDisk]='S'),
     CHECK ([UPS]=(0) OR [UPS]=(1)),
-    FOREIGN KEY ([CountryId]) REFERENCES [repository].[CountryRegion] ([CountryId]),
-    FOREIGN KEY ([RecServerId]) REFERENCES [recon].[Servers] ([RecServerId])
+    FOREIGN KEY ([CountryId]) REFERENCES [repository].[CountryRegion] ([CountryId])
 );
 
 

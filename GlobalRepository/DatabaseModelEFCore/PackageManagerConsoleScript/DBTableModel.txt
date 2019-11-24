@@ -1,7 +1,7 @@
 ﻿
 Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir AuditModels -Tables "web.AuditSystems", "web.AuditAccounts", "web.AuditServers" -ContextDir Context -Context AuditContext
-Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir RepositoryModels -Tables "web.Systems", "web.Accounts", "web.Servers" -ContextDir Context -Context RepositoryContext
-Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir DocumentationModels -Tables "documentation.views" -ContextDir Context -Context DocumentationContext
+Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Repository\Model -Tables "repository.Systems", "repository.Accounts", "repository.Servers" ,"repository.CountryRegion", "gr_user.Users" -ContextDir Repository\Context -Context RepositoryContext 
+Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Documentation\Model -Tables "documentation.views" -ContextDir Documentation\Context -Context DocumentationContext
 
 dotnet user-secrets init --project "C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DatabaseModelEFCore"
 dotnet user-secrets set "ConnectionString:RepositoryDatabase" "Server=.\\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" --project "C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DatabaseModelEFCore"

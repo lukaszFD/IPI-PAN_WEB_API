@@ -10,8 +10,7 @@
     [EditDate]           DATETIME         NULL,
     [DeleteDate]         DATETIME         NULL,
     [RecSystemId]        INT              NULL,
-    PRIMARY KEY CLUSTERED ([SystemId] ASC),
-    FOREIGN KEY ([RecSystemId]) REFERENCES [recon].[Systems] ([RecSystemId])
+    PRIMARY KEY CLUSTERED ([SystemId] ASC)
 );
 
 GO
