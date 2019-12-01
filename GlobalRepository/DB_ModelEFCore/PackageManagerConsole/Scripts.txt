@@ -1,0 +1,15 @@
+﻿--------------Repository--------------
+
+Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models\Repository -Tables "repository.Systems", "repository.Accounts", "repository.Servers" ,"repository.CountryRegion", "gr_user.Users" -ContextDir Context\Repository -Context RepositoryContext 
+
+--------------Audit--------------
+
+Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models\Audit -Tables "audit.Systems", "audit.Accounts", "audit.Servers" -ContextDir Context\Audit -Context AuditContext
+
+--------------Recon--------------
+
+Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models\Recon -Tables "recon.Systems", "recon.Accounts", "recon.Servers" -ContextDir Context\Recon -Context ReconContext
+
+--------------Documentation--------------
+
+Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models\Documentation -Tables "documentation.gr_tables" -ContextDir Context\Documentation -Context DocumentationContext
