@@ -125,6 +125,7 @@
     <Folder Include="service\Views\" />
     <Folder Include="web\" />
     <Folder Include="web\Views\" />
+    <Folder Include="documentation\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\110\SqlSchemas\master.dacpac">
@@ -300,6 +301,10 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
     <Build Include="web\Views\ReconAccounts.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="documentation\Tables\gr_tables.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
