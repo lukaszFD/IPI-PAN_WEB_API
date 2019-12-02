@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using NLog.Extensions.Logging;
 
 namespace GR_WebApi
 {
@@ -12,8 +14,7 @@ namespace GR_WebApi
         public static void Main(string[] args)
         {
             var host = CreateWebHostBuilder(args).Build();
-            var logger = host.Services.GetRequiredService<ILogger<Program>>();
-            logger.LogInformation("Seeded the database.");
+            host.Services.GetRequiredService<ILogger<Program>>();
             host.Run();
         }
 
@@ -24,30 +25,30 @@ namespace GR_WebApi
             .AddCommandLine(args)
             .Build();
 
-            try
-            {
-                return WebHost.CreateDefaultBuilder(args)
-                .ConfigureServices((context, services) =>
-                {
-                    services.AddMvc();
-                })
-                .ConfigureAppConfiguration((hostingContext, config) =>
-                {
-                    config.AddConfiguration(builtConfig);
-                })
-                .ConfigureLogging(logging =>
-                {
-                    logging.ClearProviders();
-                    logging.AddConsole();
-                })
-                .UseStartup<Startup>();
-            }
-            catch (Exception)
-            {
 
-                throw;
-            }
-
+            return WebHost.CreateDefaultBuilder(args)
+            .ConfigureServices((context, services) =>
+            {
+                services.AddMvc();
+            })
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                var env = hostingContext.HostingEnvironment;
+                config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                        .AddJsonFile($"appsettings.{env.EnvironmentName}.json",
+                            optional: true, reloadOnChange: true);
+                config.AddEnvironmentVariables();
+                config.AddConfiguration(builtConfig);
+            })
+            .ConfigureLogging((hostingContext, logging) =>
+            {
+                logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
+                logging.AddConsole();
+                logging.AddDebug();
+                logging.AddEventSourceLogger();
+                logging.AddNLog();
+            })
+            .UseStartup<Startup>();
         }
     }
 }

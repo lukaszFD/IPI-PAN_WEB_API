@@ -16,7 +16,7 @@ namespace GR_WebApi.Controllers
     [ApiController]
     public class GrTablesController : ControllerBase
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<GrTablesController> _logger;
 
         public GrTablesController(ILogger<GrTablesController> logger)
         {
@@ -25,17 +25,14 @@ namespace GR_WebApi.Controllers
         [HttpGet]
         public async Task<ActionResult<List<GrTables>>> GetGlobalRespositoryDocumentation()
         {
-            _logger.LogInformation("Message displayed: {Message}", DateTime.UtcNow.ToLongTimeString());
-
             var data = await new Documentation().DBDocumentation();
 
             if (data == null)
             {
+                _logger.LogWarning("No data found for GetGlobalRespositoryDocumentation");
                 return NotFound();
             }
             return data;
-
-
         }
 
         //// GET: api/GrTables/5
