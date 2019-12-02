@@ -8,4 +8,3 @@ C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_ModelEFCore\bi
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_ModelEFCore\obj\Debug\netcoreapp2.2\DB_ModelEFCore.dll
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_ModelEFCore\obj\Debug\netcoreapp2.2\DB_ModelEFCore.pdb
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_ModelEFCore\bin\Debug\netcoreapp2.2\appsettings.json
-C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_ModelEFCore\obj\Debug\netcoreapp2.2\DB_ModelEFCore.csprojAssemblyReference.cache

@@ -11,10 +11,9 @@ namespace DB_ModelEFCore.Controllers.Documentation
         /// <summary>
         /// This method returns all objects available in web communication (documentation). 
         /// </summary>
-        /// <returns>IEnumerable<Views></returns>
+        /// <returns></returns>
         public async Task<List<GrTables>> DBDocumentation()
         {
-
             List<GrTables> list = await Task.Run(() => new DocumentationContext().GrTables.ToList()).ConfigureAwait(true);
             return list;
 
