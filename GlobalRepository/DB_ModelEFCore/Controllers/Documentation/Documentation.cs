@@ -16,7 +16,20 @@ namespace DB_ModelEFCore.Controllers.Documentation
         {
             List<GrTables> list = await Task.Run(() => new DocumentationContext().GrTables.ToList()).ConfigureAwait(true);
             return list;
-
+        }
+        /// <summary>
+        /// This method returns objects available in network communication (documentation). It is necessary to specify two parameters. 
+        /// </summary>
+        /// <param name="schema_name"></param>
+        /// <param name="table_name"></param>
+        /// <returns></returns>
+        public async Task<List<GrTables>> DBDocumentation(string schema_name, string table_name)
+        {
+            List<GrTables> list = 
+                await Task.Run(() => 
+                new DocumentationContext().GrTables.Where(x => x.TableName == table_name & x.SchemaName == schema_name).ToList()
+                                ).ConfigureAwait(true);
+            return list;
         }
     }
 }
