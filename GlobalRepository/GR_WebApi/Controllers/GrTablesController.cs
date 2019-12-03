@@ -2,6 +2,7 @@
 using DB_ModelEFCore.Models.Documentation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -56,7 +57,7 @@ namespace GR_WebApi.Controllers
         //    return grTables;
         //}
 
-        //// PUT: api/GrTables/5
+        // PUT: api/GrTables/5
         //[HttpPut("{id}")]
         //public async Task<IActionResult> PutGrTables(int id, GrTables grTables)
         //{
@@ -83,11 +84,11 @@ namespace GR_WebApi.Controllers
         //        }
         //    }
 
-        //    return NoContent();
-        //}
+            //    return NoContent();
+            //}
 
-        //// POST: api/GrTables
-        //[HttpPost]
+            // POST: api/GrTables
+        //    [HttpPost]
         //public async Task<ActionResult<GrTables>> PostGrTables(GrTables grTables)
         //{
         //    _context.GrTables.Add(grTables);

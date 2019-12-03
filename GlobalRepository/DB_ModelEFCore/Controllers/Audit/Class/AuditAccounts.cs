@@ -10,8 +10,8 @@ namespace DB_ModelEFCore.Controllers.Audit.Class
         public DateTime? DateTo { get; set; }
         public string NewCountryRegionCode { get; set; }
         public string OldCountryRegionCode { get; set; }
-        public int? NewUserId { get; set; }
-        public int? OldUserId { get; set; }
+        public string NewUserName { get; set; }
+        public string OldUserName { get; set; }
         public Guid? NewSystemExId { get; set; }
         public Guid? OldSystemExId { get; set; }
         public Guid? NewServerExId { get; set; }

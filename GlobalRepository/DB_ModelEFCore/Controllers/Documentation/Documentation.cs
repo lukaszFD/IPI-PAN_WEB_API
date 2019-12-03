@@ -7,14 +7,18 @@ namespace DB_ModelEFCore.Controllers.Documentation
 {
     public class Documentation
     {
-        private DocumentationContext context;
+        private readonly DocumentationContext _doc;
+        public Documentation()
+        {
+            _doc = new DocumentationContext();
+        }
         /// <summary>
         /// This method returns all objects available in web communication (documentation). 
         /// </summary>
         /// <returns></returns>
         public async Task<List<GrTables>> DBDocumentation()
         {
-            List<GrTables> list = await Task.Run(() => new DocumentationContext().GrTables.ToList()).ConfigureAwait(true);
+            List<GrTables> list = await Task.Run(() => _doc.GrTables.ToList()).ConfigureAwait(true);
             return list;
         }
         /// <summary>
@@ -26,9 +30,7 @@ namespace DB_ModelEFCore.Controllers.Documentation
         public async Task<List<GrTables>> DBDocumentation(string schema_name, string table_name)
         {
             List<GrTables> list = 
-                await Task.Run(() => 
-                new DocumentationContext().GrTables.Where(x => x.TableName == table_name & x.SchemaName == schema_name).ToList()
-                                ).ConfigureAwait(true);
+                await Task.Run(() => _doc.GrTables.Where(x => x.TableName == table_name & x.SchemaName == schema_name).ToList()).ConfigureAwait(true);
             return list;
         }
     }
