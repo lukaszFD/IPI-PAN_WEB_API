@@ -19,7 +19,6 @@
     <Folder Include="Context\Documentation\" />
     <Folder Include="Context\Repository\" />
     <Folder Include="Context\Recon\" />
-    <Folder Include="Controllers\Repository\Class\" />
   </ItemGroup>
 
   <ItemGroup>

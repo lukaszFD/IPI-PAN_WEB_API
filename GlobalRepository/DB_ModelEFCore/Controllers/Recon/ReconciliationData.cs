@@ -1,16 +1,21 @@
 ﻿using DB_ModelEFCore.Controllers.Recon.Class;
 using DB_ModelEFCore.Models.Recon;
+using System.Threading.Tasks;
 
 namespace DB_ModelEFCore.Controllers.Recon
 {
     public class ReconciliationData
     {
-        private ReconContext context;
+        private readonly ReconContext _context;
+        public ReconciliationData()
+        {
+            _context = new ReconContext();
+        }
         /// <summary>
         /// Reconciliation of data for accounts. 
         /// </summary>
         /// <param name="item"></param>
-        public void ReconciliationAccounts(ReconAccounts item)
+        public async Task ReconciliationAccounts(ReconAccounts item)
         {
             var recon = new Accounts
             {
@@ -24,14 +29,14 @@ namespace DB_ModelEFCore.Controllers.Recon
                 Type = item.Type,
                 PasswordExpires = item.PasswordExpires
             };
-            context.Accounts.AddAsync(recon);
-            context.SaveChangesAsync();
+            _context.Accounts.Add(recon);
+            await _context.SaveChangesAsync();
         }
         /// <summary>
         /// Reconciliation of data for servers. 
         /// </summary>
         /// <param name="item"></param>
-        public void ReconciliationServers(ReconServers item)
+        public async Task ReconciliationServers(ReconServers item)
         {
             var recon = new Servers
             {
@@ -48,14 +53,14 @@ namespace DB_ModelEFCore.Controllers.Recon
                 Ups = item.Ups,
                 AntivirusSoftware = item.AntivirusSoftware
             };
-            context.Servers.AddAsync(recon);
-            context.SaveChangesAsync();
+            _context.Servers.Add(recon);
+            await _context.SaveChangesAsync();
         }
         /// <summary>
         /// Reconciliation of data for systems. 
         /// </summary>
         /// <param name="item"></param>
-        public void ReconciliationSystems(ReconSystems item)
+        public async Task ReconciliationSystems(ReconSystems item)
         {
             var recon = new Systems
             {
@@ -65,8 +70,8 @@ namespace DB_ModelEFCore.Controllers.Recon
                 Version = item.Version,
                 TechSupportExpDate = item.TechSupportExpDate
             };
-            context.Systems.AddAsync(recon);
-            context.SaveChangesAsync();
+            _context.Systems.Add(recon);
+            await _context.SaveChangesAsync();
         }
     }
 }
