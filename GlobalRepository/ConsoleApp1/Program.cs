@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using DB_ModelEFCore.Controllers.Audit;
+using DB_ModelEFCore.Controllers.Audit.Class;
 using DB_ModelEFCore.Models.Documentation;
 
 namespace ConsoleApp1
@@ -7,13 +10,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            DocumentationContext d = new DocumentationContext();
+  
 
-            foreach (var item in d.GrTables)
-            {
-                Console.WriteLine(item.SchemaName);
-            }
-            Console.ReadKey();
         }
     }
 }

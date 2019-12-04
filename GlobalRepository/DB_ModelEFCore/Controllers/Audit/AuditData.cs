@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DB_ModelEFCore.Controllers.Audit
 {
-    class AuditData
+    public class AuditData
     {
         private readonly RepositoryContext _repo;
         private readonly AuditContext _audit;
@@ -22,27 +22,27 @@ namespace DB_ModelEFCore.Controllers.Audit
         /// </summary>
         /// <param name="userName"></param>
         /// <returns></returns>
-        public async Task<IEnumerable<AuditAccounts>> AuditAccounts(string userName)
+        public async Task<List<AuditAccounts>> AuditAccounts(string userName)
         {
-            IEnumerable<AuditAccounts> list = await Task.Run(() =>
-                (   
-                    from a in _audit.Accounts
+            List<AuditAccounts> list = await Task.Run(() =>
+                (
+                    from u1 in _repo.Users.Where(a => a.Description == userName)
                     join 
-                    u1 in _repo.Users.Where(a => a.Description == userName) on a.NewUserId equals u1.UserId
+                    a in _audit.Accounts.ToList() on  u1.UserId equals a.NewUserId 
                     join 
-                    u2 in _repo.Users on a.OldUserId equals u2.UserId
+                    u2 in _repo.Users.ToList() on a.NewUserId equals u2.UserId
                     join 
-                    c1 in _repo.CountryRegion on a.NewCountryId equals c1.CountryId
+                    c1 in _repo.CountryRegion.ToList() on a.NewCountryId equals c1.CountryId
                     join
-                    c2 in _repo.CountryRegion on a.OldCountryId equals c2.CountryId
+                    c2 in _repo.CountryRegion.ToList() on a.OldCountryId equals c2.CountryId
                     join 
-                    s1 in _repo.Servers on a.NewServerId equals s1.ServerId
+                    s1 in _repo.Servers.ToList() on a.NewServerId equals s1.ServerId
                     join
-                    s2 in _repo.Servers on a.OldServerId equals s2.ServerId
+                    s2 in _repo.Servers.ToList() on a.OldServerId equals s2.ServerId
                     join 
-                    sy1 in _repo.Systems on a.NewSystemId equals sy1.SystemId
+                    sy1 in _repo.Systems.ToList() on a.NewSystemId equals sy1.SystemId
                     join
-                    sy2 in _repo.Systems on a.OldSystemId equals sy2.SystemId
+                    sy2 in _repo.Systems.ToList() on a.OldSystemId equals sy2.SystemId
                     select new AuditAccounts
                     { 
                         AccountExId = a.ExternalId,
@@ -68,7 +68,7 @@ namespace DB_ModelEFCore.Controllers.Audit
                         NewTofix = a.NewTofix,
                         OldTofix = a.OldTofix
                     }
-                ));
+                ).ToList());
             return  list;
         }
         /// <summary>
@@ -76,15 +76,15 @@ namespace DB_ModelEFCore.Controllers.Audit
         /// </summary>
         /// <param name="serverExId"></param>
         /// <returns></returns>
-        public async Task<IEnumerable<AuditServers>> AuditServers(Guid serverExId)
+        public async Task<List<AuditServers>> AuditServers(string serverExId)
         {
-            IEnumerable<AuditServers> list = await Task.Run(() =>
+            List<AuditServers> list = await Task.Run(() =>
                 (
-                    from s in _audit.Servers.Where(s => s.ExternalId == serverExId)
+                    from s in _audit.Servers.Where(s => s.ExternalId == new Guid(serverExId))
                     join
-                    c1 in _repo.CountryRegion on s.NewCountryId equals c1.CountryId
+                    c1 in _repo.CountryRegion.ToList() on s.NewCountryId equals c1.CountryId
                     join
-                    c2 in _repo.CountryRegion on s.OldCountryId equals c2.CountryId
+                    c2 in _repo.CountryRegion.ToList() on s.OldCountryId equals c2.CountryId
                     select new AuditServers
                     {
                         ServerExId = s.ExternalId,
@@ -116,7 +116,7 @@ namespace DB_ModelEFCore.Controllers.Audit
                         NewAntivirusSoftware = s.NewAntivirusSoftware,
                         OldAntivirusSoftware = s.OldAntivirusSoftware
                     }
-                ));
+                ).ToList());
             return list;
         }
         /// <summary>
@@ -124,11 +124,11 @@ namespace DB_ModelEFCore.Controllers.Audit
         /// </summary>
         /// <param name="systemExId"></param>
         /// <returns></returns>
-        public async Task<IEnumerable<AuditSystems>> AuditSystems(Guid systemExId)
+        public async Task<List<AuditSystems>> AuditSystems(string systemExId)
         {
-            IEnumerable<AuditSystems> list = await Task.Run(() =>
+            List<AuditSystems> list = await Task.Run(() =>
                 (
-                    from s in _audit.Systems.Where(s => s.ExternalId == systemExId)
+                    from s in _audit.Systems.Where(s => s.ExternalId == new Guid(systemExId))
                     select new AuditSystems
                     {
                         SystemExId = s.ExternalId,
@@ -146,7 +146,7 @@ namespace DB_ModelEFCore.Controllers.Audit
                         NewTechSupportExpDate = s.NewTechSupportExpDate,
                         OldTechSupportExpDate = s.OldTechSupportExpDate
                     }
-                ));
+                ).ToList());
             return list;
         }
     }
