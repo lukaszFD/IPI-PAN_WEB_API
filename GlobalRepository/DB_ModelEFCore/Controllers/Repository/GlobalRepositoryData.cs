@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DB_ModelEFCore.Controllers.Repository
 {
-    class GlobalRepositoryData
+    public class GlobalRepositoryData
     {
         private readonly RepositoryContext _repo;
         public GlobalRepositoryData()
@@ -18,15 +18,15 @@ namespace DB_ModelEFCore.Controllers.Repository
         /// </summary>
         /// <param name="userName"></param>
         /// <returns></returns>
-        public async Task<IEnumerable<GrAccount>> GrAccounts(string userName)
+        public async Task<List<GrAccount>> GrData(string userName)
         {
-            IEnumerable<GrAccount> list = await Task.Run(() =>
+            List<GrAccount> list = await Task.Run(() =>
                 (
-                    from a in _repo.Accounts
+                    from a in _repo.Accounts.ToList()
                     join
-                    u in _repo.Users.Where(a => a.Description == userName) on a.UserId equals u.UserId
+                    u in _repo.Users.Where(a => a.Description == userName).ToList() on a.UserId equals u.UserId
                     join
-                    c in _repo.CountryRegion on a.CountryId equals c.CountryId
+                    c in _repo.CountryRegion.ToList() on a.CountryId equals c.CountryId
                     select new GrAccount
                     {
                         AccountExId = a.ExternalId,
@@ -36,9 +36,9 @@ namespace DB_ModelEFCore.Controllers.Repository
                         Description = a.Description,
                         Type = a.Type,
                         PasswordExpires = a.PasswordExpires,
-                        GrServer = from s in _repo.Servers.Where(x=> x.ServerId == a.ServerId)
+                        GrServer = from s in _repo.Servers.Where(x=> x.ServerId == a.ServerId).ToList()
                                     join
-                                    c1 in _repo.CountryRegion on s.CountryId equals c1.CountryId
+                                    c1 in _repo.CountryRegion.ToList() on s.CountryId equals c1.CountryId
                                     select new GrServer
                                     { 
                                         ServerExId = s.ExternalId,
@@ -55,7 +55,7 @@ namespace DB_ModelEFCore.Controllers.Repository
                                         Ups = s.Ups,
                                         AntivirusSoftware = s.AntivirusSoftware
                                     },
-                        GrSystem = from sy in _repo.Systems.Where(x=> x.SystemId == a.SystemId)
+                        GrSystem = from sy in _repo.Systems.Where(x=> x.SystemId == a.SystemId).ToList()
                                    select new GrSystem
                                    { 
                                         SystemExId = sy.ExternalId,
@@ -66,7 +66,7 @@ namespace DB_ModelEFCore.Controllers.Repository
                                         TechSupportExpDate = sy.TechSupportExpDate
                                    }
                     }
-                ));
+                ).ToList());
             return list;
         }
     }
