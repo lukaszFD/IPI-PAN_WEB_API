@@ -31,7 +31,7 @@ namespace GR_WebApi.Controllers
                 _logger.LogWarning($"No data found for GetAuditAccounts(string {userName})");
                 return NotFound();
             }
-            return data;
+            return Ok( data);
         }
         [HttpGet("Servers")]
         public async Task<ActionResult<IEnumerable<AuditServers>>> GetAuditServers(string serverExId)
@@ -44,7 +44,7 @@ namespace GR_WebApi.Controllers
                 _logger.LogWarning($"No data found for GetAuditServers(string {serverExId})");
                 return NotFound();
             }
-            return data;
+            return Ok(data);
         }
         [HttpGet("Systems")]
         public async Task<ActionResult<IEnumerable<AuditSystems>>> GetAuditSystems(string systemrExId)
@@ -57,7 +57,7 @@ namespace GR_WebApi.Controllers
                 _logger.LogWarning($"No data found for GetAuditSystems(string {systemrExId})");
                 return NotFound();
             }
-            return data;
+            return Ok(data);
         }
     }
 }
