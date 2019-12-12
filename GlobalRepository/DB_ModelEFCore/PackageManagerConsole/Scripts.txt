@@ -13,3 +13,7 @@ Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connec
 --------------Documentation--------------
 
 Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models\Documentation -Tables "documentation.gr_tables" -ContextDir Context\Documentation -Context DocumentationContext
+
+--------------Errors--------------
+
+Scaffold-DbContext "Server=.\SQLExpress;Database=GlobalRepository;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models\Error -Tables "error.ErrorMessages" -ContextDir Context\Error -Context ErrorContext

@@ -17,6 +17,7 @@
   <ItemGroup>
     <Folder Include="Context\Audit\" />
     <Folder Include="Context\Documentation\" />
+    <Folder Include="Context\Error\" />
     <Folder Include="Context\Repository\" />
     <Folder Include="Context\Recon\" />
   </ItemGroup>
