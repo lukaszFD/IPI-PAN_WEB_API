@@ -14,6 +14,14 @@ namespace DB_ModelEFCore.Controllers.Documentation
             _doc = new DocumentationContext();
         }
         /// <summary>
+        /// Count DBDocumentation
+        /// </summary>
+        /// <returns></returns>
+        public async Task<int> DBDocumentationCount()
+        {
+            return await Task.Run(() => _doc.GrTables.Count()).ConfigureAwait(true);
+        }
+        /// <summary>
         /// This method returns objects available in network communication (documentation). It is necessary to specify parameters (pageSize,pageNumber). 
         /// </summary>
         /// <param name="pageSize"></param>

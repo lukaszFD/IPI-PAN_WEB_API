@@ -1,0 +1,24 @@
+2019-12-14 10:42:39.3500|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditAccounts by lukasz
+2019-12-14 10:43:05.1224|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditAccounts by lukasz
+2019-12-14 11:00:23.8354|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditAccounts by 5FD1FAAF-B5FC-496D-8E93-E5F9F218091E
+2019-12-14 11:00:31.3425|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditAccounts by 5FD1FAAF-B5FC-496D-8E93-E5F9F218091E
+2019-12-14 11:00:38.0930|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditAccounts by 5FD1FAAF-B5FC-496D-8E93-E5F9F218091E
+2019-12-14 11:00:50.9303|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditAccounts by 5FD1FAAF-B5FC-496D-8E93-E5F9F218091E
+2019-12-14 11:01:29.9151|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditSystems by 8b549844-640b-4481-9fbc-04a6c25cef1b
+2019-12-14 11:14:23.1606|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by lukasz
+2019-12-14 11:15:15.2522|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by lukasz
+2019-12-14 11:21:03.4873|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by lukasz
+2019-12-14 11:22:55.3287|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by lukasz
+2019-12-14 11:24:38.1397|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by lukasz
+2019-12-14 11:29:18.9252|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by lukasz
+2019-12-14 11:29:35.8141|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by lukasz
+2019-12-14 11:32:37.4931|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditAccounts by 974BF5C9-CD25-4B30-8786-112CB12F1E3B
+2019-12-14 12:11:13.3671|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Count for GrAccount by lukasz
+2019-12-14 12:11:42.8970|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by lukasz
+2019-12-14 12:47:56.8476|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditAccountsCount by 7975B3DC-1DEA-4DCA-BEF6-A90147DCD64C
+2019-12-14 12:48:12.3305|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditAccountsCount by 905C5159-42C3-4EE5-B376-8E558741C396
+2019-12-14 12:48:25.2880|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditAccounts by 905C5159-42C3-4EE5-B376-8E558741C396
+2019-12-14 12:56:05.7873|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditAccountsCount by E6140051-01A5-4106-A0DE-632BACD75EF0
+2019-12-14 12:56:15.5146|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditAccountsCount by D1149FD5-1B1F-4C09-BF02-BC72A24D4405
+2019-12-14 12:56:25.3917|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditAccountsCount by 3D1DA521-998B-495A-94F8-81FEE1634877
+2019-12-14 12:56:38.9723|INFO|GR_WebApi.Controllers.AuditController|Data downloading for AuditAccountsCount by 7E76F45F-8A4E-4F00-95F7-68DC30EF607C
