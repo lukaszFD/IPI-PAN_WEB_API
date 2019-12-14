@@ -17,16 +17,33 @@ namespace GR_WebApi.Controllers
         {
             _logger = logger;
         }
-
-        [HttpGet("Accounts")]
-        public async Task <ActionResult<IEnumerable<AuditAccounts>>> GetAuditAccounts(string userName, [FromQuery] int pageNumber, [FromQuery] int pageSize)
+        [HttpGet("Accounts/Count")]
+        public async Task<ActionResult<int>> GetAuditAccountsCount(string accountExId)
         {
-            _logger.LogInformation($"Data downloading for AuditAccounts by {userName}");
-            var data = await new AuditData().AuditAccounts(userName, pageSize, pageNumber);
+            _logger.LogInformation($"Data downloading for AuditAccountsCount by {accountExId}");
+            return Ok(await new AuditData().AuditAccountsCount(accountExId));
+        }
+        [HttpGet("Servers/Count")]
+        public async Task<ActionResult<int>> GetAuditServersCount(string serverExId)
+        {
+            _logger.LogInformation($"Data downloading for AuditAccountsCount by {serverExId}");
+            return Ok(await new AuditData().AuditServersCount(serverExId));
+        }
+        [HttpGet("Systems/Count")]
+        public async Task<ActionResult<int>> GetAuditSystemsCount(string systemExId)
+        {
+            _logger.LogInformation($"Data downloading for AuditAccountsCount by {systemExId}");
+            return Ok(await new AuditData().AuditSystemsCount(systemExId));
+        }
+        [HttpGet("Accounts")]
+        public async Task <ActionResult<IEnumerable<AuditAccounts>>> GetAuditAccounts(string accountExId, [FromQuery] int pageNumber, [FromQuery] int pageSize)
+        {
+            _logger.LogInformation($"Data downloading for AuditAccounts by {accountExId}");
+            var data = await new AuditData().AuditAccounts(accountExId, pageSize, pageNumber);
 
             if (data == null)
             {
-                _logger.LogWarning($"No data found for GetAuditAccounts(string {userName})");
+                _logger.LogWarning($"No data found for GetAuditAccounts(string {accountExId})");
                 return NotFound();
             }
             return Ok(data);
