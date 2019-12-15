@@ -1,18 +1,21 @@
 ﻿using DB_ModelEFCore.Controllers.Documentation;
 using DB_ModelEFCore.Controllers.Repository;
+using DB_ModelEFCore.Controllers.Repository.Class;
 using DB_ModelEFCore.Models.Documentation;
 using DB_ModelEFCore.Models.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
 
 namespace GR_WebApi.Controllers
 {
     [Authorize(AuthenticationSchemes = "BasicAuthentication")]
-    [Route("[controller]")]
     [ApiController]
+    [Route("[controller]")]
     public class GrTablesController : ControllerBase
     {
         private readonly ILogger<GrTablesController> _logger;
@@ -20,17 +23,6 @@ namespace GR_WebApi.Controllers
         public GrTablesController(ILogger<GrTablesController> logger)
         {
             _logger = logger;
-        }
-        [AllowAnonymous]
-        [HttpGet("authenticate")]
-        public async Task<ActionResult<IEnumerable<Users>>> Authenticate(string Username, string Password)
-        {
-            var user = await new GlobalRepositoryData().Authenticate(Username, Password);
-
-            if (user == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
-
-            return Ok(user);
         }
         [HttpGet("Documentation/All/Count")]
         public async Task<ActionResult<int>> GetGlobalRespositoryDocumentationcount()

@@ -1,4 +1,5 @@
 ﻿using DB_ModelEFCore.Controllers.Repository;
+using DB_ModelEFCore.Controllers.Repository.Class;
 using DB_ModelEFCore.Models.Repository;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
@@ -16,14 +17,17 @@ namespace GR_WebApi.Authentication
 {
     public class ApiAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {
+        private readonly IUserService _userService;
+
         public ApiAuthenticationHandler(
             IOptionsMonitor<AuthenticationSchemeOptions> options,
             ILoggerFactory logger,
             UrlEncoder encoder,
-            ISystemClock clock)
+            ISystemClock clock,
+            IUserService userService)
             : base(options, logger, encoder, clock)
         {
-
+            _userService = userService;
         }
 
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
@@ -41,7 +45,7 @@ namespace GR_WebApi.Authentication
                 var credentials = Encoding.UTF8.GetString(credentialBytes).Split(new[] { ':' }, 2);
                 var username = credentials[0];
                 var password = credentials[1];
-                user = await new GlobalRepositoryData().Authenticate(username, password);
+                user = await _userService.Authenticate(username, password);
             }
             catch
             {
@@ -53,7 +57,7 @@ namespace GR_WebApi.Authentication
                 return AuthenticateResult.Fail("Invalid Username or Password");
             }
 
-            Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(user.Description), null);
+            Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(user.ExternalId.ToString()), null);
 
             var claims = new[] 
             {

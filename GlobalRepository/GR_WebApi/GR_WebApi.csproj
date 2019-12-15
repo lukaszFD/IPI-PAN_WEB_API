@@ -20,8 +20,4 @@
     <ProjectReference Include="..\DB_ModelEFCore\DB_ModelEFCore.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="CustomContent\" />
-  </ItemGroup>
-
 </Project>
