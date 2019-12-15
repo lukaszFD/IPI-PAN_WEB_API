@@ -6,6 +6,9 @@ GO
 PRINT 'Start Reset identity'
 GO
 
+DBCC CHECKIDENT ('gr_user.Users', RESEED, 0)
+GO
+
 DBCC CHECKIDENT ('repository.CountryRegion', RESEED, 0)
 GO
 
@@ -46,6 +49,9 @@ GO
 PRINT 'Start Delete data'
 GO
 
+DELETE FROM gr_user.Users
+GO
+
 DELETE FROM repository.CountryRegion
 GO
 
@@ -81,7 +87,27 @@ GO
 
 PRINT 'Stop Delete data'
 GO
+---------------------------------------------------------
+----------INSERT INTO gr_user.Users----------------------
+---------------------------------------------------------
+BEGIN TRAN INSERT_INTO_gr_user_Users
+PRINT 'Start INSERT_INTO_gr_user_Users'
 
+INSERT INTO gr_user.Users
+           (ExternalId
+           ,Description
+           ,Username
+           ,Password
+           ,Type)
+     VALUES
+           (NEWID()
+           ,'test'
+           ,'lukasz'
+           ,'test'
+           ,'A')
+
+PRINT 'Stop INSERT_INTO_gr_user_Users'
+COMMIT TRAN INSERT_INTO_gr_user_Users
 ---------------------------------------------------------
 ----------INSERT INTO repository.CountryRegion-----------
 ---------------------------------------------------------
@@ -193,12 +219,14 @@ WHILE @number <= 237
 BEGIN
 INSERT INTO repository.Accounts
            (CountryId 
+		   ,UserId
            ,SystemId
            ,ServerId
            ,Name
            ,Type)
      VALUES
            (FLOOR(RAND()*(200-0+1))+10 
+		   ,1
            ,@number
            ,@number
            ,@Name +'_'+ cast(@number AS nvarchar(100))

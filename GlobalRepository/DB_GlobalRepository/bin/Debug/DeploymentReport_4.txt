@@ -1,0 +1,45 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [repository].[FK__Accounts__Countr__2116E6DF] (Foreign Key)
+       [repository].[FK__Accounts__Server__22FF2F51] (Foreign Key)
+       [repository].[FK__Accounts__System__23F3538A] (Foreign Key)
+       [repository].[FK__Accounts__UserId__04459E07] (Foreign Key)
+       [repository].[FK__Servers__Country__25DB9BFC] (Foreign Key)
+       [gr_user].[CK__Users__Type__0539C240] (Check Constraint)
+       [recon].[CK__Accounts__Status__29AC2CE0] (Check Constraint)
+       [recon].[CK__Servers__Status__2AA05119] (Check Constraint)
+       [recon].[CK__Systems__Status__2B947552] (Check Constraint)
+       [recon].[CK__Users__Status__2C88998B] (Check Constraint)
+       [repository].[CK__Accounts__Tofix__2E70E1FD] (Check Constraint)
+       [repository].[CK__Accounts__Type__2D7CBDC4] (Check Constraint)
+       [repository].[CK__Servers__Antivir__2F650636] (Check Constraint)
+       [repository].[CK__Servers__HardDis__30592A6F] (Check Constraint)
+       [repository].[CK__Servers__UPS__314D4EA8] (Check Constraint)
+     Create
+       Foreign Key: unnamed constraint on [repository].[Accounts] (Foreign Key)
+       Foreign Key: unnamed constraint on [repository].[Accounts] (Foreign Key)
+       Foreign Key: unnamed constraint on [repository].[Accounts] (Foreign Key)
+       Foreign Key: unnamed constraint on [repository].[Accounts] (Foreign Key)
+       Foreign Key: unnamed constraint on [repository].[Servers] (Foreign Key)
+       Check Constraint: unnamed constraint on [gr_user].[Users] (Check Constraint)
+       Check Constraint: unnamed constraint on [recon].[Accounts] (Check Constraint)
+       Check Constraint: unnamed constraint on [recon].[Servers] (Check Constraint)
+       Check Constraint: unnamed constraint on [recon].[Systems] (Check Constraint)
+       Check Constraint: unnamed constraint on [recon].[Users] (Check Constraint)
+       Check Constraint: unnamed constraint on [repository].[Accounts] (Check Constraint)
+       Check Constraint: unnamed constraint on [repository].[Accounts] (Check Constraint)
+       Check Constraint: unnamed constraint on [repository].[Servers] (Check Constraint)
+       Check Constraint: unnamed constraint on [repository].[Servers] (Check Constraint)
+       Check Constraint: unnamed constraint on [repository].[Servers] (Check Constraint)
+
+** Supporting actions

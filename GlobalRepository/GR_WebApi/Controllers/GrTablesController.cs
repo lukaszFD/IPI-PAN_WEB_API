@@ -21,17 +21,17 @@ namespace GR_WebApi.Controllers
         {
             _logger = logger;
         }
-        //[AllowAnonymous]
-        //[HttpGet("authenticate")]
-        //public async Task<ActionResult<IEnumerable<Users>>> Authenticate(string Username, string Password)
-        //{
-        //    var user = await new GlobalRepositoryData().Authenticate(Username, Password);
+        [AllowAnonymous]
+        [HttpGet("authenticate")]
+        public async Task<ActionResult<IEnumerable<Users>>> Authenticate(string Username, string Password)
+        {
+            var user = await new GlobalRepositoryData().Authenticate(Username, Password);
 
-        //    if (user == null)
-        //        return BadRequest(new { message = "Username or password is incorrect" });
+            if (user == null)
+                return BadRequest(new { message = "Username or password is incorrect" });
 
-        //    return Ok(user);
-        //}
+            return Ok(user);
+        }
         [HttpGet("Documentation/All/Count")]
         public async Task<ActionResult<int>> GetGlobalRespositoryDocumentationcount()
         {
@@ -56,8 +56,8 @@ namespace GR_WebApi.Controllers
 
             if (data == null)
             {
-                _logger.LogWarning("No data found for GetGlobalRespositoryDocumentation/Documentation/{schema_name}/{table_name}");
-                return NotFound();
+                _logger.LogWarning($"No data found for GetGlobalRespositoryDocumentation/Documentation/{schema_name}/{table_name}");
+                return BadRequest(new { message = $"No data found for GetGlobalRespositoryDocumentation/Documentation/{schema_name}/{table_name}" });
             }
             return Ok(data);
         }
