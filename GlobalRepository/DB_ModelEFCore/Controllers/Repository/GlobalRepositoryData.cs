@@ -1,13 +1,14 @@
 ﻿using DB_ModelEFCore.Controllers.Repository.Class;
 using DB_ModelEFCore.Models.Repository;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace DB_ModelEFCore.Controllers.Repository
 {
-    public class GlobalRepositoryData 
+    public class GlobalRepositoryData
     {
         private readonly RepositoryContext _repo;
         public GlobalRepositoryData()
@@ -15,13 +16,65 @@ namespace DB_ModelEFCore.Controllers.Repository
             _repo = new RepositoryContext();
         }
         /// <summary>
+        /// Create new account with system and server. 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public async Task<Guid> CreateNewAccount(NewAccount item)
+        {
+            var system = new Systems
+            {
+                CompanyName = item.SystemCompanyName,
+                Name = item.SystemName,
+                Version = item.SystemVersion,
+                TechSupportExpDate = item.SystemTechSupportExpDate
+            };
+            _repo.Systems.Add(system);
+            await _repo.SaveChangesAsync();
+            int systemId = system.SystemId;
+
+            var server = new Servers
+            {
+                Name = item.ServerName,
+                Host = item.ServerHost,
+                CountryId = _repo.CountryRegion.Where(c=> c.CountryRegionCode == item.ServerCountryRegionCode).Select(c=> c.CountryId).SingleOrDefault(),
+                Model = item.ServerModel,
+                SerialNumber = item.ServerSerialNumber,
+                WarrantyExpirationDate = item.ServerWarrantyExpirationDate,
+                Cputype = item.ServerCputype,
+                Ram = item.ServerRam,
+                HardDisk = item.ServerHardDisk,
+                Ups = item.ServerUps,
+                AntivirusSoftware = item.ServerAntivirusSoftware
+            };
+            _repo.Servers.Add(server);
+            await _repo.SaveChangesAsync();
+            int serverId = server.ServerId;
+
+            var account = new Accounts
+            {
+                CountryId = _repo.CountryRegion.Where(c => c.CountryRegionCode == item.AccountCountryRegionCode).Select(c => c.CountryId).SingleOrDefault(),
+                SystemId = systemId,
+                ServerId = serverId,
+                Name = item.AccountName,
+                Description = item.AccountDescription,
+                Type = item.AccountType,
+                PasswordExpires = item.AccountPasswordExpires
+            };
+            _repo.Accounts.Add(account);
+            await _repo.SaveChangesAsync();
+
+            return _repo.Accounts.Where(a => a.AccountId == account.AccountId).Select(a => a.ExternalId).SingleOrDefault();
+        }
+
+        /// <summary>
         /// Count GrData
         /// </summary>
         /// <param name="userName"></param>
         /// <returns></returns>
         public async Task<int> GrDataCount(string userName)
         {
-            return await Task.Run(() => _repo.Accounts.Where(a => a.UserId == _repo.Users.Where(u => u.Description == userName).Select(u => u.UserId).SingleOrDefault()).Count()).ConfigureAwait(true);
+            return await Task.Run(() => _repo.Accounts.Where(a => a.UserId == _repo.Users.Where(u => u.Username == userName).Select(u => u.UserId).SingleOrDefault()).Count()).ConfigureAwait(true);
         }
         /// <summary>
         /// This method returns all objects available in web communication (AuditAccounts). 
@@ -30,9 +83,9 @@ namespace DB_ModelEFCore.Controllers.Repository
         /// <param name="pageSize"></param>
         /// <param name="pageNumber"></param>
         /// <returns></returns>
-            public async Task<IEnumerable<GrAccount>> GrData(string userName, int pageSize, int pageNumber)
+        public async Task<IEnumerable<GrAccount>> GrData(string userName, int pageSize, int pageNumber)
         {
-            var query = (from u in _repo.Set<Users>().Where(a => a.Description == userName)
+            var query = (from u in _repo.Set<Users>().Where(a => a.Username == userName)
                          join
                          a in _repo.Set<Accounts>() on u.UserId equals a.UserId
                          join

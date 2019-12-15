@@ -13,7 +13,7 @@ namespace GR_WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            services.AddMvc(/*options => options.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_2_2*/);
+            services.AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSwaggerGen(
                 a => a.SwaggerDoc("v1", new Info { Title = "Swagger Global Repository", Description = "Swagger WebAPI Global Repository" }));
             services.AddAuthentication("BasicAuthentication")
