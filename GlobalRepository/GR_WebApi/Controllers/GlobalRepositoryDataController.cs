@@ -1,15 +1,13 @@
 ﻿using DB_ModelEFCore.Controllers.Repository;
 using DB_ModelEFCore.Controllers.Repository.Class;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace GR_WebApi.Controllers
 {
-    [Authorize(AuthenticationSchemes = "BasicAuthentication")]
+    //[Authorize(AuthenticationSchemes = "BasicAuthentication")]
     [Route("[controller]")]
     [ApiController]
     public class GlobalRepositoryDataController : ControllerBase
@@ -21,6 +19,17 @@ namespace GR_WebApi.Controllers
             _logger = logger;
         }
 
+        [HttpPost("CreateNewAccount")]
+        public async Task<ActionResult<NewAccount>> CreateNewAccount(NewAccount account)
+        {
+            var data = await new GlobalRepositoryData().CreateNewAccount(account);
+
+            if (data == null)
+            {
+                return BadRequest(new { message = "An error has occurred while processing your query" });
+            }
+            return Ok(data);
+        }
         [HttpGet("/AllAccounts")]
         public async Task<ActionResult<IEnumerable<GrAccount>>> GetGlobalRespositoryData(string userName, [FromQuery] int pageNumber, [FromQuery] int pageSize)
         {
