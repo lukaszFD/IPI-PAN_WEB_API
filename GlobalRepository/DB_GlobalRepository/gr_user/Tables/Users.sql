@@ -2,6 +2,8 @@
     [ExternalId]   UNIQUEIDENTIFIER NOT NULL,
     [UserId]       INT              IDENTITY (1, 1) NOT NULL,
     [Description]  NVARCHAR (200)   NULL,
+    [Username] [nvarchar](200) NULL,
+	[Password] [nvarchar](200) NULL,
     [Type]         CHAR (1)         NOT NULL,
     [CreationDate] DATETIME         DEFAULT (getdate()) NOT NULL,
     [EditDate]     DATETIME         NULL,

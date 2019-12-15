@@ -1,5 +1,6 @@
 ﻿using DB_ModelEFCore.Controllers.Audit;
 using DB_ModelEFCore.Controllers.Audit.Class;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace GR_WebApi.Controllers
 {
+    [Authorize(AuthenticationSchemes = "BasicAuthentication")]
     [Route("[controller]")]
     [ApiController]
     public class AuditController : ControllerBase
@@ -17,6 +19,7 @@ namespace GR_WebApi.Controllers
         {
             _logger = logger;
         }
+        
         [HttpGet("Accounts/Count")]
         public async Task<ActionResult<int>> GetAuditAccountsCount(string accountExId)
         {
