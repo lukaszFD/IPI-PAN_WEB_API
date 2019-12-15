@@ -6,16 +6,16 @@ using Microsoft.Extensions.Options;
 using System;
 using System.Net.Http.Headers;
 using System.Security.Claims;
+using System.Security.Principal;
 using System.Text;
 using System.Text.Encodings.Web;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GR_WebApi.Authentication
 {
     public class ApiAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {
-        //private readonly IUserService _userService;
-
         public ApiAuthenticationHandler(
             IOptionsMonitor<AuthenticationSchemeOptions> options,
             ILoggerFactory logger,
@@ -23,7 +23,7 @@ namespace GR_WebApi.Authentication
             ISystemClock clock)
             : base(options, logger, encoder, clock)
         {
-            //_userService = userService;
+
         }
 
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
@@ -52,6 +52,8 @@ namespace GR_WebApi.Authentication
             {
                 return AuthenticateResult.Fail("Invalid Username or Password");
             }
+
+            Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(user.Description), null);
 
             var claims = new[] 
             {

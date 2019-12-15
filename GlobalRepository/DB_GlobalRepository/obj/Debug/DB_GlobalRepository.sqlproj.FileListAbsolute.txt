@@ -9,3 +9,4 @@ C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalReposito
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\refactor.xml
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\postdeploy.sql
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\predeploy.sql
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\DB_GlobalRepository\obj\Debug\DB_GlobalRepository.sqlprojAssemblyReference.cache
