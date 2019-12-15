@@ -1,0 +1,1 @@
+2019-12-15 10:13:06.8279|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
