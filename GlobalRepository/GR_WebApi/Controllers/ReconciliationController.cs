@@ -1,10 +1,12 @@
 ﻿using DB_ModelEFCore.Controllers.Recon;
 using DB_ModelEFCore.Controllers.Recon.Class;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace GR_WebApi.Controllers
 {
+    [Authorize(AuthenticationSchemes = "BasicAuthentication")]
     [Route("[controller]")]
     [ApiController]
     public class ReconciliationController : ControllerBase

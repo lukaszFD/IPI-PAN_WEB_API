@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DB_ModelEFCore.Controllers.Repository
 {
-    public class GlobalRepositoryData
+    public class GlobalRepositoryData 
     {
         private readonly RepositoryContext _repo;
         public GlobalRepositoryData()
@@ -79,6 +79,16 @@ namespace DB_ModelEFCore.Controllers.Repository
                                         }
                          }).AsQueryable();
             return await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
+        }
+
+        public async Task<Users> Authenticate(string username, string password)
+        {
+            var user = await Task.Run(() => _repo.Users.SingleOrDefault(x => x.Username == username && x.Password == password));
+            if (user == null)
+            {
+                return null;
+            };
+            return user;
         }
     }
 }

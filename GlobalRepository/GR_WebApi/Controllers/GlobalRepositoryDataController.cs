@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace GR_WebApi.Controllers
 {
+    [Authorize(AuthenticationSchemes = "BasicAuthentication")]
     [Route("[controller]")]
     [ApiController]
     public class GlobalRepositoryDataController : ControllerBase

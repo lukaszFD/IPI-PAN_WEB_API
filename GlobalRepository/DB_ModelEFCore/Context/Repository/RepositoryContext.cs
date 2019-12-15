@@ -84,7 +84,7 @@ namespace DB_ModelEFCore.Models.Repository
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Accounts)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__Accounts__UserId__24E777C3");
+                    .HasConstraintName("FK__Accounts__UserId__04459E07");
             });
 
             modelBuilder.Entity<CountryRegion>(entity =>
@@ -210,7 +210,7 @@ namespace DB_ModelEFCore.Models.Repository
             modelBuilder.Entity<Users>(entity =>
             {
                 entity.HasKey(e => e.UserId)
-                    .HasName("PK__Users__1788CC4C86121283");
+                    .HasName("PK__tmp_ms_x__1788CC4C7E820ECE");
 
                 entity.ToTable("Users", "gr_user");
 
@@ -224,10 +224,14 @@ namespace DB_ModelEFCore.Models.Repository
 
                 entity.Property(e => e.EditDate).HasColumnType("datetime");
 
+                entity.Property(e => e.Password).HasMaxLength(200);
+
                 entity.Property(e => e.Type)
                     .IsRequired()
                     .HasMaxLength(1)
                     .IsUnicode(false);
+
+                entity.Property(e => e.Username).HasMaxLength(200);
             });
         }
     }

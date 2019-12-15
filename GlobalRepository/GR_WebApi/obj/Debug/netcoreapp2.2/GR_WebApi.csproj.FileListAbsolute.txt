@@ -18,3 +18,4 @@ C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WebApi\bin\Deb
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WebApi\obj\Debug\netcoreapp2.2\GR_WebApi.dll
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WebApi\obj\Debug\netcoreapp2.2\GR_WebApi.pdb
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WebApi\bin\Debug\netcoreapp2.2\nlog.config
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WebApi\bin\Debug\netcoreapp2.2\launchSettings.json
