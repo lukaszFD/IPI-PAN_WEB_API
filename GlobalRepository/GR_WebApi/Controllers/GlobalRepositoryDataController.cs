@@ -1,13 +1,15 @@
 ﻿using DB_ModelEFCore.Controllers.Repository;
 using DB_ModelEFCore.Controllers.Repository.Class;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GR_WebApi.Controllers
 {
-    //[Authorize(AuthenticationSchemes = "BasicAuthentication")]
+    [Authorize(AuthenticationSchemes = "BasicAuthentication")]
     [Route("[controller]")]
     [ApiController]
     public class GlobalRepositoryDataController : ControllerBase
@@ -31,10 +33,11 @@ namespace GR_WebApi.Controllers
             return Ok(data);
         }
         [HttpGet("/AllAccounts")]
-        public async Task<ActionResult<IEnumerable<GrAccount>>> GetGlobalRespositoryData(string userName, [FromQuery] int pageNumber, [FromQuery] int pageSize)
+        public async Task<ActionResult<IEnumerable<GrAccount>>> GetGlobalRespositoryData([FromQuery] int pageNumber, [FromQuery] int pageSize)
         {
-            _logger.LogInformation($"Data downloading for GrAccount by {userName}");
-            var data = await new GlobalRepositoryData().GrData(userName, pageSize, pageNumber);
+            string userEx = Thread.CurrentPrincipal.Identity.Name;
+            _logger.LogInformation($"Data downloading for GrAccount by {userEx}");
+            var data = await new GlobalRepositoryData().GrData(userEx, pageSize, pageNumber);
 
             if (data == null)
             {

@@ -6,7 +6,7 @@ namespace DB_ModelEFCore.Controllers.Repository.Class
     public class NewAccount
     {
         public string AccountCountryRegionCode { get; set; }
-        public string AccountUserName { get; set; }
+        public Guid? AccountUserId { get; set; }
         public string AccountName { get; set; }
         public string AccountDescription { get; set; }
         public string AccountType { get; set; }

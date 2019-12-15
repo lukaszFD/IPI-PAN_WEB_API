@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DB_ModelEFCore.Controllers.Repository
 {
-    public class GlobalRepositoryData
+    public class GlobalRepositoryData : IUserService
     {
         private readonly RepositoryContext _repo;
         public GlobalRepositoryData()
@@ -53,6 +53,7 @@ namespace DB_ModelEFCore.Controllers.Repository
 
             var account = new Accounts
             {
+                UserId = _repo.Users.Where(u => u.ExternalId == item.AccountUserId).Select(u => u.UserId).SingleOrDefault(),
                 CountryId = _repo.CountryRegion.Where(c => c.CountryRegionCode == item.AccountCountryRegionCode).Select(c => c.CountryId).SingleOrDefault(),
                 SystemId = systemId,
                 ServerId = serverId,
@@ -83,9 +84,9 @@ namespace DB_ModelEFCore.Controllers.Repository
         /// <param name="pageSize"></param>
         /// <param name="pageNumber"></param>
         /// <returns></returns>
-        public async Task<IEnumerable<GrAccount>> GrData(string userName, int pageSize, int pageNumber)
+        public async Task<IEnumerable<GrAccount>> GrData(string userExID, int pageSize, int pageNumber)
         {
-            var query = (from u in _repo.Set<Users>().Where(a => a.Username == userName)
+            var query = (from u in _repo.Set<Users>().Where(a => a.ExternalId == new Guid(userExID))
                          join
                          a in _repo.Set<Accounts>() on u.UserId equals a.UserId
                          join
@@ -95,7 +96,7 @@ namespace DB_ModelEFCore.Controllers.Repository
                          {
                              AccountExId = a.ExternalId,
                              CountryRegionCode = _country.CountryRegionCode,
-                             UserName = u.Description,
+                             UserName = u.Username,
                              Name = a.Name,
                              Description = a.Description,
                              Type = a.Type,
