@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GR_WebApi", "GR_WebApi\GR_W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{C5293EB3-A911-4CC6-92AB-76FC8D58EB64}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "..\..\aspnet-core-basic-authentication-api\WebApi.csproj", "{67C4EF2F-A658-4A2E-93EB-F5A5988C2C9F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,10 +35,6 @@ Global
 		{C5293EB3-A911-4CC6-92AB-76FC8D58EB64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5293EB3-A911-4CC6-92AB-76FC8D58EB64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5293EB3-A911-4CC6-92AB-76FC8D58EB64}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67C4EF2F-A658-4A2E-93EB-F5A5988C2C9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67C4EF2F-A658-4A2E-93EB-F5A5988C2C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67C4EF2F-A658-4A2E-93EB-F5A5988C2C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67C4EF2F-A658-4A2E-93EB-F5A5988C2C9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
