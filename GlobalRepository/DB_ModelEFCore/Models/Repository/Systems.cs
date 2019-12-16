@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DB_ModelEFCore.Models.Repository
 {
+    /// <summary>
+    /// Class in which information about all systems that are assigned to accounts is stored. 
+    /// </summary>
     public partial class Systems
     {
         public Systems()

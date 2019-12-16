@@ -3,10 +3,12 @@ using System.Collections.Generic;
 
 namespace DB_ModelEFCore.Controllers.Repository.Class
 {
+    /// <summary>
+    /// Class for creating new accounts in the repository.
+    /// </summary>
     public class NewAccount
     {
         public string AccountCountryRegionCode { get; set; }
-        public Guid? AccountUserId { get; set; }
         public string AccountName { get; set; }
         public string AccountDescription { get; set; }
         public string AccountType { get; set; }

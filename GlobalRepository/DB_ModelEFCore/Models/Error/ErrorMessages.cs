@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DB_ModelEFCore.Models.Error
 {
+    /// <summary>
+    /// Class in which information about errors occurred during data reconciliation is stored. 
+    /// </summary>
     public partial class ErrorMessages
     {
         public int ErrorId { get; set; }

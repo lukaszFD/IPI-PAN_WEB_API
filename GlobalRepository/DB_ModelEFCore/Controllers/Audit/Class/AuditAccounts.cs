@@ -2,6 +2,9 @@
 
 namespace DB_ModelEFCore.Controllers.Audit.Class
 {
+    /// <summary>
+    /// Audit of data for accounts.
+    /// </summary>
     public partial class AuditAccounts
     {
         public Guid AccountExId { get; set; }

@@ -2,6 +2,9 @@
 
 namespace DB_ModelEFCore.Controllers.Recon.Class
 {
+    /// <summary>
+    /// Reconciliation of data for servers. 
+    /// </summary>
     public partial class ReconServers
     {
         public Guid? ServerExId { get; set; }

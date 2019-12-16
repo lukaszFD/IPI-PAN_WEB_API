@@ -20,7 +20,7 @@ namespace DB_ModelEFCore.Controllers.Repository
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public async Task<Guid> CreateNewAccount(NewAccount item)
+        public async Task<Guid> CreateNewAccount(NewAccount item, string userExId)
         {
             var system = new Systems
             {
@@ -53,7 +53,7 @@ namespace DB_ModelEFCore.Controllers.Repository
 
             var account = new Accounts
             {
-                UserId = _repo.Users.Where(u => u.ExternalId == item.AccountUserId).Select(u => u.UserId).SingleOrDefault(),
+                UserId = _repo.Users.Where(u => u.ExternalId == new Guid(userExId)).Select(u => u.UserId).SingleOrDefault(),
                 CountryId = _repo.CountryRegion.Where(c => c.CountryRegionCode == item.AccountCountryRegionCode).Select(c => c.CountryId).SingleOrDefault(),
                 SystemId = systemId,
                 ServerId = serverId,
@@ -73,14 +73,14 @@ namespace DB_ModelEFCore.Controllers.Repository
         /// </summary>
         /// <param name="userName"></param>
         /// <returns></returns>
-        public async Task<int> GrDataCount(string userName)
+        public async Task<int> GrDataCount(string userExId)
         {
-            return await Task.Run(() => _repo.Accounts.Where(a => a.UserId == _repo.Users.Where(u => u.Username == userName).Select(u => u.UserId).SingleOrDefault()).Count()).ConfigureAwait(true);
+            return await Task.Run(() => _repo.Accounts.Where(a => a.UserId == _repo.Users.Where(u => u.ExternalId == new Guid(userExId)).Select(u => u.UserId).SingleOrDefault()).Count()).ConfigureAwait(true);
         }
         /// <summary>
         /// This method returns all objects available in web communication (AuditAccounts). 
         /// </summary>
-        /// <param name="userName"></param>
+        /// <param name="userExID"></param>
         /// <param name="pageSize"></param>
         /// <param name="pageNumber"></param>
         /// <returns></returns>
@@ -88,7 +88,7 @@ namespace DB_ModelEFCore.Controllers.Repository
         {
             var query = (from u in _repo.Set<Users>().Where(a => a.ExternalId == new Guid(userExID))
                          join
-                         a in _repo.Set<Accounts>() on u.UserId equals a.UserId
+                         a in _repo.Set<Accounts>().Where(a=> a.DeleteDate == null) on u.UserId equals a.UserId
                          join
                          c in _repo.Set<CountryRegion>() on a.CountryId equals c.CountryId into country
                          from _country in country.DefaultIfEmpty()
@@ -134,7 +134,12 @@ namespace DB_ModelEFCore.Controllers.Repository
                          }).AsQueryable();
             return await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
         }
-
+        /// <summary>
+        /// Checking if the password and login assigned to the user is correct. 
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public async Task<Users> Authenticate(string username, string password)
         {
             var user = await Task.Run(() => _repo.Users.SingleOrDefault(x => x.Username == username && x.Password == password));
@@ -143,6 +148,47 @@ namespace DB_ModelEFCore.Controllers.Repository
                 return null;
             };
             return user;
+        }
+        /// <summary>
+        /// Create new user. 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public async Task<Guid> CreateNewUser(NewUser item)
+        {
+            var user = new Users
+            {
+                Username = item.Username,
+                Password = item.Password,
+                Description = item.Description,
+                Type = "A"
+            };
+            _repo.Users.Add(user);
+            await _repo.SaveChangesAsync();
+
+            return await _repo.Users.Where(a => a.UserId == user.UserId).Select(a => a.ExternalId).SingleOrDefaultAsync();
+        }
+        /// <summary>
+        /// Delete account
+        /// </summary>
+        /// <param name="accountExId"></param>
+        public void DeleteAccount(string accountExId)
+        {
+            var serverExId = (from a in _repo.Accounts.Where(a => a.ExternalId == new Guid(accountExId))
+                                join
+                                s in _repo.Servers on a.ServerId equals s.ServerId
+                                select s.ExternalId).SingleOrDefault();
+
+            _repo.Servers.Where(a => a.ExternalId == serverExId).ToList().ForEach(x => x.DeleteDate = DateTime.Now);
+
+            var systemExId = (from a in _repo.Accounts.Where(a => a.ExternalId == new Guid(accountExId))
+                             join
+                             s in _repo.Systems on a.SystemId equals s.SystemId
+                             select s.ExternalId).SingleOrDefault();
+
+            _repo.Systems.Where(a => a.ExternalId == systemExId).ToList().ForEach(x => x.DeleteDate = DateTime.Now);
+
+            _repo.Accounts.Where(a => a.ExternalId == new Guid(accountExId)).ToList().ForEach(x => x.DeleteDate = DateTime.Now);
         }
     }
 }

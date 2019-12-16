@@ -37,7 +37,7 @@ namespace DB_ModelEFCore.Controllers.Audit
         /// <summary>
         /// This method returns all objects available in web communication (AuditAccounts). 
         /// </summary>
-        /// <param name="userName"></param>
+        /// <param name="accountExId"></param>
         /// <param name="pageSize"></param>
         /// <param name="pageNumber"></param>
         /// <returns></returns>

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DB_ModelEFCore.Controllers.Repository.Class
 {
+    /// <summary>
+    /// Creating a new account.
+    /// </summary>
     public partial class GrAccount
     {
         public Guid? AccountExId { get; set; }

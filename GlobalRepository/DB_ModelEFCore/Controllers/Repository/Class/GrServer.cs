@@ -6,6 +6,9 @@ using System.Text;
 
 namespace DB_ModelEFCore.Controllers.Repository.Class
 {
+    /// <summary>
+    /// Creating a new server.
+    /// </summary>
     public partial class GrServer
     {
         public Guid ServerExId { get; set; }
