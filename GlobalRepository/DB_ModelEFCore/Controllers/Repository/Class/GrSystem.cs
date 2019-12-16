@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DB_ModelEFCore.Controllers.Repository.Class
 {
+    /// <summary>
+    /// Creating a new system.
+    /// </summary>
     public partial class GrSystem
     {
         public Guid SystemExId { get; set; }

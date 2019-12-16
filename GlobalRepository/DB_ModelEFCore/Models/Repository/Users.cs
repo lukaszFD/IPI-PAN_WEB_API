@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DB_ModelEFCore.Models.Repository
 {
+    /// <summary>
+    /// A class in which information about all account owners is stored. 
+    /// </summary>
     public partial class Users
     {
         public Users()

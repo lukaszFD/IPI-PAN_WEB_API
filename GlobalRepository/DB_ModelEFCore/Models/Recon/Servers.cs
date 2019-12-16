@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DB_ModelEFCore.Models.Recon
 {
+    /// <summary>
+    /// Class in which information about reconciliation of data for servers is stored. 
+    /// </summary>
     public partial class Servers
     {
         public int RecServerId { get; set; }

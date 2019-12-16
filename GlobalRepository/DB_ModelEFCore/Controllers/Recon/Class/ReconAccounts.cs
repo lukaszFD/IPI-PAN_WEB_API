@@ -2,6 +2,9 @@
 
 namespace DB_ModelEFCore.Controllers.Recon.Class
 {
+    /// <summary>
+    /// Reconciliation of data for accounts. 
+    /// </summary>
     public partial class ReconAccounts
     {
         public Guid? AccountExId { get; set; }

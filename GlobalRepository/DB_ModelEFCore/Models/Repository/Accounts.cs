@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DB_ModelEFCore.Models.Repository
 {
+    /// <summary>
+    /// Account class in which information about all accounts in the repository is stored. 
+    /// </summary>
     public partial class Accounts
     {
         public Guid ExternalId { get; set; }

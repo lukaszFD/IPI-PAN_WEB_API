@@ -15,6 +15,9 @@ using System.Threading.Tasks;
 
 namespace GR_WebApi.Authentication
 {
+    /// <summary>
+    /// A class to check if the data the user entered during login is correct and if he has access to the data.
+    /// </summary>
     public class ApiAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {
         private readonly IUserService _userService;
@@ -29,7 +32,10 @@ namespace GR_WebApi.Authentication
         {
             _userService = userService;
         }
-
+        /// <summary>
+        /// Checking if the data entered by the user during logging in is true.
+        /// </summary>
+        /// <returns></returns>
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
         {
             if (!Request.Headers.ContainsKey("Authorization"))

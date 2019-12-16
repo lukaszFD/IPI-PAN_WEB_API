@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [gr_user].[Users] (
-    [ExternalId]   UNIQUEIDENTIFIER NOT NULL,
+    [ExternalId]   UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
     [UserId]       INT              IDENTITY (1, 1) NOT NULL,
     [Description]  NVARCHAR (200)   NULL,
     [Username] [nvarchar](200) NULL,

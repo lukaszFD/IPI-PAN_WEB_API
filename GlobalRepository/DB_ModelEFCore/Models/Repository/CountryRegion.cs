@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DB_ModelEFCore.Models.Repository
 {
+    /// <summary>
+    /// Class in which information about all regions that are assigned to the account in the repository is stored. 
+    /// </summary>
     public partial class CountryRegion
     {
         public CountryRegion()

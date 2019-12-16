@@ -1,6 +1,9 @@
 ﻿using System;
 namespace DB_ModelEFCore.Controllers.Audit.Class
 {
+    /// <summary>
+    /// Audit of data for systems.
+    /// </summary>
     public partial class AuditSystems
     {
         public Guid SystemExId { get; set; }

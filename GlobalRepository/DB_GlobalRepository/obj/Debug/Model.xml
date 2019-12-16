@@ -643,6 +643,22 @@
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
+				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[NEWID()]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[gr_user].[Users]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[gr_user].[Users].[ExternalId]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="41" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
 				<Value QuotedIdentifiers="True" AnsiNulls="True"><![CDATA[(getdate())]]></Value>
 			</Property>
 			<Relationship Name="DefiningTable">
@@ -655,7 +671,7 @@
 					<References Name="[gr_user].[Users].[CreationDate]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="41" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="42" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint">
 			<Relationship Name="Columns">
@@ -678,7 +694,7 @@
 					<References Name="[repository].[CountryRegion]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="42" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="43" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint">
 			<Relationship Name="Columns">
@@ -701,7 +717,7 @@
 					<References Name="[repository].[Servers]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="43" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="44" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint">
 			<Relationship Name="Columns">
@@ -724,7 +740,7 @@
 					<References Name="[repository].[Systems]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="44" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="45" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint">
 			<Relationship Name="Columns">
@@ -747,7 +763,7 @@
 					<References Name="[gr_user].[Users]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="45" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="46" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint">
 			<Relationship Name="Columns">
@@ -770,7 +786,7 @@
 					<References Name="[repository].[CountryRegion]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="46" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="47" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -789,7 +805,7 @@
 					<References Name="[error].[ErrorMessages]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="47" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="48" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -808,7 +824,7 @@
 					<References Name="[recon].[Accounts]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="48" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="49" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -827,7 +843,7 @@
 					<References Name="[recon].[Servers]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="49" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="50" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -846,7 +862,7 @@
 					<References Name="[recon].[Systems]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="50" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="51" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -865,7 +881,7 @@
 					<References Name="[repository].[CountryRegion]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="51" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="52" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -884,7 +900,7 @@
 					<References Name="[repository].[Accounts]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="52" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="53" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -903,7 +919,7 @@
 					<References Name="[repository].[Systems]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="53" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="54" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -922,7 +938,7 @@
 					<References Name="[repository].[Servers]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="54" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="55" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -941,7 +957,7 @@
 					<References Name="[documentation].[gr_tables]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="55" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="56" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -960,7 +976,7 @@
 					<References Name="[audit].[Systems]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="56" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="57" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -979,7 +995,7 @@
 					<References Name="[audit].[Accounts]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="57" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="58" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -998,7 +1014,7 @@
 					<References Name="[audit].[CountryRegion]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="58" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="59" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -1017,7 +1033,7 @@
 					<References Name="[audit].[Servers]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="59" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="60" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -1036,7 +1052,7 @@
 					<References Name="[gr_user].[Users]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="60" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="61" />
 		</Element>
 		<Element Type="SqlSchema" Name="[audit]">
 			<Relationship Name="Authorizer">
@@ -1063,7 +1079,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="57" />
+						<AttachedAnnotation Disambiguator="58" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1482,7 +1498,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="58" />
+						<AttachedAnnotation Disambiguator="59" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1638,7 +1654,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="59" />
+						<AttachedAnnotation Disambiguator="60" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2151,7 +2167,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="56" />
+						<AttachedAnnotation Disambiguator="57" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2603,7 +2619,7 @@
 					<References Name="[documentation]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="55" />
+			<AttachedAnnotation Disambiguator="56" />
 		</Element>
 		<Element Type="SqlView" Name="[documentation].[tables]">
 			<Property Name="QueryScript">
@@ -3777,7 +3793,7 @@ END CATCH]]></Value>
 					<References Name="[error]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="47" />
+			<AttachedAnnotation Disambiguator="48" />
 		</Element>
 		<Element Type="SqlView" Name="[error].[ReconAccounts]">
 			<Property Name="QueryScript">
@@ -4769,7 +4785,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Offset" Value="551" />
+				<Property Name="Offset" Value="567" />
 				<Property Name="Length" Value="226" />
 				<Property Name="StartLine" Value="16" />
 				<Property Name="StartColumn" Value="1" />
@@ -4793,6 +4809,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
+						<AttachedAnnotation Disambiguator="41" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -4891,7 +4908,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="41" />
+						<AttachedAnnotation Disambiguator="42" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -4930,7 +4947,7 @@ END]]></Value>
 					<References Name="[gr_user]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="60" />
+			<AttachedAnnotation Disambiguator="61" />
 			<AttachedAnnotation Disambiguator="13" />
 		</Element>
 		<Element Type="SqlSchema" Name="[recon]">
@@ -5140,7 +5157,7 @@ END]]></Value>
 					<References Name="[recon]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="48" />
+			<AttachedAnnotation Disambiguator="49" />
 			<AttachedAnnotation Disambiguator="4" />
 		</Element>
 		<Element Type="SqlDmlTrigger" Name="[recon].[After_I_MergeAccount_trg]">
@@ -6340,7 +6357,7 @@ END CATCH]]></Value>
 					<References Name="[recon]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="49" />
+			<AttachedAnnotation Disambiguator="50" />
 			<AttachedAnnotation Disambiguator="5" />
 		</Element>
 		<Element Type="SqlTable" Name="[recon].[Systems]">
@@ -6482,7 +6499,7 @@ END CATCH]]></Value>
 					<References Name="[recon]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="50" />
+			<AttachedAnnotation Disambiguator="51" />
 			<AttachedAnnotation Disambiguator="7" />
 		</Element>
 		<Element Type="SqlTable" Name="[recon].[Users]">
@@ -6832,13 +6849,13 @@ END CATCH]]></Value>
 					<References Name="[repository]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="52" />
+			<AttachedAnnotation Disambiguator="53" />
 			<AttachedAnnotation Disambiguator="8" />
 			<AttachedAnnotation Disambiguator="9" />
-			<AttachedAnnotation Disambiguator="42" />
 			<AttachedAnnotation Disambiguator="43" />
 			<AttachedAnnotation Disambiguator="44" />
 			<AttachedAnnotation Disambiguator="45" />
+			<AttachedAnnotation Disambiguator="46" />
 		</Element>
 		<Element Type="SqlDmlTrigger" Name="[repository].[After_U_Accounts_trg]">
 			<Property Name="IsUpdateTrigger" Value="True" />
@@ -7941,7 +7958,7 @@ END]]></Value>
 					<References Name="[repository]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="51" />
+			<AttachedAnnotation Disambiguator="52" />
 		</Element>
 		<Element Type="SqlTable" Name="[repository].[Servers]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -8245,11 +8262,11 @@ END]]></Value>
 					<References Name="[repository]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="54" />
+			<AttachedAnnotation Disambiguator="55" />
 			<AttachedAnnotation Disambiguator="10" />
 			<AttachedAnnotation Disambiguator="11" />
 			<AttachedAnnotation Disambiguator="12" />
-			<AttachedAnnotation Disambiguator="46" />
+			<AttachedAnnotation Disambiguator="47" />
 		</Element>
 		<Element Type="SqlTable" Name="[repository].[Systems]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -8438,7 +8455,7 @@ END]]></Value>
 					<References Name="[repository]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="53" />
+			<AttachedAnnotation Disambiguator="54" />
 		</Element>
 		<Element Type="SqlSchema" Name="[service]">
 			<Relationship Name="Authorizer">

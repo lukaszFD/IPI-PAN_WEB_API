@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DB_ModelEFCore.Models.Audit
 {
+    /// <summary>
+    /// The class in which the information from the audit of systems is stored. 
+    /// </summary>
     public partial class Systems
     {
         public int AudId { get; set; }

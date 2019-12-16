@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DB_ModelEFCore.Models.Documentation
 {
+    /// <summary>
+    /// Class in which the documentation of the account repository is stored. 
+    /// </summary>
     public partial class GrTables
     {
         public int TableId { get; set; }
