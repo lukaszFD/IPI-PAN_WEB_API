@@ -104,43 +104,18 @@ namespace GR_WebApi.Controllers
             }
             return Ok(new { message = $"For user {_userEx} are assigned {data}." });
         }
-        /// <summary>
-        /// Create new user
-        /// </summary>
-        /// <param name="account"></param>
-        /// <returns></returns>
-        [HttpPost("CreateNewUser")]
-        public async Task<ActionResult<NewUser>> CreateNewUser(NewUser user)
-        {
-            string data;
-            try
-            {
-                data = Convert.ToString(await new GlobalRepositoryData().CreateNewUser(user));
-                _logger.LogInformation($"CreateNewUser {data} for {_userEx}");
-                if (data == null)
-                {
-                    _logger.LogWarning($"No data found for {_userEx}");
-                    return NotFound(new { message = $"No data found for {_userEx}"});
-                }
-            }
-            catch (System.Exception ex)
-            {
-                _logger.LogError($"An error has occurred during data processing. For : {_userEx}. Error : {ex.Message}");
-                return StatusCode(500, $"An error has occurred during data processing. For : {_userEx}. Error : {ex.Message}");
-            }
-            return Ok(data);
-        }
+
         /// <summary>
         /// DEelte account
         /// </summary>
         /// <param name="accountExId"></param>
         /// <returns></returns>
         [HttpDelete("DeleteAccount")]
-        public ActionResult<bool> DeleteAccount(string accountExId)
+        public async Task<ActionResult<bool>> DeleteAccount(string accountExId)
         {
             try
             {
-                new GlobalRepositoryData().DeleteAccount(accountExId);
+                await new GlobalRepositoryData().DeleteAccount(accountExId);
             }
             catch (System.Exception ex)
             {

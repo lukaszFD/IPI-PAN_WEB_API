@@ -37,7 +37,7 @@ namespace DB_ModelEFCore.Controllers.Repository
             {
                 Name = item.ServerName,
                 Host = item.ServerHost,
-                CountryId = _repo.CountryRegion.Where(c=> c.CountryRegionCode == item.ServerCountryRegionCode).Select(c=> c.CountryId).SingleOrDefault(),
+                CountryId = _repo.CountryRegion.Where(c => c.CountryRegionCode == item.ServerCountryRegionCode).Select(c => c.CountryId).SingleOrDefault(),
                 Model = item.ServerModel,
                 SerialNumber = item.ServerSerialNumber,
                 WarrantyExpirationDate = item.ServerWarrantyExpirationDate,
@@ -88,7 +88,7 @@ namespace DB_ModelEFCore.Controllers.Repository
         {
             var query = (from u in _repo.Set<Users>().Where(a => a.ExternalId == new Guid(userExID))
                          join
-                         a in _repo.Set<Accounts>().Where(a=> a.DeleteDate == null) on u.UserId equals a.UserId
+                         a in _repo.Set<Accounts>().Where(a => a.DeleteDate == null) on u.UserId equals a.UserId
                          join
                          c in _repo.Set<CountryRegion>() on a.CountryId equals c.CountryId into country
                          from _country in country.DefaultIfEmpty()
@@ -161,7 +161,7 @@ namespace DB_ModelEFCore.Controllers.Repository
                 Username = item.Username,
                 Password = item.Password,
                 Description = item.Description,
-                Type = "A"
+                Type = "N"
             };
             _repo.Users.Add(user);
             await _repo.SaveChangesAsync();
@@ -172,23 +172,56 @@ namespace DB_ModelEFCore.Controllers.Repository
         /// Delete account
         /// </summary>
         /// <param name="accountExId"></param>
-        public void DeleteAccount(string accountExId)
+        public async Task DeleteAccount(string accountExId)
         {
-            var serverExId = (from a in _repo.Accounts.Where(a => a.ExternalId == new Guid(accountExId))
-                                join
-                                s in _repo.Servers on a.ServerId equals s.ServerId
-                                select s.ExternalId).SingleOrDefault();
+            using (var accountContext = new RepositoryContext())
+            {
+                var account = await Task.Run(() => (from a in accountContext.Accounts.Where(a => a.ExternalId == new Guid(accountExId)) select a).FirstOrDefault());
 
-            _repo.Servers.Where(a => a.ExternalId == serverExId).ToList().ForEach(x => x.DeleteDate = DateTime.Now);
+                if (account != null)
+                {
+                    account.DeleteDate = DateTime.Now;
+                    accountContext.Accounts.Update(account);
+                    await accountContext.SaveChangesAsync();
+                }
+            }
 
-            var systemExId = (from a in _repo.Accounts.Where(a => a.ExternalId == new Guid(accountExId))
-                             join
-                             s in _repo.Systems on a.SystemId equals s.SystemId
-                             select s.ExternalId).SingleOrDefault();
+            using (var serverContext = new RepositoryContext())
+            {
+                var server = await Task.Run(() => (from a in serverContext.Accounts.Where(a => a.ExternalId == new Guid(accountExId))
+                                                   join
+                                                   s in serverContext.Servers on a.ServerId equals s.ServerId
+                                                   select s).FirstOrDefault());
+                if (server != null)
+                {
+                    server.DeleteDate = DateTime.Now;
+                    serverContext.Servers.Update(server);
+                    await serverContext.SaveChangesAsync();
+                }
+            }
 
-            _repo.Systems.Where(a => a.ExternalId == systemExId).ToList().ForEach(x => x.DeleteDate = DateTime.Now);
+            using (var systemContext = new RepositoryContext())
+            {
+                var system = await Task.Run(() => (from a in systemContext.Accounts.Where(a => a.ExternalId == new Guid(accountExId))
+                                                   join
+                                                   s in systemContext.Systems on a.SystemId equals s.SystemId
+                                                   select s).FirstOrDefault());
 
-            _repo.Accounts.Where(a => a.ExternalId == new Guid(accountExId)).ToList().ForEach(x => x.DeleteDate = DateTime.Now);
+                if (system != null)
+                {
+                    system.DeleteDate = DateTime.Now;
+                    systemContext.Systems.Update(system);
+                    await systemContext.SaveChangesAsync();
+                }
+            }
+        }
+        /// <summary>
+        /// Check admin guid
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<Guid>> AdminCheck()
+        {
+            return await  Task.Run(() => _repo.Users.Where(a => a.Type == "A" && a.DeleteDate == null).Select(a => a.ExternalId).ToList()).ConfigureAwait(true);
         }
     }
 }

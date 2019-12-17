@@ -1,0 +1,47 @@
+2019-12-17 19:01:27.3348|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2019-12-17 19:02:06.2513|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:02:06.3475|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:02:06.6489|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|CreateNewUser b648dfbb-0f47-40f8-00fe-08d7831b3a74 for 09a339c2-6949-4044-8452-203a0cc19dd6
+2019-12-17 19:13:23.0882|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2019-12-17 19:14:22.2210|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2019-12-17 19:14:52.5364|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2019-12-17 19:15:30.3960|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:15:53.7130|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:16:14.7635|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:16:40.7158|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2019-12-17 19:17:50.8854|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2019-12-17 19:18:41.1212|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:18:41.2226|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:19:34.9436|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2019-12-17 19:20:01.2170|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:20:01.2969|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:20:50.8664|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2019-12-17 19:21:17.5574|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:21:17.6331|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:21:36.2200|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:21:36.2751|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:21:36.6010|INFO|GR_WebApi.Controllers.AdminController|NewUser : 40985b27-2861-40fa-d170-08d7831df3c7
+2019-12-17 19:40:51.3287|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2019-12-17 19:41:13.7268|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:41:13.7963|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:41:14.1935|ERROR|GR_WebApi.Controllers.GlobalRepositoryDataController|An error has occurred during data processing. For : 77a48a1f-c8f4-46aa-a584-8dc9d3ba3c7e. Error : An error occurred while updating the entries. See the inner exception for details.
+2019-12-17 19:41:38.1270|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:41:38.1454|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:42:27.4046|ERROR|GR_WebApi.Controllers.GlobalRepositoryDataController|An error has occurred during data processing. For : 77a48a1f-c8f4-46aa-a584-8dc9d3ba3c7e. Error : An error occurred while updating the entries. See the inner exception for details.
+2019-12-17 19:48:15.1443|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2019-12-17 19:48:53.7917|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:48:53.8747|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:50:48.8408|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2019-12-17 19:51:34.1088|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:51:34.1823|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:54:35.2665|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:54:35.3026|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:57:07.4524|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2019-12-17 19:57:30.0840|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 19:57:30.1606|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 20:13:30.1635|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2019-12-17 20:14:37.6332|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 20:14:37.7311|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 20:15:41.3231|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 20:15:41.3419|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2019-12-17 20:16:03.7779|INFO|GR_WebApi.Controllers.AdminController|NewUser : d64ec67b-a845-495f-19dd-08d783258ef8

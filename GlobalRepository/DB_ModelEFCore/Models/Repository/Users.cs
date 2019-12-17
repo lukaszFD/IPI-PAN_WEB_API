@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DB_ModelEFCore.Models.Repository
 {
@@ -13,6 +15,8 @@ namespace DB_ModelEFCore.Models.Repository
             Accounts = new HashSet<Accounts>();
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public Guid ExternalId { get; set; }
         public int UserId { get; set; }
         public string Description { get; set; }

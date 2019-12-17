@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace DB_ModelEFCore.Controllers.Repository.Class
 {
