@@ -101,10 +101,23 @@ INSERT INTO gr_user.Users
            ,Type)
      VALUES
            (NEWID()
-           ,'test'
+           ,'admin'
+           ,'admin'
+           ,'admin'
+           ,'A')
+
+INSERT INTO gr_user.Users
+           (ExternalId
+           ,Description
+           ,Username
+           ,Password
+           ,Type)
+     VALUES
+           (NEWID()
+           ,'lukasz'
            ,'lukasz'
            ,'test'
-           ,'A')
+           ,'N')
 
 PRINT 'Stop INSERT_INTO_gr_user_Users'
 COMMIT TRAN INSERT_INTO_gr_user_Users
@@ -226,7 +239,7 @@ INSERT INTO repository.Accounts
            ,Type)
      VALUES
            (FLOOR(RAND()*(200-0+1))+10 
-		   ,1
+		   ,2
            ,@number
            ,@number
            ,@Name +'_'+ cast(@number AS nvarchar(100))
