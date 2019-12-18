@@ -5,14 +5,16 @@ It is a project carried out at the postgraduate studies of the Polish Academy of
 ## Technical data and used technologies.
 During the design and programming works I used the most popular tools provided by Microsoft.
 
-###Installed tools : 
-	- Microsoft SQL Server 2017 Express 
-	- Microsoft Visual Studio Community 2019 version
-###Technologies used:
-	- Programming language : C# version 7.3
-	- Database model project in VS : Entity Framework Core 2.2
-	- Web Api project : .Net Core 2.2
-	- Database design : SQL Server 2017
+###Installed tools :
+
+- Microsoft SQL Server 2017 Express 
+- Microsoft Visual Studio Community 2019
+###Technologies used :
+
+- Programming language : C# version 7.3
+- Database model project in VS : Entity Framework Core 2.2
+- Web Api project : .Net Core 2.2
+- Database design : SQL Server 2017
 
 
 If you like the code or have any questions or suggestions then let me know at [Linkedin](https://www.linkedin.com/in/lukaszfd84/) .
