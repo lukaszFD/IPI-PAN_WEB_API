@@ -9,9 +9,9 @@ If you like the code or have any questions or suggestions then let me know at [L
 During the design and programming works I used the most popular tools provided by Microsoft.
 
 1. Programming language : C# version 7.3
-2. Database model project in VS : Entity Framework Core 2.2 [EfCore](https://github.com/lukaszFD/IPI-PAN_WEB_API/tree/master/GlobalRepository/DB_ModelEFCore)
-3. Web Api project : .Net Core 2.2 [WebApi](https://github.com/lukaszFD/IPI-PAN_WEB_API/tree/master/GlobalRepository/GR_WebApi)
-4. Database design : SQL Server 2017 [DB](https://github.com/lukaszFD/IPI-PAN_WEB_API/tree/master/GlobalRepository/DB_GlobalRepository)
+2. [Database model project in VS : Entity Framework Core 2.2](https://github.com/lukaszFD/IPI-PAN_WEB_API/tree/master/GlobalRepository/DB_ModelEFCore)
+3. [Web Api project : .Net Core 2.2](https://github.com/lukaszFD/IPI-PAN_WEB_API/tree/master/GlobalRepository/GR_WebApi)
+4. [Database design : SQL Server 2017](https://github.com/lukaszFD/IPI-PAN_WEB_API/tree/master/GlobalRepository/DB_GlobalRepository)
 
 ## Database project 
 
