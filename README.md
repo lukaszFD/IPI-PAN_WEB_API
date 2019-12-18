@@ -3,6 +3,7 @@
 It is a project carried out at the postgraduate studies of the Polish Academy of Sciences in the field of: "Programming on the .NET platform". This system will be an interface of web communication with the repository of accounts storing information about : systems, servers and accesses. It will be a bridge between other systems and will only manage this information. 
 
 If you like the code or have any questions or suggestions then let me know at [Linkedin](https://www.linkedin.com/in/lukaszfd84/).
+
 My questions about c# on [stackoverflow](https://stackoverflow.com/search?q=user%3A7038630+%5Bc%23%5D).
 
 ## Technical data and used technologies.
