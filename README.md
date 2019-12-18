@@ -1,16 +1,28 @@
-![DB_FEDER](https://user-images.githubusercontent.com/25389541/63093059-203cc880-bf64-11e9-89ce-07497b6cc21f.png)
-
 ## Project
 
-It is a project carried out at the postgraduate studies of the Polish Academy of Sciences in the field of: "Programming on the .NET platform". This system will be an interface of web communication with the repository of accounts storing information about : systems, servers and accesses. It will be a bridge between other systems and will only manage this information. In this project I will use the latest technologies available in Microsoft.
+It is a project carried out at the postgraduate studies of the Polish Academy of Sciences in the field of: "Programming on the .NET platform". This system will be an interface of web communication with the repository of accounts storing information about : systems, servers and accesses. It will be a bridge between other systems and will only manage this information. 
+
+## Technical data and used technologies.
+During the design and programming works I used the most popular tools provided by Microsoft.
+
+Installed tools : 
+	a)	Microsoft SQL Server 2017 Express 
+	b)	Microsoft Visual Studio Community 2019 version
+Technologies used:
+	a)	Programming language : C# version 7.3
+	b)	Database model project in VS : Entity Framework Core 2.2
+	c)	Web Api project : .Net Core 2.2
+	d)	Database design : SQL Server 2017
+
 
 If you like the code or have any questions or suggestions then let me know at [Linkedin](https://www.linkedin.com/in/lukaszfd84/) .
-
+  
+The database project in Visual Studio is here [DB](https://github.com/lukaszFD/IPI-PAN_WEB_API/tree/master/GlobalRepository/DB_GlobalRepository).
+Database model in Entity Framework is here [EfCore](https://github.com/lukaszFD/IPI-PAN_WEB_API/tree/master/GlobalRepository/DB_ModelEFCore).
+Web Api project is here [WebApi](https://github.com/lukaszFD/IPI-PAN_WEB_API/tree/master/GlobalRepository/GR_WebApi). 
 
 ## Database project 
-  
-  The database project in Visual Studio is here [DB](https://github.com/lukaszFD/IPI-PAN_WEB_API/tree/master/GlobalRepository/DB_GlobalRepository).
-  
+
 # Main tables of the repository
 
 ![GR_main](https://user-images.githubusercontent.com/25389541/69998016-b7e71680-1555-11ea-9038-1035076f456c.png)
