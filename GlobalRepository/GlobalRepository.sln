@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DB_ModelEFCore", "DB_ModelE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GR_WebApi", "GR_WebApi\GR_WebApi.csproj", "{FC5D5DAD-0303-4AD0-B116-CFC0499B7ECA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GR_WpfApp", "GR_WpfApp\GR_WpfApp.csproj", "{CAF74577-406D-4988-8C10-0E46747563CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{FC5D5DAD-0303-4AD0-B116-CFC0499B7ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC5D5DAD-0303-4AD0-B116-CFC0499B7ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC5D5DAD-0303-4AD0-B116-CFC0499B7ECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAF74577-406D-4988-8C10-0E46747563CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAF74577-406D-4988-8C10-0E46747563CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAF74577-406D-4988-8C10-0E46747563CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAF74577-406D-4988-8C10-0E46747563CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

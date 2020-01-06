@@ -1,0 +1,41 @@
+2020-01-02 18:16:28.4887|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-02 21:45:18.4110|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-02 21:49:25.1011|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-02 22:13:16.0896|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-02 22:13:40.7468|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-02 22:13:40.8182|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-02 22:13:40.8590|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was challenged.
+2020-01-02 22:14:01.0791|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:14:01.0791|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:14:01.1364|INFO|GR_WebApi.Controllers.GrTablesController|GetGlobalRespositoryDocumentation for user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-02 22:14:01.4218|ERROR|GR_WebApi.Controllers.GrTablesController|An error has occurred during data processing. For : bb2f882f-f643-4b8a-aa06-3b611d7de44e. Error : The number of rows provided for a FETCH clause must be greater then zero.
+2020-01-02 22:14:18.0723|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:14:18.0846|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:14:18.1072|INFO|GR_WebApi.Controllers.GrTablesController|GetGlobalRespositoryDocumentation for user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-02 22:14:28.9874|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:14:29.0009|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:14:29.0009|INFO|GR_WebApi.Controllers.GrTablesController|GetGlobalRespositoryDocumentationCount for user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-02 22:14:40.7156|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:14:40.7271|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:14:40.7520|INFO|GR_WebApi.Controllers.GrTablesController|GetGlobalRespositoryDocumentation for user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-02 22:14:55.4190|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:14:55.4282|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:14:55.4619|INFO|GR_WebApi.Controllers.GrTablesController|GetGlobalRespositoryDocumentation for user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-02 22:15:26.8648|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:15:26.8751|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:15:26.8897|INFO|GR_WebApi.Controllers.GrTablesController|GetGlobalRespositoryDocumentation for user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-02 22:15:33.1032|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:15:33.1214|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:15:33.1325|INFO|GR_WebApi.Controllers.GrTablesController|GetGlobalRespositoryDocumentation for user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-02 22:15:44.4655|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:15:44.4713|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:15:44.4856|INFO|GR_WebApi.Controllers.GrTablesController|GetGlobalRespositoryDocumentation for user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-02 22:16:11.2052|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:16:11.2052|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:16:11.2357|INFO|GR_WebApi.Controllers.GrTablesController|GetGlobalRespositoryDocumentation for user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-02 22:16:19.6129|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:16:19.6129|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:16:19.6594|INFO|GR_WebApi.Controllers.GrTablesController|GetGlobalRespositoryDocumentation for user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-02 22:16:32.7335|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:16:32.7335|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-02 22:16:32.7555|INFO|GR_WebApi.Controllers.GrTablesController|GetGlobalRespositoryDocumentation for user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
