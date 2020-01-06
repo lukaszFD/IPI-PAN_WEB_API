@@ -1,0 +1,17 @@
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\bin\Debug\netcoreapp3.0\GR_WpfApp.exe
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\bin\Debug\netcoreapp3.0\GR_WpfApp.deps.json
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\bin\Debug\netcoreapp3.0\GR_WpfApp.runtimeconfig.json
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\bin\Debug\netcoreapp3.0\GR_WpfApp.runtimeconfig.dev.json
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\bin\Debug\netcoreapp3.0\GR_WpfApp.dll
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\bin\Debug\netcoreapp3.0\GR_WpfApp.pdb
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Debug\netcoreapp3.0\GR_WpfApp.csprojAssemblyReference.cache
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Debug\netcoreapp3.0\MainWindow.g.cs
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Debug\netcoreapp3.0\App.g.cs
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Debug\netcoreapp3.0\GR_WpfApp_MarkupCompile.cache
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Debug\netcoreapp3.0\GR_WpfApp_MarkupCompile.lref
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Debug\netcoreapp3.0\MainWindow.baml
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Debug\netcoreapp3.0\GR_WpfApp.g.resources
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Debug\netcoreapp3.0\GR_WpfApp.AssemblyInfoInputs.cache
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Debug\netcoreapp3.0\GR_WpfApp.AssemblyInfo.cs
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Debug\netcoreapp3.0\GR_WpfApp.dll
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Debug\netcoreapp3.0\GR_WpfApp.pdb
