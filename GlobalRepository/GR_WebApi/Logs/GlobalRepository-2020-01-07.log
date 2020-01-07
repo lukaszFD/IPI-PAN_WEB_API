@@ -1,0 +1,89 @@
+2020-01-07 21:23:31.6952|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 21:24:27.7912|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Invalid Username or Password
+2020-01-07 21:24:27.8553|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Invalid Username or Password
+2020-01-07 21:24:27.8816|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was challenged.
+2020-01-07 21:25:11.1059|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Invalid Username or Password
+2020-01-07 21:25:11.1203|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Invalid Username or Password
+2020-01-07 21:25:11.1324|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was challenged.
+2020-01-07 21:26:59.3967|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 21:28:06.6680|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:28:06.7534|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:28:06.8011|INFO|GR_WebApi.Controllers.GrTablesController|GetGlobalRespositoryDocumentation for user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 21:28:14.1676|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:28:14.1676|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:28:14.1865|INFO|GR_WebApi.Controllers.GrTablesController|GetGlobalRespositoryDocumentation for user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 21:29:11.8145|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:29:11.8360|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:29:11.8360|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 21:31:27.7170|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 21:31:53.0158|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:31:53.1227|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:31:53.1675|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 21:45:05.4900|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 21:45:58.4345|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 21:46:25.1020|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:46:25.1713|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:46:25.2199|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 21:46:43.6421|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:46:43.6540|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:46:43.6637|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 21:58:01.4846|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 21:58:24.1001|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:58:24.1766|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:58:24.2516|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 21:58:37.0120|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:58:37.0120|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 21:58:37.0275|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 22:10:22.3265|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 22:10:44.4993|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:10:44.6069|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:10:44.6514|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 22:11:04.3846|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:11:04.3984|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:11:04.3984|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 22:11:04.7003|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 22:11:04.7074|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 22:11:04.7074|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was challenged.
+2020-01-07 22:11:18.5865|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:11:18.5865|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:11:18.6066|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 22:11:18.6619|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 22:11:18.6619|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 22:11:18.6619|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was challenged.
+2020-01-07 22:12:57.6072|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 22:13:19.5957|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:13:19.7280|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:13:19.8599|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 22:13:32.2918|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:13:32.2918|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:13:32.3071|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 22:16:24.1642|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 22:16:38.0663|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:16:38.1356|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:16:38.2249|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 22:20:00.2826|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 22:20:07.0804|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:20:07.1476|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:20:07.1938|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 22:23:56.1285|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 22:24:13.8364|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:24:13.9014|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:24:13.9439|INFO|GR_WebApi.Controllers.GlobalRepositoryDataController|Data downloading for GrAccount by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e
+2020-01-07 22:36:03.8352|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 22:38:28.4369|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:38:28.5393|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:38:28.6066|INFO|GR_WebApi.Controllers.AuditController|Data downloading for account : 16D9F7AB-475B-4A63-B8BF-56C80FE8557D by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e (GetAuditServers)
+2020-01-07 22:40:49.9960|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 22:41:31.7098|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:41:31.8241|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:41:31.8737|INFO|GR_WebApi.Controllers.AuditController|Data downloading for account : 16d9f7ab-475b-4a63-b8bf-56c80fe8557d by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e (GetAuditServers)
+2020-01-07 22:41:37.9732|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:41:37.9732|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:41:38.0051|INFO|GR_WebApi.Controllers.AuditController|Data downloading for account : 16d9f7ab-475b-4a63-b8bf-56c80fe8557d by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e (GetAuditServers)
+2020-01-07 22:41:55.1365|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:41:55.1479|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:41:55.1479|INFO|GR_WebApi.Controllers.AuditController|Data downloading for account : 16d9f7ab-475b-4a63-b8bf-56c80fe8557d by user : bb2f882f-f643-4b8a-aa06-3b611d7de44e (GetAuditServers)
+2020-01-07 22:44:10.9159|INFO|GR_WebApi.Authentication.ApiAuthenticationHandler|BasicAuthentication was not authenticated. Failure message: Missing Authorization Header
+2020-01-07 22:44:39.5664|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:44:39.6607|DEBUG|GR_WebApi.Authentication.ApiAuthenticationHandler|AuthenticationScheme: BasicAuthentication was successfully authenticated.
+2020-01-07 22:44:40.1825|ERROR|GR_WebApi.Controllers.GlobalRepositoryDataController|An error has occurred during data processing. For : bb2f882f-f643-4b8a-aa06-3b611d7de44e. Error : An error occurred while updating the entries. See the inner exception for details.

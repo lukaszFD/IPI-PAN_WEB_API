@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GR_WpfApp.Class;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -23,9 +24,10 @@ namespace GR_WpfApp.Pages
             InitializeComponent();
         }
 
-        private void accountButton_Click(object sender, RoutedEventArgs e)
-        {
 
+        private async void accountButton_Click(object sender, RoutedEventArgs e)
+        {
+            dataGirdAccount.ItemsSource = new GetDataFromJson().Account(await new GetDataFromHttp().Request(urlTbx.Text, passwordTbx.Text, loginTbx.Text));  
         }
     }
 }
