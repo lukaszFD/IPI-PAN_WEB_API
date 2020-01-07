@@ -43,11 +43,11 @@
                         CornerRadius="4" 
                         Background="Transparent">
 
-                                    <TextBlock Text="My Accounts" Foreground="#ffff" Margin="20 10" FontSize="30"></TextBlock>
+                                    <TextBlock Text="Audit Accounts" Foreground="#ffff" Margin="20 10" FontSize="30"></TextBlock>
                                 </Border>
                             </Grid>
 
-                            <DataGrid Background="Transparent" ItemsSource="{Binding}" x:Name="dataGirAccount" Width="auto"  Height="551" HorizontalAlignment="Left" AlternatingRowBackground="LightBlue"/>
+                            <DataGrid Background="Transparent" ItemsSource="{Binding}" x:Name="dataGirdAccount" Width="auto"  Height="551" HorizontalAlignment="Left" AlternatingRowBackground="LightBlue"/>
                         </StackPanel>
                     </Border>
 
@@ -78,7 +78,89 @@
                         </Button>
                     </Border>
 
-                    <Border Grid.Column="1" 
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0" 
+                                BorderBrush="LightGray" 
+                                BorderThickness="1" 
+                                CornerRadius="4" 
+                                Background="Transparent">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="0" 
+                                        BorderBrush="LightGray" 
+                                        BorderThickness="1" 
+                                        CornerRadius="4" 
+                                        Background="Transparent">
+
+                                    <StackPanel>
+                                        <TextBlock Text="Password and Login" Foreground="#ffff" Margin="0 5" FontSize="20"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Grid.Column="1" 
+                                        BorderBrush="LightGray" 
+                                        BorderThickness="1" 
+                                        CornerRadius="4" 
+                                        Background="Transparent">
+
+                                    <StackPanel >
+
+                                        <TextBox 
+                                            Margin="0 5"
+                                            Height="20" 
+                                            Width="200" 
+                                            x:Name="loginTbx"/>
+                                    </StackPanel>
+
+                                </Border>
+
+                                <Border Grid.Column="2" 
+                                        BorderBrush="LightGray" 
+                                        BorderThickness="1" 
+                                        CornerRadius="4" 
+                                        Background="Transparent">
+                                    <StackPanel >
+
+                                        <TextBox 
+                                            Margin="0 5"
+                                            Height="20" 
+                                            Width="200" 
+                                            x:Name="passwordTbx"/>
+                                    </StackPanel>
+
+                                </Border>
+
+                            </Grid>
+
+                        </Border>
+
+                        <Border Grid.Row="1" 
+                                BorderBrush="LightGray" 
+                                BorderThickness="1" 
+                                CornerRadius="4" 
+                                Background="Transparent">
+                            <StackPanel >
+
+                                <TextBox 
+                                            Margin="0 5"
+                                            Height="20" 
+                                            Width="600" 
+                                            x:Name="urlTbx"/>
+                            </StackPanel>
+
+                        </Border>
+
+                    </Grid>
+                    <!--<Border Grid.Column="1" 
                     BorderBrush="LightGray"
                     BorderThickness="1" 
                     CornerRadius="4" 
@@ -89,9 +171,9 @@
                                             Height="74" 
                                             Width="284" 
                                             x:Name="responseTbx"
-                                           />
+                                            SelectionChanged="response_SelectionChanged"/>
                         </StackPanel>
-                    </Border>
+                    </Border>-->
                 </Grid>
             </Border>
 

@@ -33,7 +33,7 @@ namespace GR_WpfApp
 
         private void btnShowAccount_Click(object sender, RoutedEventArgs e)
         {
-
+            mainFrame.NavigationService.Navigate(new MyAccount());
         }
 
         private void btnDoc_Click(object sender, RoutedEventArgs e)

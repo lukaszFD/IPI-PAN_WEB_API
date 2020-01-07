@@ -52,7 +52,7 @@
                                 FontSize="18" 
                                 BorderBrush="Transparent" 
                                 Grid.Column="3" 
-                                Content="My account" 
+                                Content="Audit" 
                                 Background="Transparent" 
                                 FontWeight= "Bold" 
                                 Foreground="#ffff"></Button>

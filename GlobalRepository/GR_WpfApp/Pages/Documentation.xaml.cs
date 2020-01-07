@@ -32,35 +32,9 @@ namespace GR_WpfApp.Pages
 
         private async void DrawCircleButton_Click(object sender, RoutedEventArgs e)
         {
-            await Request();
+
+            dataGirdDoc.ItemsSource = new GetDataFromJson().Doc(await new GetDataFromHttp().Request(urlTbx.Text,passwordTbx.Text,loginTbx.Text));
         }
-
-        private async Task Request()
-        {
-            try
-            {
-                var authValue = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes($"lukasz:test")));
-
-                using (var client = new HttpClient() { DefaultRequestHeaders = { Authorization = authValue } })
-                {
-                    HttpResponseMessage response = client.GetAsync("https://localhost:44396/GrTables/Documentation/All?pageNumber=0&pageSize=204").Result;
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var data = await response.Content.ReadAsStringAsync();
-
-                        dataGirdDoc.ItemsSource = new GetDataFromJson().Doc(data);
-                    }
-                    
-                    responseTbx.Text = response.Headers.ToString();
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
 
         private void response_SelectionChanged(object sender, RoutedEventArgs e)
         {

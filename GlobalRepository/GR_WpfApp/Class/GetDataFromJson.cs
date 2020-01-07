@@ -9,6 +9,7 @@ namespace GR_WpfApp.Class
     public partial class GetDataFromJson
     {
         public  List<Documentation> Doc(string json) => JsonConvert.DeserializeObject<List<Documentation>>(json);
+        public  List<Accounts> Account(string json) => JsonConvert.DeserializeObject<List<Accounts>>(json);
     }
 }
 
