@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GR_WpfApp.Class;
+using Newtonsoft.Json;
+using System;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GR_WpfApp.Pages
 {
@@ -23,124 +19,53 @@ namespace GR_WpfApp.Pages
             InitializeComponent();
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void DrawCircleButton_Click(object sender, RoutedEventArgs e)
         {
+            GrAccount acc = new GrAccount();
+            acc.AccountCountryRegionCode = accCountryRegionCode.Text;
+            acc.AccountDescription = accDescription.Text;
+            acc.AccountName = accName.Text;
+            acc.AccountPasswordExpires = datePickerAccount.SelectedDate.Value;
+            acc.AccountType = accType.Text;
 
-        }
+            acc.ServerName = servName.Text;
+            acc.ServerHost = servHost.Text;
+            acc.ServerCountryRegionCode = servCountryRegionCode.Text;
+            acc.ServerModel = Convert.ToInt32( servModel.Text);
+            acc.ServerSerialNumber = Convert.ToInt32(servSerialNumber.Text);
+            acc.ServerWarrantyExpirationDate = datePickerServer.SelectedDate.Value;
+            acc.ServerCputype = Convert.ToInt32(servCputype.Text);
+            acc.ServerRam = Convert.ToInt32(servRam.Text);
+            acc.ServerHardDisk = servHardDisk.Text;
+            acc.ServerUps = servUps.Text;
+            acc.ServerAntivirusSoftware = servAntivirusSoftware.Text;
 
-        private void tbxGuestName_SelectionChanged(object sender, RoutedEventArgs e)
-        {
+            acc.SystemCompanyName = sysCompanyName.Text;
+            acc.SystemName = sysName.Text;
+            acc.SystemVersion = sysVersion.Text;
+            acc.SystemTechSupportExpDate = datePickerSystem.SelectedDate.Value;
 
-        }
+            string json = JsonConvert.SerializeObject(acc);
 
-        private void accountName_SelectionChanged(object sender, RoutedEventArgs e)
-        {
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
-        }
+            try
+            {
+                var authValue = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes($"{loginTbx.Text}:{passwordTbx.Text}")));
 
-        private void accountDescription_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void accountType_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void accountCountryRegionCode_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void accountPasswordExpires_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void serverName_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void serverHost_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void serverCountryRegionCode_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void serverModel_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void serverSerialNumber_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void serverWarrantyExpirationDate_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void serverCputype_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void serverRam_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void serverHardDisk_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void serverUps_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void serverUps_SelectionChanged_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void systemCompanyName_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void systemName_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void systemVersion_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void systemTechSupportExpDate_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void DrawCircleButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void response_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
+                using (var client = new HttpClient() { DefaultRequestHeaders = { Authorization = authValue } })
+                {
+                    HttpResponseMessage response = client.PostAsync(urlTbx.Text, httpContent).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        responseTbx.Text = await response.Content.ReadAsStringAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
