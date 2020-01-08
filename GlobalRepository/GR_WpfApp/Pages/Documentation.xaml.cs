@@ -35,10 +35,5 @@ namespace GR_WpfApp.Pages
 
             dataGirdDoc.ItemsSource = new GetDataFromJson().Doc(await new GetDataFromHttp().Request(urlTbx.Text,passwordTbx.Text,loginTbx.Text));
         }
-
-        private void response_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

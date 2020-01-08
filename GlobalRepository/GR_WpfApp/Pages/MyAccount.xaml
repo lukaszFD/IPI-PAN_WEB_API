@@ -115,7 +115,7 @@
                                     <StackPanel >
 
                                         <TextBox 
-                                            Margin="0 5"
+                                            Margin="0 10"
                                             Height="20" 
                                             Width="200" 
                                             x:Name="loginTbx"/>
@@ -131,7 +131,7 @@
                                     <StackPanel >
 
                                         <TextBox 
-                                            Margin="0 5"
+                                            Margin="0 10"
                                             Height="20" 
                                             Width="200" 
                                             x:Name="passwordTbx"/>
@@ -149,12 +149,36 @@
                                 CornerRadius="4" 
                                 Background="Transparent">
                             <StackPanel >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0"
+                                            BorderBrush="LightGray" 
+                                            BorderThickness="1" 
+                                            CornerRadius="4" 
+                                            Background="Transparent">
+                                        <StackPanel>
+                                            <TextBlock Text="Url" Foreground="#ffff" Margin="0 10" FontSize="20"></TextBlock>
+                                        </StackPanel>
 
-                                <TextBox 
-                                            Margin="0 5"
+                                    </Border>
+                                    <Border Grid.Column="1"
+                                            BorderBrush="LightGray" 
+                                            BorderThickness="1" 
+                                            CornerRadius="4" 
+                                            Background="Transparent">
+                                        <TextBox 
+                                            Margin="0 8"
                                             Height="20" 
                                             Width="600" 
-                                            x:Name="urlTbx"/>
+                                            x:Name="urlTbx" />
+                                    </Border>
+
+
+                                </Grid>
+
                             </StackPanel>
 
                         </Border>
