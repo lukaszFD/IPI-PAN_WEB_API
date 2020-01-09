@@ -172,7 +172,7 @@
                                         <TextBox 
                                             Margin="0 8"
                                             Height="20" 
-                                            Width="600" 
+                                            Width="665" 
                                             x:Name="urlTbx" />
                                     </Border>
 

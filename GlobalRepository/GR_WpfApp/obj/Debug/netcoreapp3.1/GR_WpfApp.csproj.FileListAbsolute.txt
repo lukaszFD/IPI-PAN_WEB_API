@@ -22,3 +22,4 @@ C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Deb
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Debug\netcoreapp3.1\Pages\NewAccount.baml
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Debug\netcoreapp3.1\GR_WpfApp.csproj.CopyComplete
+C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Debug\netcoreapp3.1\GR_WpfApp.csprojAssemblyReference.cache
