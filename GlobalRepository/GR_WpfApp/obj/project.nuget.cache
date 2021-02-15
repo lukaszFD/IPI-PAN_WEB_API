@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "e09nG6LdoKlYW/T6CXg+XBrH539GmxGJ8/jGSh15zOWuZPVtP8xdnD4EKiGq843TH0DLmTyU4xT8rtT002cBCw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Luc\\Documents\\GitHub\\IPI-PAN_WEB_API\\GlobalRepository\\GR_WpfApp\\GR_WpfApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Luc\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

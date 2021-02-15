@@ -2,14 +2,15 @@
     [ExternalId]   UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
     [UserId]       INT              IDENTITY (1, 1) NOT NULL,
     [Description]  NVARCHAR (200)   NULL,
-    [Username] [nvarchar](200) NULL,
-	[Password] [nvarchar](200) NULL,
+    [Username] [nvarchar](200)      NOT NULL,
+	[Password] [varbinary](100)     NOT NULL,
     [Type]         CHAR (1)         NOT NULL,
     [CreationDate] DATETIME         DEFAULT (getdate()) NOT NULL,
     [EditDate]     DATETIME         NULL,
     [DeleteDate]   DATETIME         NULL,
     PRIMARY KEY CLUSTERED ([UserId] ASC),
-    CHECK ([Type]='A' OR [Type]='N')
+    CHECK ([Type]='A' OR [Type]='N'),
+    CONSTRAINT UQ_UserName UNIQUE([Username],[Type])  
 );
 
 GO
