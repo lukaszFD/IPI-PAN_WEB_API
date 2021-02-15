@@ -103,7 +103,7 @@ INSERT INTO gr_user.Users
            (NEWID()
            ,'admin'
            ,'admin'
-           ,'admin'
+           ,EncryptByPassPhrase('GR','admin')
            ,'A')
 
 INSERT INTO gr_user.Users
@@ -116,7 +116,7 @@ INSERT INTO gr_user.Users
            (NEWID()
            ,'lukasz'
            ,'lukasz'
-           ,'test'
+           ,EncryptByPassPhrase('GR','test')
            ,'N')
 
 PRINT 'Stop INSERT_INTO_gr_user_Users'

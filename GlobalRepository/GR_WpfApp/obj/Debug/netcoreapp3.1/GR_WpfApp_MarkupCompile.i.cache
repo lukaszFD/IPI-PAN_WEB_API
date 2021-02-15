@@ -1,5 +1,5 @@
 ﻿GR_WpfApp
-
+1.0.0.0
 
 winexe
 C#
@@ -8,13 +8,13 @@ C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\obj\Deb
 GR_WpfApp
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Luc\Documents\GitHub\IPI-PAN_WEB_API\GlobalRepository\GR_WpfApp\App.xaml
 4-1652706018
 
-12-288615268
+13-1362082427
 193355513331
 MainWindow.xaml;Pages\Documentation.xaml;Pages\MyAccount.xaml;Pages\NewAccount.xaml;
 
-True
+False
 
