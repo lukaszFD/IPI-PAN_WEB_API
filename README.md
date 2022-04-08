@@ -2,13 +2,13 @@
 
 It is a project carried out at the postgraduate studies of the Polish Academy of Sciences in the field of: "Programming on the .NET platform". This system will be an interface of web communication with the repository of accounts storing information about : systems, servers and accesses. It will be a bridge between other systems and will only manage this information. 
 
-#Update 08/04/2022
-
+---------------------------------------------------------------------------
+# Update 08/04/2022
 A REST API in Java Spring Boot was also created for this project. You can find it here [luc.SpringBoot](https://github.com/lukaszFD/luc.SpringBoot).
 
-#Update 08/04/2022
-
+# Update 08/04/2022
 I added a new folder "[GlobalRepository_db_bak](https://github.com/lukaszFD/IPI-PAN_WEB_API/GlobalRepository_db_bak)" where the backup db can be found. 
+---------------------------------------------------------------------------
 
 If you like the code or have any questions or suggestions then let me know at [Linkedin](https://www.linkedin.com/in/lukaszfd84/).
 
