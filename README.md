@@ -4,10 +4,10 @@ It is a project carried out at the postgraduate studies of the Polish Academy of
 
 
 ## Update 08/04/2022
-```
-A REST API in Java Spring Boot was also created for this project. You can find it here [luc.SpringBoot](https://github.com/lukaszFD/luc.SpringBoot).
-I added a new folder "[GlobalRepository_db_bak](https://github.com/lukaszFD/IPI-PAN_WEB_API/GlobalRepository_db_bak)" where the backup db can be found. 
-```
+
+* A REST API in Java Spring Boot was also created for this project. You can find it here [luc.SpringBoot](https://github.com/lukaszFD/luc.SpringBoot).
+* I added a new folder "[GlobalRepository_db_bak](https://github.com/lukaszFD/IPI-PAN_WEB_API/GlobalRepository_db_bak)" where the backup db can be found. 
+
 
 If you like the code or have any questions or suggestions then let me know at [Linkedin](https://www.linkedin.com/in/lukaszfd84/).
 
